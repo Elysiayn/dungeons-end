@@ -1,2 +1,2 @@
-# dndrandom-encounter
-DND 5e Random Encounter Battle Generator
+# Dungeon's End
+DND 5e based fighting game
