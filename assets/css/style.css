@@ -1,0 +1,29 @@
+/* Import XY Grid System */
+@import 'foundation';
+
+@include foundation-xy-grid-classes(
+  /* options
+  $base-grid: true,
+  $margin-grid: true,
+  $padding-grid: true,
+  $block-grid: true,
+  $collapse: true,
+  $offset: true,
+  $vertical-grid: true,
+  $frame-grid: true
+  */
+);
+
+.card {
+    background:darkred;
+    border: 3px solid black;
+    box-shadow: 0 10px 20px 0 darkgrey; 
+    padding: 0.25rem;
+    margin: 1rem;
+    border-radius: 10px;
+    align-content: center;
+}
+
+.hero {
+    background: rgb(49, 48, 48);
+}
