@@ -32,9 +32,10 @@
 }
 
 .card-divider {
-    background: rgb(49, 48, 48);
+    background: rgb(37, 37, 37);
     color: white;
     text-align: center;
+    /* border: gold;  */
 }
 
 .center {
@@ -42,3 +43,8 @@
     margin-left:auto;
     margin-right:auto;
 }
+
+/* .btn {
+    border: 10px solid gold;
+    color: gold;
+} */
