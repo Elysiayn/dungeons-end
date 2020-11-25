@@ -11,8 +11,13 @@
   $offset: true,
   $vertical-grid: true,
   $frame-grid: true
+  
   */
 );
+
+.gallery-item {
+    @include xy-gutters($gutter-position: left right bottom);
+  }
 
 /* Character Selection Cards */
 
@@ -23,7 +28,7 @@
     padding: 0.25rem;
     margin: 1rem;
     border-radius: 10px;
-    align-content: center;
+    justify-content: center;
 }
 
 .card-section {
@@ -39,9 +44,23 @@
 }
 
 .center {
-    display:block;
+    display:grid;
     margin-left:auto;
     margin-right:auto;
+    justify-content: center;
+    align-content:center;
+}
+
+.item-center {
+    display:grid;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-items: center;
+}
+
+.grid-container {
+    display:grid;
+    grid-gap: 50px;
 }
 
 /* .btn {
