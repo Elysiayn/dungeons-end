@@ -8,26 +8,52 @@
         <link rel="stylesheet" href="./assets/css/style.css"/>
     </head>
     <body>
-        <div class="banner">
-
+        <!-- Banner -->
+        <div class="row">
+            <div class="large-12 column, banner">
+            </div>
         </div>
 
-        <div class="navbar">
-
+        <!-- Navigation Menu -->
+        <div class="row">
+            <div class="large-12 column, navbar">
+            </div>
         </div>
 
-        <div class="playImages">
-            <div id="image1"></div>
-            <div id="image2"></div>
-            <div id="image3"></div>
-            <div id="image4"></div>
-        </div>
+        <!-- Character Selection Pictures -->
+        <div class="row, playerImages">
+            <!-- Image 1 -->
+            <div class="large-3 cloumn">
+                <div id="image1"></div>
+            </div>
+            <!-- Image 2 -->
+            <div class="large-3 cloumn">
+                <div id="image2"></div>
+            </div>
+            <!-- Image 3 -->
+            <div class="large-3 cloumn">
+                <div id="image3"></div>
+            </div>
+            <!-- Image 4 -->
+            <div class="large-3 cloumn">
+                <div id="image4"></div>
+            </div>
 
-        <div class="characterName">
-            <div class="small-9 columns">
-                <input type="text" placeholder="name">
+        </div>
+        
+        <!-- Input Field for Character Name -->
+        <div class="row">
+            <div class="large-12 columns">
+                <input type="text" id="name"> 
+                <label>Please Enter Character Name!</label>
+            </div>
+        </div>
+        <!-- Character Submit Button -->
+        <div class="row">
+            <div class="large-12 columns">
                 <button class="submit"></button>
-              </div>
+                <label>Confirm your Character!</label>
+            </div>
         </div>
     
         <script src="./assets/js/script.js"></script>
