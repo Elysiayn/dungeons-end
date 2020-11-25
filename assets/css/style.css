@@ -14,6 +14,8 @@
   */
 );
 
+/* Character Selection Cards */
+
 .card {
     background:darkred;
     border: 3px solid black;
@@ -24,6 +26,19 @@
     align-content: center;
 }
 
-.hero {
+.card-section {
+    align-content: center;
+    text-align: center;
+}
+
+.card-divider {
     background: rgb(49, 48, 48);
+    color: white;
+    text-align: center;
+}
+
+.center {
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
 }
