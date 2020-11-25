@@ -8,26 +8,40 @@
         <link rel="stylesheet" href="./assets/css/style.css"/>
     </head>
     <body>
-        <div class="banner">
+<!-- Banner -->
+<div class="grid-x">
+    <div class=" cell small-6 med-12, banner">
+    </div>
+</div>
 
-        </div>
+<!-- Navigation Menu -->
+<div class="grid-x">
+    <div class="cell small-6 med-12, navbar">
+    </div>
+</div>
 
-        <div class="navbar">
-
-        </div>
-
-        <div class="playImages">
+<!-- Character Selection Pictures -->
+<div class="grid-x">
             <div id="image1"></div>
             <div id="image2"></div>
             <div id="image3"></div>
             <div id="image4"></div>
+        <!-- End of Character Selection Pictures -->
         </div>
-
-        <div class="characterName">
-            <div class="small-9 columns">
-                <input type="text" placeholder="name">
+        
+        <!-- Input Field for Character Name -->
+        <div class="grid-x">
+            <div class="cell small-6 med-12">
+                <input type="text" id="name"> 
+                <label>Please Enter Character Name!</label>
+            </div>
+        </div>
+        <!-- Character Submit Button -->
+        <div class="grid-x">
+            <div class="cell sm-6 large-12">
                 <button class="submit"></button>
-              </div>
+                <label>Confirm your Character!</label>
+            </div>
         </div>
     
         <script src="./assets/js/script.js"></script>
