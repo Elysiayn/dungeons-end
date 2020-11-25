@@ -51,13 +51,6 @@
     align-content:center;
 }
 
-.item-center {
-    display:grid;
-    grid-auto-flow: column;
-    align-items: center;
-    justify-items: center;
-}
-
 .grid-container {
     display:grid;
     grid-gap: 50px;
