@@ -22,10 +22,30 @@ var monsterSummoner = function (monster) {
             console.log(data.actions[2].name);
             console.log(data.actions[2].damage[0].damage_dice);
             console.log(data.actions[2].attack_bonus);
+            damageDiceRoll(data.actions[2].damage[0].damage_dice);
 
         })
     }
     )
+}
+
+var damageDiceRoll = function(damageDice) {
+
+    var damageInfo = damageDice.split(/[d,+]/);
+    var damageMultiplier = parseInt(damageInfo[0]);
+    var damageValue = parseInt(damageInfo[1]);
+    var damageBonus = parseInt(damageInfo[2]);
+
+
+    console.log(damageInfo);
+    console.log(damageValue);
+    console.log(damageMultiplier);
+    console.log(damageBonus);
+
+    var damageDealt = (damageMultiplier * (Math.ceil(Math.random()*damageValue)) + damageBonus)
+
+    console.log(damageDealt);
+
 }
 
 
