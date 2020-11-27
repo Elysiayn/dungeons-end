@@ -1,3 +1,48 @@
+/* Import XY Grid System */
+@import 'foundation';
+
+@include foundation-xy-grid-classes(
+  /* options
+  $base-grid: true,
+  $margin-grid: true,
+  $padding-grid: true,
+  $block-grid: true,
+  $collapse: true,
+  $offset: true,
+  $vertical-grid: true,
+  $frame-grid: true
+  
+  */
+);
+
+.gallery-item {
+    @include xy-gutters($gutter-position: left right bottom);
+  }
+
+/* Character Selection Cards */
+
+.card {
+    background:darkred;
+    border: 3px solid black;
+    box-shadow: 0 10px 20px 0 darkgrey; 
+    padding: 0.25rem;
+    margin: 1rem;
+    border-radius: 10px;
+    justify-content: center;
+}
+
+.card-section {
+    align-content: center;
+    text-align: center;
+}
+
+.card-divider {
+    background: rgb(37, 37, 37);
+    color: white;
+    text-align: center;
+    /* border: gold;  */
+}
+
 .center {
     display:grid;
     margin-left:auto;
@@ -5,3 +50,13 @@
     justify-content: center;
     align-content:center;
 }
+
+.grid-container {
+    display:grid;
+    grid-gap: 50px;
+}
+
+/* .btn {
+    border: 10px solid gold;
+    color: gold;
+} */
