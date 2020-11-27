@@ -7,6 +7,21 @@ var beginAdventure = function(event) {
 
 document.getElementById("start-button").addEventListener("click", beginAdventure);
 
+var monsterRandomizer = function () {
+    fetch(
+        "https://www.dnd5eapi.co/api/monsters?challenge_rating=1,2,3,4,5"
+    )
+    .then(function(response){
+    response.json().then(function(data){
+
+    var randomMonster = data.results[Math.floor(Math.random() * data.results.length)]
+    
+        monsterSummoner(randomMonster.index);
+
+    })
+})
+}
+
 
 var monsterSummoner = function (monster) {
     
@@ -19,15 +34,16 @@ var monsterSummoner = function (monster) {
             console.log(data.hit_points);
             console.log(data.armor_class);
             console.log(data.xp);
-            console.log(data.actions[2].name);
-            console.log(data.actions[2].damage[0].damage_dice);
-            console.log(data.actions[2].attack_bonus);
-            damageDiceRoll(data.actions[2].damage[0].damage_dice);
+            console.log(data.actions[0].name);
+            console.log(data.actions[0].damage[0].damage_dice);
+            console.log(data.actions[0].attack_bonus);
+            damageDiceRoll(data.actions[0].damage[0].damage_dice);
 
         })
     }
     )
 }
+
 
 var damageDiceRoll = function(damageDice) {
 
@@ -49,4 +65,4 @@ var damageDiceRoll = function(damageDice) {
 }
 
 
-monsterSummoner("bearded-devil");
+monsterRandomizer();
