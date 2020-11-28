@@ -60,3 +60,9 @@
     border: 10px solid gold;
     color: gold;
 } */
+
+
+.bottom {
+    position: absolute;
+    bottom:0;
+}
