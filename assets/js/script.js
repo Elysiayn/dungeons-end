@@ -44,7 +44,6 @@ var monsterSummoner = function (monster) {
     )
 }
 
-<<<<<<< HEAD
 // I think we may need to wrap the hitDiceRoll and damageDiceRoll in a while loop to continue these functions until the monster dies. However, doing so may prevent the other list of options. So, we will actually want to have that be in the while loop, then just call on these functions conditionally. 
 
 // What're the 3-4 options that a user can choose from, and are those options available with each round or is it per battle?
@@ -63,8 +62,6 @@ var hitDiceRoll = function() {
     return toHit;    
 }
 console.log("Look at me!", hitDiceRoll());
-=======
->>>>>>> feature/monsterRandomizer
 
 var damageDiceRoll = function(damageDice) {
 
@@ -87,3 +84,7 @@ var damageDiceRoll = function(damageDice) {
 
 
 monsterRandomizer();
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems, {});
+  });

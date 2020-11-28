@@ -1,45 +1,4 @@
-<<<<<<< HEAD
-.hero-image {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("");
-    /* height: 50%; */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-}
-
-.hero-text {
-    text-align: center;
-    /* position: absolute; */
-    top: 50%;
-    left: 50%;
-    /* transform: translate(-50%, -50%); */
-    color: white;
-  }
-=======
-/* Import XY Grid System */
-@import 'foundation';
-
-@include foundation-xy-grid-classes(
-  /* options
-  $base-grid: true,
-  $margin-grid: true,
-  $padding-grid: true,
-  $block-grid: true,
-  $collapse: true,
-  $offset: true,
-  $vertical-grid: true,
-  $frame-grid: true
-  
-  */
-);
-
-.gallery-item {
-    @include xy-gutters($gutter-position: left right bottom);
-  }
-
 /* Character Selection Cards */
-
 .card {
     background:darkred;
     border: 3px solid black;
@@ -50,12 +9,12 @@
     justify-content: center;
 }
 
-.card-section {
+.card-content {
     align-content: center;
     text-align: center;
 }
 
-.card-divider {
+.card-action {
     background: rgb(37, 37, 37);
     color: white;
     text-align: center;
@@ -70,7 +29,7 @@
     align-content:center;
 }
 
-.grid-container {
+.container {
     display:grid;
     grid-gap: 50px;
 }
@@ -85,4 +44,8 @@
     position: absolute;
     bottom:0;
 }
->>>>>>> 0d8f4382259b426e4c0b58f0696477c237176602
+
+.banner {
+    font-size: 50px;
+    text-align: center;
+}
