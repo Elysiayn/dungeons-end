@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 .hero-image {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("");
     /* height: 50%; */
@@ -86,3 +87,9 @@
     bottom:0;
 }
 >>>>>>> 0d8f4382259b426e4c0b58f0696477c237176602
+=======
+.banner {
+    font-size: 50px;
+    text-align: center;
+}
+>>>>>>> feature/navbar

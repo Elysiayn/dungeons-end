@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 var inputEl = document.getElementById("player-name");
 
 
@@ -87,3 +88,9 @@ var damageDiceRoll = function(damageDice) {
 
 
 monsterRandomizer();
+=======
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems, {});
+  });
+>>>>>>> feature/navbar
