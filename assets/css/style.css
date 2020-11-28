@@ -1,4 +1,4 @@
-/* Character Selection Cards */
+/* Character Selection Cards Styles Begin*/
 .card {
     background:darkred;
     border: 3px solid black;
@@ -7,18 +7,19 @@
     margin: 1rem;
     border-radius: 10px;
     justify-content: center;
+    font-family: "Fondamento", cursive;
 }
 
 .card-content {
     align-content: center;
     text-align: center;
+    color: white;
 }
 
 .card-action {
     background: rgb(37, 37, 37);
     color: white;
     text-align: center;
-    /* border: gold;  */
 }
 
 .center {
@@ -34,16 +35,21 @@
     grid-gap: 50px;
 }
 
-/* .btn {
-    border: 10px solid gold;
-    color: gold;
-} */
-
-
-.bottom {
-    position: absolute;
-    bottom:0;
+.btn {
+    border: 1px solid black;
+    box-shadow: 0 5px 10px 0 rgb(37, 37, 37); 
+    font-family: "Fondamento", cursive;
+    background: rgb(180, 154, 2);
 }
+
+img {
+    border: 5px solid rgb(180, 154, 2);
+}
+
+.btn:hover {
+    background: rgb(37, 37, 37);
+  }
+/* Character Selection Card Styles End */
 
 .banner {
     font-size: 50px;
