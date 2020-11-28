@@ -1,5 +1,24 @@
 var inputEl = document.getElementById("player-name");
 
+var gameState = {
+    user: {
+        name: "",
+        hp: 50, // determined by player selected
+        ap: 0, // determined by roll 
+        armor: 0, // determined by player selected
+        xp: 0,
+        level: 1
+    },
+    enemy: {
+        name: "",
+        hp: 0,
+        ap: 0,
+        armor: 0,
+        xp: 0,
+        challenge_rating: 0
+    },
+
+}
 
 var beginAdventure = function(event) {
     console.log("Hooray!");
@@ -7,9 +26,9 @@ var beginAdventure = function(event) {
 
 document.getElementById("start-button").addEventListener("click", beginAdventure);
 
-var monsterRandomizer = function () {
+var monsterRandomizer = function (playerLevel) {
     fetch(
-        "https://www.dnd5eapi.co/api/monsters?challenge_rating=1,2,3,4,5"
+        "https://www.dnd5eapi.co/api/monsters?challenge_rating=" + playerLevel
     )
     .then(function(response){
     response.json().then(function(data){
@@ -30,14 +49,25 @@ var monsterSummoner = function (monster) {
     )
     .then(function(response){
         response.json().then(function(data) {
+            var cleanUrl = data.name.split(" ").join("-")
             console.log(data.name);
+            gameState.enemy.name = data.name;
+
+            monsterImageAPI(cleanUrl);
+
             console.log(data.hit_points);
+            gameState.enemy.hp = data.hit_points;
+
             console.log(data.armor_class);
+            gameState.enemy.armor = data.armor_class;
+
             console.log(data.xp);
-            console.log(data.actions[0].name);
-            console.log(data.actions[0].damage[0].damage_dice);
-            console.log(data.actions[0].attack_bonus);
-            damageDiceRoll(data.actions[0].damage[0].damage_dice);
+            gameState.enemy.xp = data.xp;
+
+            console.log(data.actions[1].name);
+            console.log(data.actions[1].damage[0].damage_dice);
+            console.log(data.actions[1].attack_bonus);
+            damageDiceRoll(data.actions[1].damage[0].damage_dice);
 
         })
     }
@@ -53,11 +83,18 @@ var hitDiceRoll = function() {
     max = Math.floor(20);
     var toHit = Math.floor(Math.random() * (max - min + 1) + min);
 
-    if (toHit + str + profBonus > monsterArmor) {
-        damageDiceRoll();
-    } else {
-        // I am not sure what the else would be. What happens if you don't beat the target's armor value?
+    if (toHit < 6) {
+        alert("You've failed to roll high enough!")
+    } else if (toHit >= 6) {
+        alert("You've rolled high enough to attack!")
+        // damageDiceRoll();
     }
+
+    // if (toHit + str + profBonus > monsterArmor) {
+    //     damageDiceRoll();
+    // } else {
+        
+    // }
 
     return toHit;    
 }
@@ -82,8 +119,19 @@ var damageDiceRoll = function(damageDice) {
 
 }
 
+var monsterImageAPI = function(monsterName) {
+    fetch("https://api.open5e.com/monsters/" + monsterName.toLowerCase())
+    .then(function(response) {
+        response.json().then(function(data) {
+            console.log(data);
+            // console.log(data.results[1].img_main);
+        })
+    })
+};
 
-monsterRandomizer();
+
+
+monsterRandomizer(gameState.user.level);
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.sidenav');
     var instances = M.Sidenav.init(elems, {});
