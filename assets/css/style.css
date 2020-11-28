@@ -35,7 +35,8 @@
     grid-gap: 50px;
 }
 
-.btn {
+.btn,
+.btn-large {
     border: 1px solid black;
     box-shadow: 0 5px 10px 0 rgb(37, 37, 37); 
     font-family: "Fondamento", cursive;
@@ -46,10 +47,17 @@ img {
     border: 5px solid rgb(180, 154, 2);
 }
 
-.btn:hover {
+.btn:hover,
+.btn-large:hover {
     background: rgb(37, 37, 37);
-  }
+}
 /* Character Selection Card Styles End */
+
+.input-form {
+    border: 1px solid black;
+    box-shadow: 0 5px 10px 0 rgb(37, 37, 37); 
+    font-family: "Fondamento", cursive;
+}
 
 .banner {
     font-size: 50px;
