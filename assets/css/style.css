@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .hero-image {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("");
     /* height: 50%; */
@@ -15,3 +16,73 @@
     /* transform: translate(-50%, -50%); */
     color: white;
   }
+=======
+/* Import XY Grid System */
+@import 'foundation';
+
+@include foundation-xy-grid-classes(
+  /* options
+  $base-grid: true,
+  $margin-grid: true,
+  $padding-grid: true,
+  $block-grid: true,
+  $collapse: true,
+  $offset: true,
+  $vertical-grid: true,
+  $frame-grid: true
+  
+  */
+);
+
+.gallery-item {
+    @include xy-gutters($gutter-position: left right bottom);
+  }
+
+/* Character Selection Cards */
+
+.card {
+    background:darkred;
+    border: 3px solid black;
+    box-shadow: 0 10px 20px 0 darkgrey; 
+    padding: 0.25rem;
+    margin: 1rem;
+    border-radius: 10px;
+    justify-content: center;
+}
+
+.card-section {
+    align-content: center;
+    text-align: center;
+}
+
+.card-divider {
+    background: rgb(37, 37, 37);
+    color: white;
+    text-align: center;
+    /* border: gold;  */
+}
+
+.center {
+    display:grid;
+    margin-left:auto;
+    margin-right:auto;
+    justify-content: center;
+    align-content:center;
+}
+
+.grid-container {
+    display:grid;
+    grid-gap: 50px;
+}
+
+/* .btn {
+    border: 10px solid gold;
+    color: gold;
+} */
+
+
+.bottom {
+    position: absolute;
+    bottom:0;
+}
+>>>>>>> 0d8f4382259b426e4c0b58f0696477c237176602
