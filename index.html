@@ -1,133 +1,106 @@
-  
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <title></title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
+        <!--Let browser know website is optimized for mobile-->
+        <meta name=“viewport” content=“width=device-width, initial-scale=1.0" /> 
+        <link rel=“stylesheet” href=“https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css”>
         <link rel="stylesheet" href="./assets/css/style.css"/>
     </head>
     <body>
-<<<<<<< HEAD
-       
-
-        
-        <!-- Banner -->
-        <div class="grid-x">
-          <div class=" cell small-6 med-12 center">
+    <!-- Banner -->
+    <div class="row">
+        <div class=" cell small-6 med-12 center">
             <div class="hero-image">
-              <div class="hero-text">
-            <h1 style="font-size:50px ">Welcome to Dungeons End</h1>
-              </div>
+                <div class="hero-text">
+                    <h1 style="font-size:50px ">Welcome to Dungeons End</h1>
+                </div>
             </div>
-          </div>
         </div>
+    </div>
         
-      <!-- Navigation Menu -->
-      <div class="grid-x">
-          <div class="cell small-6 med-12 navbar center">
+    <!-- Navigation Menu -->
+    <div class="row">
+        <div class="cell small-6 med-12 navbar center">
             <div class="top-bar">
-              <div class="top-bar-left">
+                <div class="top-bar-left">
                 <ul class="dropdown menu" data-dropdown-menu>
-                  <li class="menu-text">Menu</li>
-                  <li>
+                    <li class="menu-text">Menu</li>
+                    <li>
                     <a href="#home">Home</a>
-                  </li>
-                  <li><a href="#encounter">Encounter</a></li>
-                  <li><a href="#high-score">High Score</a></li>
+                    </li>
+                    <li><a href="#encounter">Encounter</a></li>
+                    <li><a href="#high-score">High Score</a></li>
                 </ul>
-              </div>
+            </div>
             </div>
         </div>
-      </div>
-
-        <div class="playImages">
-            <div id="image1"></div>
-            <div id="image2"></div>
-            <div id="image3"></div>
-            <div id="image4"></div>
-        </div>
-
-        <div class="characterName">
-            <div class="small-9 columns">
-                <input type="text" placeholder="name">
-                <button class="submit"></button>
-              </div>
-        </div>
-        
-
-        
-        <script src="./assets/js/script.js"></script>
-
-=======
-        <!-- Banner -->
-        <div class="grid-x">
-            <div class=" cell small-6 med-12, banner">
-            </div>
-        </div>
-
-        <!-- Navigation Menu -->
-        <div class="grid-x">
-            <div class="cell small-6 med-12, navbar">
-            </div>
-        </div>
+    </div>
 
     <!-- Character Selection Pictures -->
-    <div class="grid-container center">
-        <div class="grid-x">
+    <div class="container center">
+        <div class="row">
             <!-- Image 1 -->
-            <div class="cell small-2 med-4 center">
+            <div class="col s2 m4 center">
                 <div class="card" id="image1">
-                    <div class="card-section center">
+                    <div class="card-content center">
                         <img src="https://via.placeholder.com/200">
+                        <span class="card-title">Card Title</span>
                         <p>FIGHTER 1 INFO</p>
                     </div>
-                    <div class="card-divider">
+                    <div class="card-action">
                         <!-- consider btn colors: alert/warning/secondary-cannot customize -->
-                        <button type="button" class="alert button center" id="fighter1">Select Fighter</button>
+                        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                            <i class="material-icons right">send</i>
+                        </button>
                     </div>
                 </div>
             </div>
 
             <!-- Image 2 -->
-            <div class="cell small-2 med-4 center">
+            <div class="col s2 m4 center">
                 <div class="card" id="image2">
-                    <div class="card-section center">
+                    <div class="card-content center">
                         <img src="https://via.placeholder.com/200">
+                        <span class="card-title">Card Title</span>
                         <p>FIGHTER 2 INFO</p>
+                        <a class="waves-effect waves-light btn">button</a>
                     </div>
-                    <div class="card-divider">
+                    <div class="card-action">
                         <!-- consider btn colors: alert/warning/secondary-cannot customize -->
-                        <button type="button" class="alert button center" id="fighter2">Select Fighter</button>
+                        <a class="waves-effect waves-light btn">button</a>
                     </div>
                 </div>
             </div>
 
             <!-- Image 3 -->
-            <div class="cell small-2 med-4 center">
+            <div class="col s2 m4 center">
                 <div class="card" id="image3">
-                    <div class="card-section center">
+                    <div class="card-content center">
                         <img src="https://via.placeholder.com/200">
+                        <span class="card-title">Card Title</span>
                         <p>FIGHTER 3 INFO</p>
                     </div>
-                    <div class="card-divider">
+                    <div class="card-action">
                         <!-- consider btn colors: alert/warning/secondary-cannot customize -->
-                        <button type="button" class="alert button center" id="fighter3">Select Fighter</button>
+                        <a class="waves-effect red darken-4 btn-small"><i class="material-icons left">Select Fighter</i>button</a>
                     </div>
                 </div>
             </div>
 
             <!-- Image 4 -->
-            <div class="cell small-2 med-4 center">
+            <div class="col s2 m4 center">
                 <div class="card" id="image4">
-                    <div class="card-section center">
+                    <div class="card-content center">
                         <img src="https://via.placeholder.com/200">
+                        <span class="card-title">Card Title</span>
                         <p>FIGHTER 4 INFO</p>
                     </div>
-                    <div class="card-divider">
+                    <div class="card-action">
                         <!-- consider btn colors: alert/warning/secondary-cannot customize -->
-                        <button type="button" class="alert button center" id="fighter4">Select Fighter</button>
+                        <a class="waves-effect red darken-4 btn-small"><i class="material-icons left">Select Fighter</i>button</a>
                     </div>
                 </div>
             </div>
@@ -138,9 +111,9 @@
     <br>
     <br>
     <!-- Input Field for Character Name -->
-    <div class="grid-container">
-        <div class="grid-x">
-            <div class="cell small-8 large-12 center">
+    <div class="container">
+        <div class="row">
+            <div class="col s8 l12 center">
                 <input type="text" id="player-name" placeholder="Enter Character Name!"/>
                 <!-- Character Submit Button -->
                 <div id="start-button" class="cell small-4 large-6 center" >
@@ -150,7 +123,7 @@
             </div>      
         </div>
     </div>
+    <script src=“https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js”></script>
     <script src="./assets/js/script.js"></script>
->>>>>>> 0d8f4382259b426e4c0b58f0696477c237176602
     </body>
 </html>
