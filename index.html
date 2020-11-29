@@ -128,12 +128,21 @@
     <div class="container">
         <div class="row">
             <div class="col s8 l12 center">
-                <div class="input-form card-panel">
-                <input class="input-form" type="text" id="player-name" placeholder="Enter Character Name!"/>
+                <input type="text" id="player-name" placeholder="Enter Character Name!"/>
+                <!-- Character Submit Button & Modal Trigger-->
+                <div id="start-button" class="cell small-4 large-6 center" >
+                    <a data-target="modal1" class="button submit modal-trigger" href="#">Begin Adventure!</a>
+                </div>  
+                <!-- Modal Content -->
+                <div id="modal1" class="modal">
+                    <div class="modal-content">
+                        <h4>Modal Header</h4>
+                        <p>A bunch of text</p>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Continue</a>
+                    </div>
                 </div>
-                <br>
-                <!-- Character Submit Button -->
-                    <button class="btn-large pulse" type="submit" name="action" id="start-button">Begin Adventure!</button>  
             </div>      
         </div>
     </div>

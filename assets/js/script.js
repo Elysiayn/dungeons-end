@@ -1,3 +1,10 @@
+// Modal Activation Trigger
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elems, options);
+});
+// Modal End
+
 var inputEl = document.getElementById("player-name");
 
 var gameState = {
