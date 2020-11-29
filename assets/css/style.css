@@ -54,7 +54,7 @@ img {
 /* Character Selection Card Styles End */
 
 .input-form {
-    border: 1px solid black;
+    border: 5px solid rgb(180, 154, 2);
     box-shadow: 0 5px 10px 0 rgb(37, 37, 37); 
     font-family: "Fondamento", cursive;
 }
