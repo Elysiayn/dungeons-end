@@ -5,12 +5,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!--Let browser know website is optimized for mobile-->
         <meta name=“viewport” content=“width=device-width, initial-scale=1.0" /> 
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <link rel="stylesheet" href="./assets/css/style.css"/>
         <title></title>
     </head>
 
-    
+
   <!-- Nav Bar -->
   <nav class="red darken-4">
     <div class="nav-wrapper">
@@ -31,6 +32,28 @@
 </nav>
 
     <body>
+
+
+        
+
+
+        <a class="waves-effect waves-light btn"id="attack-button">Attack</a>
+        <a class="waves-effect waves-light btn" id="run-button"><i class="material-icons left"></i>Run</a>
+        <a class="waves-effect waves-light btn"id="dodge-button"><i class="material-icons right"></i>Dodge</a>
+
+       <!-- Modal Trigger -->
+  <a class="waves-effect waves-light btn modal-trigger" href="#modal1"><i class="material-icons right">local_hospital</i>Health Potions</a>
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Health Potions</h4>
+      <p>You click to use your health</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
         
 
         <script src=“https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js”></script>
