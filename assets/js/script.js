@@ -136,3 +136,9 @@ document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.sidenav');
     var instances = M.Sidenav.init(elems, {});
   });
+
+// Health Portion Modal //
+  $(document).ready(function(){
+    $('#healthportions').modal();
+  });
+          
