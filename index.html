@@ -1,81 +1,120 @@
-  
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title></title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
+        <!--Let browser know website is optimized for mobile-->
+        <meta name=“viewport” content=“width=device-width, initial-scale=1.0" /> 
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Fondamento&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <link rel="stylesheet" href="./assets/css/style.css"/>
+        <title></title>
     </head>
+
+    <!-- Banner -->
+    <div class= "banner">
+        <div class="col s12 m8 offset-m2 l6 offset-l3">
+            <div class="card-panel grey lighten-5 z-depth-1">
+                <div class="row valign-wrapper">
+                    <div class="col s2">
+                        <img src="" alt="" class="round responsive-img">
+                    </div>
+                    <div class="col s10 center">
+                        <span class="black-text">
+                            Welcome To Dungeons End
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Nav Bar -->
+    <nav class="red darken-4">
+        <div class="nav-wrapper">
+            <a href="#!" class="brand-logo">Logo</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">Menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="encounter.html">Encounter</a></li>
+                <li><a href="high-score.html">High Score</a></li>
+            </ul>
+        </div>
+        
+            <ul class="sidenav" id="mobile-demo">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="encounter.html">Encounter</a></li>
+                <li><a href="high-score.html">High Score</a></li>
+            </ul>
+    </nav>
     <body>
-        <!-- Banner -->
-        <div class="grid-x">
-            <div class=" cell small-6 med-12, banner">
-            </div>
-        </div>
-
-        <!-- Navigation Menu -->
-        <div class="grid-x">
-            <div class="cell small-6 med-12, navbar">
-            </div>
-        </div>
-
+    <br>
+    <br>
+    <br>
     <!-- Character Selection Pictures -->
-    <div class="grid-container center">
-        <div class="grid-x">
+    <div class="container center">
+        <div class="row">
             <!-- Image 1 -->
-            <div class="cell small-2 med-4 center">
+            <div class="col s4 m6 center">
                 <div class="card" id="image1">
-                    <div class="card-section center">
-                        <img src="https://via.placeholder.com/200">
+                    <div class="card-content center">
+                        <img src="./assets/images/image1.jpg" style="width:200px;height:300px;" alt="Human Male Fighter">
+                        <span class="card-title">Human Fighter</span>
                         <p>FIGHTER 1 INFO</p>
                     </div>
-                    <div class="card-divider">
-                        <!-- consider btn colors: alert/warning/secondary-cannot customize -->
-                        <button type="button" class="alert button center" id="fighter1">Select Fighter</button>
+                    <div class="card-action">
+                        <button class="btn" type="submit" name="action" id="fighter1">Select Fighter
+                            <i class="material-icons left">colorize</i>
+                        </button>
                     </div>
                 </div>
             </div>
 
             <!-- Image 2 -->
-            <div class="cell small-2 med-4 center">
+            <div class="col s4 m6 center">
                 <div class="card" id="image2">
-                    <div class="card-section center">
-                        <img src="https://via.placeholder.com/200">
+                    <div class="card-content center">
+                        <img src="./assets/images/image2.jpg" style="width:200px;height:300px;" alt="Orc Male Fighter">
+                        <span class="card-title">Orc Fighter</span>
                         <p>FIGHTER 2 INFO</p>
                     </div>
-                    <div class="card-divider">
-                        <!-- consider btn colors: alert/warning/secondary-cannot customize -->
-                        <button type="button" class="alert button center" id="fighter2">Select Fighter</button>
+                    <div class="card-action">
+                        <button class="btn" type="submit" name="action" id="fighter2">Select Fighter
+                            <i class="material-icons left">colorize</i>
+                        </button>
                     </div>
                 </div>
             </div>
 
             <!-- Image 3 -->
-            <div class="cell small-2 med-4 center">
+            <div class="col s4 m6 center">
                 <div class="card" id="image3">
-                    <div class="card-section center">
-                        <img src="https://via.placeholder.com/200">
+                    <div class="card-content center">
+                        <img src="./assets/images/image3.jpg" style="width:200px;height:300px;" alt="Aasimar Female Fighter">
+                        <span class="card-title">Aasimar Fighter</span>
                         <p>FIGHTER 3 INFO</p>
                     </div>
-                    <div class="card-divider">
-                        <!-- consider btn colors: alert/warning/secondary-cannot customize -->
-                        <button type="button" class="alert button center" id="fighter3">Select Fighter</button>
+                    <div class="card-action">
+                        <button class="btn" type="submit" name="action" id="fighter3">Select Fighter
+                            <i class="material-icons left">colorize</i>
+                        </button>
                     </div>
                 </div>
             </div>
 
             <!-- Image 4 -->
-            <div class="cell small-2 med-4 center">
+            <div class="col s4 m6 center">
                 <div class="card" id="image4">
-                    <div class="card-section center">
-                        <img src="https://via.placeholder.com/200">
+                    <div class="card-content center">
+                        <img src="./assets/images/image4.jpg" style="width:200px;height:300px;" alt="Elf Female Fighter">
+                        <span class="card-title">Elf Fighter</span>
                         <p>FIGHTER 4 INFO</p>
                     </div>
-                    <div class="card-divider">
-                        <!-- consider btn colors: alert/warning/secondary-cannot customize -->
-                        <button type="button" class="alert button center" id="fighter4">Select Fighter</button>
+                    <div class="card-action">
+                        <button class="btn" type="submit" name="action" id="fighter4">Select Fighter
+                            <i class="material-icons left">colorize</i>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -86,18 +125,22 @@
     <br>
     <br>
     <!-- Input Field for Character Name -->
-    <div class="grid-container">
-        <div class="grid-x">
-            <div class="cell small-8 large-12 center">
-                <input type="text" id="player-name" placeholder="Enter Character Name!"/>
+    <div class="container">
+        <div class="row">
+            <div class="col s8 l12 center">
+                <div class="input-form card-panel">
+                <input class="input-form" type="text" id="player-name" placeholder="Enter Character Name!"/>
+                </div>
+                <br>
                 <!-- Character Submit Button -->
-                <div id="start-button" class="cell small-4 large-6 center" >
-                    <a class="button warning submit" href="#">Begin Adventure!</a>
-                    
-                </div>  
+                    <button class="btn-large pulse" type="submit" name="action" id="start-button">Begin Adventure!</button>  
             </div>      
         </div>
     </div>
+    <br>
+    <br>
+    <br>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./assets/js/script.js"></script>
     </body>
 </html>

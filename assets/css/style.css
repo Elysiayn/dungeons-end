@@ -1,26 +1,4 @@
-/* Import XY Grid System */
-@import 'foundation';
-
-@include foundation-xy-grid-classes(
-  /* options
-  $base-grid: true,
-  $margin-grid: true,
-  $padding-grid: true,
-  $block-grid: true,
-  $collapse: true,
-  $offset: true,
-  $vertical-grid: true,
-  $frame-grid: true
-  
-  */
-);
-
-.gallery-item {
-    @include xy-gutters($gutter-position: left right bottom);
-  }
-
-/* Character Selection Cards */
-
+/* Character Selection Cards Styles Begin*/
 .card {
     background:darkred;
     border: 3px solid black;
@@ -29,18 +7,19 @@
     margin: 1rem;
     border-radius: 10px;
     justify-content: center;
+    font-family: "Fondamento", cursive;
 }
 
-.card-section {
+.card-content {
     align-content: center;
     text-align: center;
+    color: white;
 }
 
-.card-divider {
+.card-action {
     background: rgb(37, 37, 37);
     color: white;
     text-align: center;
-    /* border: gold;  */
 }
 
 .center {
@@ -51,18 +30,45 @@
     align-content:center;
 }
 
-.grid-container {
+.container {
     display:grid;
     grid-gap: 50px;
 }
 
-/* .btn {
-    border: 10px solid gold;
-    color: gold;
-} */
+.btn,
+.btn-large {
+    border: 1px solid black;
+    box-shadow: 0 5px 10px 0 rgb(37, 37, 37); 
+    font-family: "Fondamento", cursive;
+    background: rgb(180, 154, 2);
+}
 
+img {
+    border: 5px solid rgb(180, 154, 2);
+}
 
-.bottom {
+.btn:hover,
+.btn-large:hover {
+    background: rgb(37, 37, 37);
+}
+/* Character Selection Card Styles End */
+
+.input-form {
+    border: 5px solid rgb(180, 154, 2);
+    box-shadow: 0 5px 10px 0 rgb(37, 37, 37); 
+    font-family: "Fondamento", cursive;
+}
+
+.banner {
+    font-size: 50px;
+    text-align: center;
+}
+
+div.fight-button {
     position: absolute;
-    bottom:0;
+    bottom: 80px;
+    left: 35%;
+    
+    
+   
 }
