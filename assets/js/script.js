@@ -63,12 +63,23 @@ var monsterSummoner = function (monster) {
 
             console.log(data.xp);
             gameState.enemy.xp = data.xp;
-
-            console.log(data.actions[1].name);
-            console.log(data.actions[1].damage[0].damage_dice);
-            console.log(data.actions[1].attack_bonus);
-            damageDiceRoll(data.actions[1].damage[0].damage_dice);
-
+            
+            
+            if (data.actions[0].name=== "Multiattack") {
+            console.log(data.actions[0].name);
+            console.log(data.actions[0].options.from[0]);
+            var count = 1;
+            for( i= 0; i < data.actions[0].options.from[0].length; i++ ){
+                
+                damageDiceRoll(data.actions[count].damage[0].damage_dice);
+                count ++;
+            }
+                
+            }
+            else{    /*console.log(data.actions[0].damage[0].damage_dice);
+            console.log(data.actions[0].attack_bonus);*/
+            damageDiceRoll(data.actions[0].damage[0].damage_dice);
+            }
         })
     }
     )
@@ -105,15 +116,18 @@ var damageDiceRoll = function(damageDice) {
     var damageInfo = damageDice.split(/[d,+]/);
     var damageMultiplier = parseInt(damageInfo[0]);
     var damageValue = parseInt(damageInfo[1]);
+    if(parseInt(damageInfo[2])){
     var damageBonus = parseInt(damageInfo[2]);
-
+    } else {
+        var damageBonus = 0;
+    }
 
     console.log(damageInfo);
     console.log(damageValue);
     console.log(damageMultiplier);
-    console.log(damageBonus);
+    console.log(damageBonus); 
 
-    var damageDealt = (damageMultiplier * (Math.ceil(Math.random()*damageValue)) + damageBonus)
+    var damageDealt = ((damageMultiplier * (Math.ceil(Math.random()*damageValue))) + damageBonus)
 
     console.log(damageDealt);
 
@@ -142,3 +156,4 @@ document.addEventListener('DOMContentLoaded', function() {
     $('#healthportions').modal();
   });
           
+
