@@ -1,5 +1,7 @@
 // Modal Activation Trigger
-
+$(document).ready(function(){
+    $('.modal').modal();
+});
 // Modal End
 
 var inputEl = document.getElementById("player-name");
@@ -24,11 +26,11 @@ var gameState = {
 
 }
 
-var beginAdventure = function(event) {
-    window.location.href = "./encounter.html"
-};
+// var beginAdventure = function(event) {
+//     window.location.href = "./encounter.html"
+// };
 
-document.getElementById("start-button").addEventListener("click", beginAdventure);
+// document.getElementById("start-button").addEventListener("click", beginAdventure);
 
 
 
