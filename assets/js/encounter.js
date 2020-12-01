@@ -13,37 +13,9 @@ var gameState = {
         ap: 0,
         armor: 0,
         xp: 0,
-        challenge_rating: 0
+        challenge_rating: 0,
+        attacks: []
     },
-
-}
-
-
-
-
-// I think we may need to wrap the hitDiceRoll and damageDiceRoll in a while loop to continue these functions until the monster dies. However, doing so may prevent the other list of options. So, we will actually want to have that be in the while loop, then just call on these functions conditionally. 
-
-// What're the 3-4 options that a user can choose from, and are those options available with each round or is it per battle?
-
-var damageDiceRoll = function(damageDice) {
-
-    var damageInfo = damageDice.split(/[d,+]/);
-    var damageMultiplier = parseInt(damageInfo[0]);
-    var damageValue = parseInt(damageInfo[1]);
-    if(parseInt(damageInfo[2])){
-    var damageBonus = parseInt(damageInfo[2]);
-    } else {
-        var damageBonus = 0;
-    }
-
-    console.log(damageInfo);
-    console.log(damageValue);
-    console.log(damageMultiplier);
-    console.log(damageBonus); 
-
-    var damageDealt = ((damageMultiplier * (Math.ceil(Math.random()*damageValue))) + damageBonus)
-
-    console.log(damageDealt);
 
 }
 
@@ -86,26 +58,90 @@ var monsterSummoner = function (monster) {
             console.log(data.xp);
             gameState.enemy.xp = data.xp;
             
+            /*if (data.actions[0].name === "Multiattack") {
+                console.log(data.actions[0].name);
+                console.log(data.actions[0].options.from[0]);
+                var count = 1;
+                for( i= 0; i < data.actions[0].options.from[0].length; i++ ){
+                    
+                    damageDiceRoll(data.actions[count].damage[0].damage_dice);
+                    count ++;
+                }
+                    
+                }
+                else{   
+                damageDiceRoll(data.actions[0].damage[0].damage_dice);
+                }*/
             
+
             if (data.actions[0].name === "Multiattack") {
             console.log(data.actions[0].name);
-            console.log(data.actions[0].options.from[0]);
+            /*console.log(data.actions[0].options.from[0]);*/
+
+            var attackInfo = {};
+
+            attackInfo.name = data.actions[0].name;
+            attackInfo.damageDice = 0;
+            gameState.enemy.attacks.push(attackInfo); 
+            
+            //debugger;
+
             var count = 1;
             for( i= 0; i < data.actions[0].options.from[0].length; i++ ){
                 
-                damageDiceRoll(data.actions[count].damage[0].damage_dice);
+                var attackInfo = {};
+
+                attackInfo.name = data.actions[count].name;  
+                attackInfo.damageDice = data.actions[count].damage[0].damage_dice;
+
+                gameState.enemy.attacks.push(attackInfo);
                 count ++;
             }
                 
+            } else{
+                
+                var attackInfo = {};
+
+                attackInfo.name = data.actions[0].name;
+                attackInfo.damageDice = data.actions[0].damage[0].damage_dice
+
+                gameState.enemy.attacks.push(attackInfo);
+                
             }
-            else{    /*console.log(data.actions[0].damage[0].damage_dice);
-            console.log(data.actions[0].attack_bonus);*/
-            damageDiceRoll(data.actions[0].damage[0].damage_dice);
-            }
+            console.log(gameState.enemy.attacks)
         })
     }
     )
 }
+
+
+// I think we may need to wrap the hitDiceRoll and damageDiceRoll in a while loop to continue these functions until the monster dies. However, doing so may prevent the other list of options. So, we will actually want to have that be in the while loop, then just call on these functions conditionally. 
+
+// What're the 3-4 options that a user can choose from, and are those options available with each round or is it per battle?
+
+var damageDiceRoll = function(damageDice) {
+
+    var damageInfo = damageDice.split(/[d,+]/);
+    var damageMultiplier = parseInt(damageInfo[0]);
+    var damageValue = parseInt(damageInfo[1]);
+    if(parseInt(damageInfo[2])){
+    var damageBonus = parseInt(damageInfo[2]);
+    } else {
+        var damageBonus = 0;
+    }
+
+    console.log(damageInfo);
+    console.log(damageValue);
+    console.log(damageMultiplier);
+    console.log(damageBonus); 
+
+    var damageDealt = ((damageMultiplier * (Math.ceil(Math.random()*damageValue))) + damageBonus)
+
+    console.log(damageDealt);
+
+}
+
+
 
 var hitDiceRoll = function() {
     min = Math.ceil(1);
@@ -129,6 +165,8 @@ var hitDiceRoll = function() {
 }
 
 console.log("Look at me!", hitDiceRoll());
+
+
 
 var playerDodge = function (event) {
     console.log("You took the dodge action");
