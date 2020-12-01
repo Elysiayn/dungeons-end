@@ -64,3 +64,11 @@ img {
     text-align: center;
 }
 
+div.fight-button {
+    position: absolute;
+    bottom: 80px;
+    left: 35%;
+    
+    
+   
+}
