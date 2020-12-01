@@ -21,7 +21,9 @@ var gameState = {
 }
 
 var beginAdventure = function(event) {
-    console.log("Hooray!");
+    window.location.href = "./encounter.html";
+    
+    console.log("Be wary," + inputEl.nodeValue() + "." + "As you fight your way to the Dungeon's End, you will face ferocious monsters. While each monster may vary in power, remain vigilant, as any of these foes could be your demise.")
 };
 
 document.getElementById("start-button").addEventListener("click", beginAdventure);
