@@ -1,8 +1,8 @@
-// Modal Activation Trigger
+//Modal Activation Trigger
 $(document).ready(function(){
     $('.modal').modal();
 });
-// Modal End
+//Modal End
 
 var inputEl = document.getElementById("player-name");
 
