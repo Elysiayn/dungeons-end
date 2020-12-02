@@ -9,7 +9,7 @@ nav {
     border: 3px solid black;
     box-shadow: 0 10px 20px 0 darkgrey; 
     padding: 0.25rem;
-    margin: 1rem;
+    margin: 1.5rem 1rem;
     border-radius: 10px;
     justify-content: center;
     font-family: "Fondamento", cursive;
@@ -42,6 +42,11 @@ nav {
 .container {
     display:grid;
     grid-gap: 50px;
+    flex: 1 0 auto;
+}
+
+.full-width {
+    width:100%;
 }
 
 .btn,
@@ -96,4 +101,15 @@ div.fight-button {
 .footer-copyright {
     background-color: darkred;
     font-family: "Fondamento", cursive;
+    flex-shrink:0;
 }
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+   {
+    flex: 1 0 auto;
+  }
