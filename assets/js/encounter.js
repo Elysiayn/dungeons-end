@@ -20,6 +20,10 @@ var gameState = {
 
 }
 
+var min = Math.ceil(1);
+var max = Math.floor(20);
+var monsterHit = Math.floor(Math.random() * (max - min + 1) + min);
+
 var monsterRandomizer = function (playerLevel) {
     fetch(
         "https://www.dnd5eapi.co/api/monsters?challenge_rating=" + playerLevel
@@ -75,7 +79,7 @@ var monsterSummoner = function (monster) {
             
 
             if (data.actions[0].name === "Multiattack") {
-            console.log(data.actions[0].name);
+            //console.log(data.actions[0].name);
             /*console.log(data.actions[0].options.from[0]);*/
 
             var attackInfo = {};
@@ -146,8 +150,7 @@ var damageDiceRoll = function(damageDice) {
 
 
 var hitDiceRoll = function() {
-    min = Math.ceil(1);
-    max = Math.floor(20);
+    
     var toHit = Math.floor(Math.random() * (max - min + 1) + min);
     
 
@@ -196,34 +199,55 @@ var monsterImageAPI = function(monsterName) {
     })
 };
 
-var monsterAttack = function () {
-    min = Math.ceil(1);
-    max = Math.floor(20);
-    var monsterStrike = Math.floor(Math.random() * (max - min + 1) + min);
-    
-     console.log(gameState.enemy.attacks[0].name);
-    if (monsterStrike < gameState.user.armor) {
-        console.log(gameState.enemy.name + " failed to strike you!")
-    } else if (monsterStrike >= gameState.user.armor) {
-        if (gameState.enemy.attacks[0].name === "Multiattack"){
-            //debugger;
-            console.log(gameState.enemy.name + " hits you!")
-            var count = 1;
-            if (gameState.enemy.attacks.length < 3 ) {
-                console.log(gameState.enemy.attacks[count].damageDice)
-                damageDiceRoll(gameState.enemy.attacks[count].damageDice);
-                damageDiceRoll(gameState.enemy.attacks[count].damageDice);
-            } else {
-            for ( i = 0; i < gameState.enemy.attacks.length; i++) {
 
-                damageDiceRoll(gameState.enemy.attack[count].damageDice);
-                count ++;
+// needs to be shuffled around to cause the monster to have to attempt hit both attacks instead of either both hitting or missing
+
+var monsterStrike =  function() { 
+    
+    monsterHit = Math.floor(Math.random() * (max - min + 1) + min);
+    //console.log(monsterHit)
+
+}
+
+var monsterAttack = function () {
+    
+         console.log(gameState.enemy.attacks[0].name);
+     
+        if (gameState.enemy.attacks[0].name === "Multiattack"){
+           // debugger;
+           // var count = 1;
+            
+            if (gameState.enemy.attacks.length < 3 ) {
+                for(i=0; i < gameState.enemy.attacks.length; i++ ) {                
+                    monsterStrike();
+                    if (monsterHit < gameState.user.armor) {
+                        console.log(gameState.enemy.name + " failed to strike you!")
+                    } else if (monsterHit>= gameState.user.armor){
+                        console.log(gameState.enemy.name + " hits you with " + gameState.enemy.attacks[1].name + "!")
+                        damageDiceRoll(gameState.enemy.attacks[1].damageDice);
+                    }
+                }
+            } else {
+            for ( i = 1; i < gameState.enemy.attacks.length; i++) {
+                monsterStrike();
+                if (monsterHit< gameState.user.armor) {
+                    console.log(gameState.enemy.name + " failed to strike you!")
+                } else if (monsterHit >= gameState.user.armor) {
+                    console.log(gameState.enemy.name + " hits you with " + gameState.enemy.attacks[i].name + "!")
+                    damageDiceRoll(gameState.enemy.attacks[i].damageDice);
+                }
+                
             }}}
          else {
-            console.log(gameState.enemy.name + " hits you!")
-            damageDiceRoll(gameState.enemy.attacks[0].damageDice);
+            monsterStrike();
+            if (monsterHit < gameState.user.armor) {
+                console.log(gameState.enemy.name + " failed to strike you!")
+            } else if (monsterHit >= gameState.user.armor){
+                console.log(gameState.enemy.name + " hits you with " + gameState.enemy.attacks[0].name + "!")
+                damageDiceRoll(gameState.enemy.attacks[0].damageDice);
+            }
         }
-    }
+    
 }  
 
 monsterRandomizer(gameState.user.level);
