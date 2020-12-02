@@ -1,10 +1,15 @@
+nav {
+    background-color: darkred;
+    font-family: "Fondamento", cursive;
+}
+
 /* Character Selection Cards Styles Begin*/
 .card {
     background:darkred;
     border: 3px solid black;
     box-shadow: 0 10px 20px 0 darkgrey; 
     padding: 0.25rem;
-    margin: 1rem;
+    margin: 1.5rem 1rem;
     border-radius: 10px;
     justify-content: center;
     font-family: "Fondamento", cursive;
@@ -22,6 +27,10 @@
     text-align: center;
 }
 
+.card-title {
+    border-bottom: 1px solid white;
+}
+
 .center {
     display:grid;
     margin-left:auto;
@@ -33,6 +42,11 @@
 .container {
     display:grid;
     grid-gap: 50px;
+    flex: 1 0 auto;
+}
+
+.full-width {
+    width:100%;
 }
 
 .btn,
@@ -44,7 +58,7 @@
 }
 
 img {
-    border: 5px solid rgb(180, 154, 2);
+    border: 5px ridge rgb(180, 154, 2);
 }
 
 .btn:hover,
@@ -54,16 +68,22 @@ img {
 /* Character Selection Card Styles End */
 
 .input-form {
-    border: 5px solid rgb(180, 154, 2);
+    border: 10px ridge rgb(180, 154, 2);
     box-shadow: 0 5px 10px 0 rgb(37, 37, 37); 
     font-family: "Fondamento", cursive;
 }
 /* Enter Character Name End */
 
-p, 
-h4 {
+.modalStyle {
     font-family: "Fondamento", cursive;
+    border: 10px ridge darkred;
+    box-shadow: 0 5px 10px 0 rgb(37, 37, 37); 
 }
+
+h4 {
+    border-bottom: 5px double rgb(37, 37, 37);
+}
+/* Modal Styling End */
 
 .banner {
     font-size: 50px;
@@ -74,7 +94,22 @@ div.fight-button {
     position: absolute;
     bottom: 80px;
     left: 35%;
-    
-    
-   
 }
+
+/* Footer Style */
+.page-footer,
+.footer-copyright {
+    background-color: darkred;
+    font-family: "Fondamento", cursive;
+    flex-shrink:0;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+   {
+    flex: 1 0 auto;
+  }

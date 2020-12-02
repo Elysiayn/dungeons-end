@@ -1,3 +1,11 @@
+//Modal Activation Trigger
+$(document).ready(function(){
+    $('.modal').modal();
+});
+//Modal End
+
+var inputEl = document.getElementById("player-name");
+
 var gameState = {
     user: {
         name: "",
