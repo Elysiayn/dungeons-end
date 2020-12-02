@@ -89,3 +89,9 @@ div.fight-button {
     bottom: 80px;
     left: 35%;
 }
+
+/* Footer Style */
+.page-footer,
+.footer-copyright {
+    background-color: darkred;
+}
