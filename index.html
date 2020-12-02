@@ -129,17 +129,29 @@
         <div class="row">
             <div class="col s8 l12 center">
                 <div class="input-form card-panel">
-                <input class="input-form" type="text" id="player-name" placeholder="Enter Character Name!"/>
+                    <input class="input-form" type="text" id="player-name" placeholder="Enter Character Name!"/>
                 </div>
                 <br>
-                <!-- Character Submit Button -->
-                    <button class="btn-large pulse" type="submit" name="action" id="start-button">Begin Adventure!</button>  
-            </div>      
+                <!-- Character Submit Button & Modal Trigger -->
+                    <button data-target="modal1" class="btn-large modal-trigger pulse" type="submit" name="action" id="start-button">Begin Adventure!</button>  
+                <!-- Modal Structure -->
+                <div id="modal1" class="modal">
+                    <div class="modal-content">
+                        <a href="https://placeholder.com"><img src="https://via.placeholder.com/250"></a>
+                        <h4>Modal Header</h4>
+                        <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt doloribus inventore, ut voluptatibus vero magnam, vitae iste aut nemo nostrum quibusdam illo expedita sit tempore ratione, maiores quis quos eveniet!</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button data-target="modal1" class="btn modal-close" type="submit" name="action" id="continue">Continue</button>
+                    </div>
+                </div>  
+            </div>  
         </div>
     </div>
     <br>
     <br>
     <br>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./assets/js/script.js"></script>
     </body>
