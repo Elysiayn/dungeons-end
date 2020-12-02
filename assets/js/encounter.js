@@ -20,7 +20,6 @@ var gameState = {
 
 }
 
-
 var monsterRandomizer = function (playerLevel) {
     fetch(
         "https://www.dnd5eapi.co/api/monsters?challenge_rating=" + playerLevel
@@ -102,6 +101,7 @@ var monsterSummoner = function (monster) {
                 
             } else{
                 
+                // var needed on all parts to keep the function from overwriting other array elements
                 var attackInfo = {};
 
                 attackInfo.name = data.actions[0].name;
@@ -145,7 +145,6 @@ var damageDiceRoll = function(damageDice) {
 }
 
 
-
 var hitDiceRoll = function() {
     min = Math.ceil(1);
     max = Math.floor(20);
@@ -153,7 +152,7 @@ var hitDiceRoll = function() {
     
 
     if (toHit < 6) {
-        console.log("You've failed to strike the " + gameState.enemy.name)
+        console.log("You've failed to strike the " + gameState.enemy.name);
     } else if (toHit >= 6) {
         console.log("You've dealt the " + gameState.enemy.name + " a mighty blow!")
         damageDiceRoll(gameState.user.attack);
@@ -202,12 +201,28 @@ var monsterAttack = function () {
     max = Math.floor(20);
     var monsterStrike = Math.floor(Math.random() * (max - min + 1) + min);
     
-
+     console.log(gameState.enemy.attacks[0].name);
     if (monsterStrike < gameState.user.armor) {
         console.log(gameState.enemy.name + " failed to strike you!")
     } else if (monsterStrike >= gameState.user.armor) {
-        console.log(gameState.enemy.name + " rolled high enough to attack!")
-        damageDiceRoll(gameState.user.attack);
+        if (gameState.enemy.attacks[0].name === "Multiattack"){
+            //debugger;
+            console.log(gameState.enemy.name + " hits you!")
+            var count = 1;
+            if (gameState.enemy.attacks.length < 3 ) {
+                console.log(gameState.enemy.attacks[count].damageDice)
+                damageDiceRoll(gameState.enemy.attacks[count].damageDice);
+                damageDiceRoll(gameState.enemy.attacks[count].damageDice);
+            } else {
+            for ( i = 0; i < gameState.enemy.attacks.length; i++) {
+
+                damageDiceRoll(gameState.enemy.attack[count].damageDice);
+                count ++;
+            }}}
+         else {
+            console.log(gameState.enemy.name + " hits you!")
+            damageDiceRoll(gameState.enemy.attacks[0].damageDice);
+        }
     }
 }  
 
@@ -225,5 +240,5 @@ document.addEventListener('DOMContentLoaded', function() {
  document.getElementById("attack-button").addEventListener("click", hitDiceRoll);
  document.getElementById("dodge-button").addEventListener("click", playerDodge);
  document.getElementById("run-button").addEventListener("click", playerRun);
-
+ 
 
