@@ -1,5 +1,6 @@
 nav {
     background-color: darkred;
+    font-family: "Fondamento", cursive;
 }
 
 /* Character Selection Cards Styles Begin*/
@@ -94,4 +95,5 @@ div.fight-button {
 .page-footer,
 .footer-copyright {
     background-color: darkred;
+    font-family: "Fondamento", cursive;
 }
