@@ -323,6 +323,7 @@ var endGame = function() {
     } else if(gameState.user.hp <= 0) {
         console.log("You have perished");
         //store xp/score and character name in local store send user to highscore screen
+        window.location.href = "./highscore.html"
     } 
 
 
