@@ -15,7 +15,7 @@
     <!-- Nav Bar -->
     <nav>
         <div class="nav-wrapper">
-            <a href="#!" class="brand-logo">Logo</a>
+            <a href="#!" class="brand-logo center"><img src="./assets/images/logo.png" width="95" height="auto"></a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">Menu</i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="index.html">Home</a></li>
@@ -60,17 +60,24 @@
     <!-- Combat Log -->
     
     <!-- Fight Box -->
-    <div class="container">
+    <div class="row">
         <div class="fight-button">
+            <div class="col s12 m6 l3">
             <a class="waves-effect waves-light btn-large"id="attack-button"><i class="material-icons right">colorize</i>Attack</a>
+            </div>
+            <div class="col s12 m6 l3">
             <a class="waves-effect waves-light btn-large" id="run-button"><i class="material-icons right">directions_run</i>Run</a>
+            </div>
+            <div class="col s12 m6 l3">
             <a class="waves-effect waves-light btn-large"id="dodge-button"><i class="material-icons right">block</i>Dodge</a>
+            </div>
 
             <!-- Modal Trigger -->
-            <a class="waves-effect waves-light btn-large modal-trigger" href="#healthportions"><i class="material-icons right">local_hospital</i>Health Potions</a>
+            <div class="col s12 m6 l3">
+            <a class="waves-effect waves-light btn-large modal-trigger" href="#health"><i class="material-icons right">local_hospital</i>Health Potions</a>
 
             <!-- Modal Structure -->
-            <div id="health-potions" class="modal">
+            <div class="modal" id="#health">
                 <div class="modal-content">
                     <h4>Health Potions</h4>
                     <p>You are now able to increase your health to continue the game!</p>
@@ -81,6 +88,8 @@
             </div>
         </div>
     </div>
+    </div>
+
 <!-- Footer -->
 <footer class="page-footer">
     <div class="container.footer">
