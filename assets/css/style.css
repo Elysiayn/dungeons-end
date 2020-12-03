@@ -94,12 +94,6 @@ div.fight-button {
     position: absolute;
     bottom: 80px;
     left: 35%;
-<<<<<<< HEAD
-    
-    
-   
-}
-=======
 }
 
 /* Footer Style */
@@ -116,7 +110,3 @@ body {
     flex-direction: column;
   }
 
-   {
-    flex: 1 0 auto;
-  }
->>>>>>> develop
