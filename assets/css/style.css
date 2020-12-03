@@ -62,7 +62,8 @@ nav {
 }
 
 .btn:hover,
-.btn-large:hover {
+.btn-large:hover,
+.btn:active {
     background: rgb(37, 37, 37);
 }
 /* Character Selection Card Styles End */
@@ -124,3 +125,6 @@ body {
     flex-direction: column;
 }
 
+main {
+    flex: 1 0 auto;
+}
