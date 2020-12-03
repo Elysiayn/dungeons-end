@@ -57,7 +57,7 @@ nav {
     background: rgb(180, 154, 2);
 }
 
-img {
+.style {
     border: 5px ridge rgb(180, 154, 2);
 }
 
@@ -122,8 +122,5 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-  }
+}
 
-   {
-    flex: 1 0 auto;
-  }
