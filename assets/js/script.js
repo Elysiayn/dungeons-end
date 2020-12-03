@@ -26,6 +26,7 @@ var inputEl = document.getElementById("player-name");
 var grabName = function() {
 
     var beginModal = document.querySelector('.modal');
+    var instances = M.Modal.init(beginModal);
     var getModal = M.Modal.getInstance(beginModal);
     getModal.open();
 
