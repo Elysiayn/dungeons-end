@@ -20,10 +20,14 @@ var gameState = {
 
 }
 
+var damageDealt = 0;
+
 var min = Math.ceil(1);
 var max = Math.floor(20);
 var monsterHit = Math.floor(Math.random() * (max - min + 1) + min);
 
+
+//this function pulls a random monster based on the player's current level
 var monsterRandomizer = function (playerLevel) {
     fetch(
         "https://www.dnd5eapi.co/api/monsters?challenge_rating=" + playerLevel
@@ -39,6 +43,8 @@ var monsterRandomizer = function (playerLevel) {
 })
 }
 
+
+// this takes the monster from the monsterRandomizer function and gets the stats for it from the api
 
 var monsterSummoner = function (monster) {
     
@@ -126,6 +132,8 @@ var monsterSummoner = function (monster) {
 
 // What're the 3-4 options that a user can choose from, and are those options available with each round or is it per battle?
 
+// this calcualtes the damage done by the user and the monster when they land an attack
+
 var damageDiceRoll = function(damageDice) {
 
     var damageInfo = damageDice.split(/[d,+]/);
@@ -142,12 +150,14 @@ var damageDiceRoll = function(damageDice) {
     console.log(damageMultiplier);
     console.log(damageBonus);*/
 
-    var damageDealt = ((damageMultiplier * (Math.ceil(Math.random()*damageValue))) + damageBonus)
+    damageDealt = ((damageMultiplier * (Math.ceil(Math.random()*damageValue))) + damageBonus)
 
     console.log(damageDealt);
 
 }
 
+
+// this determines if the user hits the monster
 
 var hitDiceRoll = function() {
     
@@ -159,6 +169,9 @@ var hitDiceRoll = function() {
     } else if (toHit >= 6) {
         console.log("You've dealt the " + gameState.enemy.name + " a mighty blow!")
         damageDiceRoll(gameState.user.attack);
+        console.log(gameState.enemy.hp)
+        gameState.enemy.hp = gameState.enemy.hp - damageDealt;
+        console.log(gameState.enemy.hp)
     }
 
     // if (toHit + str + profBonus > monsterArmor) {
@@ -173,6 +186,8 @@ var hitDiceRoll = function() {
 //console.log("Look at me!", hitDiceRoll());
 
 
+// this allows the player to take a dodge action and temperarily increase their armor to hopefully avoid a strike from the monster
+
 var playerDodge = function (event) {
     console.log("You took the dodge action");
     gameState.user.armor = gameState.user.armor + 5;
@@ -184,10 +199,14 @@ var playerDodge = function (event) {
     //console.log(gameState.user.armor);
 }
 
+//this will allow the player to run away
+
 var playerRun = function (event) {
     console.log("You ran away");
     //monsterAttack();
 }
+
+// this will grab an image of the monster
 
 var monsterImageAPI = function(monsterName) {
     fetch("https://api.open5e.com/monsters/" + monsterName.toLowerCase())
@@ -200,7 +219,7 @@ var monsterImageAPI = function(monsterName) {
 };
 
 
-// needs to be shuffled around to cause the monster to have to attempt hit both attacks instead of either both hitting or missing
+// this rolls to see if the monter hits the user 
 
 var monsterStrike =  function() { 
     
@@ -209,14 +228,20 @@ var monsterStrike =  function() {
 
 }
 
+// this is the function to determine if the monster hit and if so what to do about it
+
 var monsterAttack = function () {
     
          console.log(gameState.enemy.attacks[0].name);
      
+        //checks if the monster has the mulitattack feature
+
         if (gameState.enemy.attacks[0].name === "Multiattack"){
            // debugger;
            // var count = 1;
+           
             
+            // this will run if the monster has a multiattack feature but only one basic attack. Allowing it to strike twice. the monsterstike function being inside the for loop forces it to have to check to see if it hits with each attack
             if (gameState.enemy.attacks.length < 3 ) {
                 for(i=0; i < gameState.enemy.attacks.length; i++ ) {                
                     monsterStrike();
@@ -225,9 +250,12 @@ var monsterAttack = function () {
                     } else if (monsterHit>= gameState.user.armor){
                         console.log(gameState.enemy.name + " hits you with " + gameState.enemy.attacks[1].name + "!")
                         damageDiceRoll(gameState.enemy.attacks[1].damageDice);
+                        gameState.user.hp = gameState.user.hp - damageDealt;
+                        console.log(gameState.user.hp)
                     }
                 }
             } else {
+                // this will run through all other monster attacks if they have multiattack and more then one base ability
             for ( i = 1; i < gameState.enemy.attacks.length; i++) {
                 monsterStrike();
                 if (monsterHit< gameState.user.armor) {
@@ -235,16 +263,21 @@ var monsterAttack = function () {
                 } else if (monsterHit >= gameState.user.armor) {
                     console.log(gameState.enemy.name + " hits you with " + gameState.enemy.attacks[i].name + "!")
                     damageDiceRoll(gameState.enemy.attacks[i].damageDice);
+                    gameState.user.hp = gameState.user.hp - damageDealt;
+                    console.log(gameState.user.hp)
                 }
                 
             }}}
          else {
+             // this will run if the monster does not have multiattack, it will use its first ability
             monsterStrike();
             if (monsterHit < gameState.user.armor) {
                 console.log(gameState.enemy.name + " failed to strike you!")
             } else if (monsterHit >= gameState.user.armor){
                 console.log(gameState.enemy.name + " hits you with " + gameState.enemy.attacks[0].name + "!")
                 damageDiceRoll(gameState.enemy.attacks[0].damageDice);
+                gameState.user.hp = gameState.user.hp - damageDealt;
+                console.log(gameState.user.hp)
             }
         }
     
