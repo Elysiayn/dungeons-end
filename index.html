@@ -13,13 +13,15 @@
         <title>Dungeon's End</title>
     </head>
 
+    <body>
+        
     <!-- Banner -->
     <div class= "banner">
         <div class="col s12 m8 offset-m2 l6 offset-l3">
             <div class="card-panel grey lighten-5 z-depth-1">
                 <div class="row valign-wrapper">
                     <div class="col s2">
-                        <img src="./assets/images/dd3.jpg"   alt="dragons" class="round responsive-img">
+                        <!-- <img src="./assets/images/dd3.jpg"   alt="dragons" class="round responsive-img"> -->
                     </div>
                 </div>
                     <div class="col s10 center">
@@ -47,15 +49,14 @@
                 <li><a href="highscore.html">High Score</a></li>
             </ul>
     </nav>
-    <body>
     <br>
     <br>
     <br>
     <!-- Character Selection Pictures -->
-    <div class="container center">
+    <div class="container center full-width">
         <div class="row">
             <!-- Image 1 -->
-            <div class="col s4 m6 center">
+            <div class="col s12 m6 l4 xl3 center">
                 <div class="card" id="image1">
                     <div class="card-content center">
                         <img src="./assets/images/image1.jpg" style="width:200px;height:300px;" alt="Human Male Fighter">
@@ -63,7 +64,7 @@
                         <p>FIGHTER 1 INFO</p>
                     </div>
                     <div class="card-action">
-                        <button class="btn" type="submit" name="action" id="fighter1">Select Fighter
+                        <button class="btn" data-name="human" type="submit" name="action" id="fighter1">Select Fighter
                             <i class="material-icons left">colorize</i>
                         </button>
                     </div>
@@ -71,7 +72,7 @@
             </div>
 
             <!-- Image 2 -->
-            <div class="col s4 m6 center">
+            <div class="col s12 m6 l4 xl3 center">
                 <div class="card" id="image2">
                     <div class="card-content center">
                         <img src="./assets/images/image2.jpg" style="width:200px;height:300px;" alt="Orc Male Fighter">
@@ -79,7 +80,7 @@
                         <p>FIGHTER 2 INFO</p>
                     </div>
                     <div class="card-action">
-                        <button class="btn" type="submit" name="action" id="fighter2">Select Fighter
+                        <button class="btn" data-name="orc" type="submit" name="action" id="fighter2">Select Fighter
                             <i class="material-icons left">colorize</i>
                         </button>
                     </div>
@@ -87,7 +88,7 @@
             </div>
 
             <!-- Image 3 -->
-            <div class="col s4 m6 center">
+            <div class="col s12 m6 l4 xl3 center">
                 <div class="card" id="image3">
                     <div class="card-content center">
                         <img src="./assets/images/image3.jpg" style="width:200px;height:300px;" alt="Aasimar Female Fighter">
@@ -95,7 +96,7 @@
                         <p>FIGHTER 3 INFO</p>
                     </div>
                     <div class="card-action">
-                        <button class="btn" type="submit" name="action" id="fighter3">Select Fighter
+                        <button class="btn" data-name="aasimar" type="submit" name="action" id="fighter3">Select Fighter
                             <i class="material-icons left">colorize</i>
                         </button>
                     </div>
@@ -103,7 +104,7 @@
             </div>
 
             <!-- Image 4 -->
-            <div class="col s4 m6 center">
+            <div class="col s12 m6 l4 xl3 center">
                 <div class="card" id="image4">
                     <div class="card-content center">
                         <img src="./assets/images/image4.jpg" style="width:200px;height:300px;" alt="Elf Female Fighter">
@@ -111,7 +112,7 @@
                         <p>FIGHTER 4 INFO</p>
                     </div>
                     <div class="card-action">
-                        <button class="btn" type="submit" name="action" id="fighter4">Select Fighter
+                        <button class="btn" data-name="elf" type="submit" name="action" id="fighter4">Select Fighter
                             <i class="material-icons left">colorize</i>
                         </button>
                     </div>
@@ -139,7 +140,7 @@
                         <img src="./assets/images/image6.jpg" style="width:450px;height:300px;" alt="Old Sagely Wizard">
                         <div class="">
                             <h4>Welcome to Dungeon's End!</h4>
-                            <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt doloribus inventore, ut voluptatibus vero magnam, vitae iste aut nemo nostrum quibusdam illo expedita sit tempore ratione, maiores quis quos eveniet!</p>
+                            <p class="modal-text"></p>
                         </div>
                     </div>
                     <div class="modal-footer">

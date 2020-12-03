@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!--Let browser know website is optimized for mobile-->
         <meta name=“viewport” content=“width=device-width, initial-scale=1.0" /> 
+        <link href="https://fonts.googleapis.com/css2?family=Fondamento&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <link rel="stylesheet" href="./assets/css/style.css"/>
@@ -17,28 +18,62 @@
             <a href="#!" class="brand-logo center"><img src="./assets/images/logo.png" width="95" height="auto"></a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">Menu</i></a>
             <ul class="right hide-on-med-and-down">
-                <li><a href="./index.html#home">Home</a></li>
-                <li><a href="./index.html#encounter">Encounter</a></li>
-                <li><a href="./index.html#high-score">High Score</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="highscore.html">High Score</a></li>
             </ul>
         </div>
         
             <ul class="sidenav" id="mobile-demo">
-                <li><a href="./index.html#home">Home</a></li>
-                <li><a href="./index.html#encounter">Encounter</a></li>
-                <li><a href="./index.html#high-score">High Score</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="highscore.html">High Score</a></li>
             </ul>
     </nav>
     <body>
+    
+    <!-- Fight Images Container -->
+    <div class="container center">
+        <div class="row">
+            <!-- Player Image Card -->
+            <div class="col s12 m6 l4 xl3 center">
+                <div class="card" id="playerImage">
+                    <div class="card-content center">
+                        <!-- This is where img will be dynamically generated -->
+                        <span class="card-title"> <!--card title dynamically generated-->  </span>
+                        <p> <!-- player info will be dynamically generated--> </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Enemy Image Card -->
+            <div class="col s12 m6 l4 xl3 center">
+                <div class="card" id="enemyImage">
+                    <div class="card-content center">
+                        <!-- This is where img will be dynamically generated -->
+                        <span class="card-title"> <!--card title dynamically generated-->  </span>
+                        <p> <!-- enemy info will be dynamically generated--> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Combat Log -->
+    
     <!-- Fight Box -->
     <div class="row">
-        <div class="col s12 m6 l3">
         <div class="fight-button">
+            <div class="col s12 m6 l3">
             <a class="waves-effect waves-light btn-large"id="attack-button"><i class="material-icons right">colorize</i>Attack</a>
+            </div>
+            <div class="col s12 m6 l3">
             <a class="waves-effect waves-light btn-large" id="run-button"><i class="material-icons right">directions_run</i>Run</a>
+            </div>
+            <div class="col s12 m6 l3">
             <a class="waves-effect waves-light btn-large"id="dodge-button"><i class="material-icons right">block</i>Dodge</a>
+            </div>
 
             <!-- Modal Trigger -->
+            <div class="col s12 m6 l3">
             <a class="waves-effect waves-light btn-large modal-trigger" href="#healthportions"><i class="material-icons right">local_hospital</i>Health Potions</a>
 
             <!-- Modal Structure -->
@@ -55,6 +90,26 @@
     </div>
     </div>
 
+<!-- Footer -->
+<footer class="page-footer">
+    <div class="container.footer">
+        <div class="row">
+            <div class="col s12 l6">
+                <p> ❤️ Made with love by 
+                    <a class="grey-text text-lighten-4" href="https://github.com/Clu-Codes">Clu-Codes</a>,
+                    <a class="grey-text text-lighten-4" href="https://github.com/Elysiayn">Elysiayn</a>,
+                    <a class="grey-text text-lighten-4" href="https://github.com/Nickhill2380">Nickhill2380</a> &
+                    <a class="grey-text text-lighten-4" href="https://github.com/wdavonta">Wdavonta</a>.
+                </p>
+            </div>
+            <div class="col s12 l4 right">
+                <a class="grey-text text-lighten-4 right" href="index.html">Home</a>
+                <br />
+                <a class="grey-text text-lighten-4 right" href="highscore.html">High Score</a>
+            </div>
+        </div>
+    </div>
+</footer>
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!-- <script src="./assets/js/script.js"></script> -->
