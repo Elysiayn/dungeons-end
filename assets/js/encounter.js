@@ -68,6 +68,11 @@ var monsterSummoner = function (monster) {
             //console.log(data.xp);
             gameState.enemy.xp = data.xp;
             
+            if (data.index === "duergar") {
+                console.log("duergar ran away")
+                monsterRandomizer(gameState.user.level);
+            }
+
             /*if (data.actions[0].name === "Multiattack") {
                 console.log(data.actions[0].name);
                 console.log(data.actions[0].options.from[0]);
@@ -157,7 +162,7 @@ var damageDiceRoll = function(damageDice) {
 }
 
 
-// this determines if the user hits the monster
+// this determines if the user hits the monster and represent the fight button
 
 var hitDiceRoll = function() {
     
@@ -169,9 +174,9 @@ var hitDiceRoll = function() {
     } else if (toHit >= 6) {
         console.log("You've dealt the " + gameState.enemy.name + " a mighty blow!")
         damageDiceRoll(gameState.user.attack);
-        console.log(gameState.enemy.hp)
+        
         gameState.enemy.hp = gameState.enemy.hp - damageDealt;
-        console.log(gameState.enemy.hp)
+        console.log("enemy health " + gameState.enemy.hp)
     }
 
     // if (toHit + str + profBonus > monsterArmor) {
@@ -179,7 +184,13 @@ var hitDiceRoll = function() {
     // } else {
         
     // }
+
+    
+    endGame();
+    // if statement is here to check if the monster is alive and before it attacks 
+    if (gameState.enemy.hp > 0) {
     monsterAttack();
+    }
     return toHit;    
 }
 
@@ -197,6 +208,8 @@ var playerDodge = function (event) {
     
     gameState.user.armor = gameState.user.armor -5;
     //console.log(gameState.user.armor);
+
+    
 }
 
 //this will allow the player to run away
@@ -251,7 +264,8 @@ var monsterAttack = function () {
                         console.log(gameState.enemy.name + " hits you with " + gameState.enemy.attacks[1].name + "!")
                         damageDiceRoll(gameState.enemy.attacks[1].damageDice);
                         gameState.user.hp = gameState.user.hp - damageDealt;
-                        console.log(gameState.user.hp)
+                        console.log("user health " + gameState.user.hp)
+                        endGame();
                     }
                 }
             } else {
@@ -264,7 +278,8 @@ var monsterAttack = function () {
                     console.log(gameState.enemy.name + " hits you with " + gameState.enemy.attacks[i].name + "!")
                     damageDiceRoll(gameState.enemy.attacks[i].damageDice);
                     gameState.user.hp = gameState.user.hp - damageDealt;
-                    console.log(gameState.user.hp)
+                    console.log("user health " + gameState.user.hp)
+                    endGame();
                 }
                 
             }}}
@@ -277,7 +292,8 @@ var monsterAttack = function () {
                 console.log(gameState.enemy.name + " hits you with " + gameState.enemy.attacks[0].name + "!")
                 damageDiceRoll(gameState.enemy.attacks[0].damageDice);
                 gameState.user.hp = gameState.user.hp - damageDealt;
-                console.log(gameState.user.hp)
+                console.log("user health " + gameState.user.hp)
+                endGame();
             }
         }
     
@@ -294,6 +310,26 @@ document.addEventListener('DOMContentLoaded', function() {
     $('#healthportions').modal();
   }); */ 
   
+
+
+  // function used to check if the user or enemies' heatlh falls below zero
+var endGame = function() {
+
+    if (gameState.enemy.hp <= 0) {
+        console.log("The monster has been slain");
+        gameState.user.xp = gameState.user.xp + gameState.enemy.xp;
+        console.log (gameState.user.xp);
+        monsterRandomizer(gameState.user.level);
+        
+    } else if(gameState.user.hp <= 0) {
+        console.log("You have perished");
+        //store xp/score and character name in local store send user to highscore screen
+        window.location.href = "./highscore.html"
+    } 
+
+
+}
+
 
  document.getElementById("attack-button").addEventListener("click", hitDiceRoll);
  document.getElementById("dodge-button").addEventListener("click", playerDodge);
