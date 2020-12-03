@@ -92,6 +92,23 @@ h4 {
 }
 
 
+div#header-background{
+    position: absolute;
+    max-height: 4em;
+    z-index: -1;
+    border-radius: 10%;
+    opacity: 0.75;
+    
+}
+
+h1#header-text{ 
+    position: relative;
+    top: 0;
+    text-align: center;
+    font-size: 3em;
+    font-family: "berkshire swash";
+}
+
 
 /* Footer Style */
 .page-footer,
