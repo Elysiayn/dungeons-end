@@ -88,15 +88,27 @@ h4 {
 .banner {
     font-size: 50px;
     text-align: center;
+    font-family: "Berkshire Swash";
 }
 
-div.fight-button {
+
+div#header-background{
     position: absolute;
-    bottom: 80px;
-    left: 35%;
+    max-height: 4em;
+    z-index: -1;
+    border-radius: 10%;
+    opacity: 0.75;
+    
 }
-    
-    
+
+h1#header-text{ 
+    position: relative;
+    top: 0;
+    text-align: center;
+    font-size: 3em;
+    font-family: "berkshire swash";
+}
+
 
 /* Footer Style */
 .page-footer,
@@ -111,3 +123,4 @@ body {
     min-height: 100vh;
     flex-direction: column;
 }
+

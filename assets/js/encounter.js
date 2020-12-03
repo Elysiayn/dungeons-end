@@ -293,6 +293,7 @@ document.addEventListener('DOMContentLoaded', function() {
  /*  $(document).ready(function(){
     $('#healthportions').modal();
   }); */ 
+  
 
  document.getElementById("attack-button").addEventListener("click", hitDiceRoll);
  document.getElementById("dodge-button").addEventListener("click", playerDodge);
