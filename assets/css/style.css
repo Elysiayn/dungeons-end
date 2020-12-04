@@ -133,3 +133,23 @@ body {
     float: left; 
     height:auto;
 }
+
+/* .log {
+    display:block;
+    width: 100%;
+    overflow-y: scroll;
+} */
+
+.log-title {
+    background:white;
+    color:darkred;
+    margin: 1rem;
+    border: 5px ridge rgb(180, 154, 2);
+}
+
+p.log {
+    width: 12em;
+    height: 6em;
+    border: dotted;
+    overflow-y: scroll;
+}
