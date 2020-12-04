@@ -126,8 +126,7 @@ body {
 
 /* Combat Log Styles */
 .combatLog {
-    display:grid;
-    margin-left:auto;
+    margin-left:0%;
     margin-right:0;
     justify-content: left;
     align-content:left;
