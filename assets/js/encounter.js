@@ -1,3 +1,36 @@
+// Fighter Card Variables
+var fighters = {
+    human: {
+        imgUrl: "./assets/images/image1.jpg",
+        title: "Human Fighter",
+        description: ""
+    },
+    orc: {
+        imgUrl: "./assets/images/image2.jpg",
+        title: "Orc Fighter",
+        description: ""
+    },
+    aasimar: {
+        imgUrl: "./assets/images/image3.jpg",
+        title: "Aasimar Fighter",
+        description: ""
+    },
+    elf: {
+        imgUrl: "./assets/images/image4.jpg",
+        title: "Elf Fighter",
+        description: ""
+    },
+} 
+
+// Click Handler function calls generated fighter card function
+var dataName = click.attributes.values("dataName")
+
+var generateFighterCard = function(dataName) {
+    //DOM manipulation to append img 
+    img.attr(src.fighters.dataName.imgURL)
+}
+
+
 var gameState = {
     user: {
         name: "",
