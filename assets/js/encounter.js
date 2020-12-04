@@ -22,8 +22,8 @@ var fighters = {
     },
 } 
 
-// Click Handler function calls generated player card function
-var dataName = event.attributes.values("dataName")
+// Click Handler function calls generated fighter card function
+var dataName = click.attributes.values("dataName")
 
 var generateFighterCard = function(dataName) {
     //DOM manipulation to append img 
