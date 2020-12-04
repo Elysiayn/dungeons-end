@@ -13,6 +13,7 @@ nav {
     border-radius: 10px;
     justify-content: center;
     font-family: "Fondamento", cursive;
+    width: 100%;
 }
 
 .card-content {
@@ -62,7 +63,8 @@ nav {
 }
 
 .btn:hover,
-.btn-large:hover {
+.btn-large:hover,
+.button:active {
     background: rgb(37, 37, 37);
 }
 /* Character Selection Card Styles End */
@@ -77,19 +79,22 @@ nav {
 .modalStyle {
     font-family: "Fondamento", cursive;
     border: 10px ridge darkred;
-    box-shadow: 0 5px 10px 0 rgb(37, 37, 37); 
+    box-shadow: 0 5px 10px 0 rgb(37, 37, 37);
+    font-weight: bolder;
+    font-size: large;
 }
 
 h4 {
     border-bottom: 5px double rgb(37, 37, 37);
+    font-weight: bolder;
 }
 /* Modal Styling End */
 
-.banner {
+/* .banner {
     font-size: 50px;
     text-align: center;
     font-family: "Berkshire Swash";
-}
+} */
 
 
 div#header-background{
@@ -109,7 +114,6 @@ h1#header-text{
     font-family: "berkshire swash";
 }
 
-
 /* Footer Style */
 .page-footer,
 .footer-copyright {
@@ -124,3 +128,52 @@ body {
     flex-direction: column;
 }
 
+/* Combat Log Styles */
+.combatLog {
+    margin: .75rem auto auto auto;
+    padding:0.25rem;
+    /* justify-content: right;
+    align-content:right;
+    float: right;  */
+    height:auto;
+}
+
+.card-title.log-title {
+    background:white;
+    color:darkred;
+    margin: 1rem;
+    border: 5px ridge rgb(180, 154, 2);
+    padding:1rem;
+    font-weight:900;
+    font-size:250% ;
+    text-decoration: double underline black;
+}
+
+p.log {
+    width: 100%;
+    height: 6em;
+    border: 5px ridge rgb(180,154,2);
+    overflow-y: scroll;
+    height: 300px;
+    background:white;
+    color: darkred;
+    font-weight: bolder;
+}
+
+.contentLog {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* .responsive-img {
+    width: auto ;
+  max-width: 100% ;
+  height: auto ;
+} */
+
+/* VS */
+.vs {
+    border: 5px ridge rgb(180,154,2);
+}

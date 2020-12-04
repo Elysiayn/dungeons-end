@@ -30,35 +30,52 @@
             </ul>
     </nav>
 
-    <!-- Fight Images Container -->
-    <div class="container center">
+    <!-- Fighter/Enemy/Log Display -->
+    <div class="container">
         <div class="row">
-            <!-- Player Image Card -->
-            <div class="col s12 m6 l4 xl3 center">
-                <div class="card" id="playerImage">
+
+            <!-- Combat Log -->
+            <div class="col s12 m7 l5 xl4 combatLog">
+                <div class="card combatLog" id="log">
+                    <span class="card-title log-title center">COMBAT LOG</span>
                     <div class="card-content center">
-                        <!-- This is where player img will be dynamically generated -->
-                        <span class="card-title"> <!--card title will be dynamically generated here-->  </span>
-                        <p> <!-- player info will be dynamically generated here--> </p>
+                        <p class="log">COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT</p>
                     </div>
                 </div>
             </div>
 
+            <!-- Player Image Card -->
+            <div class="col s12 m4 l4 xl3 center">
+                <div class="card" id="playerImage">
+                    <div class="card-content center">
+                        <!-- This is where player img will be dynamically generated -->
+                        <span class="card-title"> <!--card title will be dynamically generated here--></span>
+                        <p> <!-- player info will be dynamically generated here--> </p>
+                    </div>
+                </div>
+            </div> 
+            
+
+            <div class="col s12 m12 l4 xl2 center">
+                <div class="card vs">
+                    <h1>VS.</h1>
+                </div>
+            </div>
+
             <!-- Enemy Image Card -->
-            <div class="col s12 m6 l4 xl3 center">
+            <div class="col s12 m4 l4 xl3 center">
                 <div class="card" id="enemyImage">
                     <div class="card-content center">
                         <!-- This is where enemy img will be dynamically generated -->
-                        <span class="card-title"> <!--card title dynamically generated-->  </span>
+                        <span class="card-title"> <!--card title dynamically generated--> </span>
                         <p> <!-- enemy info will be dynamically generated--> </p>
                     </div>
                 </div>
             </div>
+
         </div>
-    </div>
-    
-    <!-- Combat Log -->
-    
+
+
     <!-- Fight Box -->
     <div class="row">
         <div class="fight-button">
@@ -72,44 +89,45 @@
             <a class="waves-effect waves-light btn-large"id="dodge-button"><i class="material-icons right">block</i>Dodge</a>
             </div>
 
-            <!-- Modal Trigger -->
+        
             <div class="col s12 m6 l3">
-            <a class="waves-effect waves-light btn-large modal-trigger" href="#health"><i class="material-icons right">local_hospital</i>Health Potions</a>
-
+            <!-- Modal Trigger -->
+            <a class="waves-effect waves-light btn-large modal-trigger" href="#demo-modal"><i class="material-icons right">local_hospital</i>Health Potions</a> 
+            
             <!-- Modal Structure -->
-            <div class="modal" id="#health">
+            <div id="demo-modal" class="modal">
                 <div class="modal-content">
-                    <h4>Health Potions</h4>
-                    <p>You are now able to increase your health to continue the game!</p>
+                <h4>Health Potions</h4>
+                <p>You are now able to increase your health to continue the game!</p>
                 </div>
                 <div class="modal-footer">
-                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                </div>
+            </div>
+            </div>
+            </div>
+            </div>
+    </div>
+    <!-- Footer -->
+    <footer class="page-footer">
+        <div class="container.footer">
+            <div class="row">
+                <div class="col s12 l6">
+                    <p> ❤️ Made with love by 
+                        <a class="grey-text text-lighten-4" href="https://github.com/Clu-Codes">Clu-Codes</a>,
+                        <a class="grey-text text-lighten-4" href="https://github.com/Elysiayn">Elysiayn</a>,
+                        <a class="grey-text text-lighten-4" href="https://github.com/Nickhill2380">Nickhill2380</a> &
+                        <a class="grey-text text-lighten-4" href="https://github.com/wdavonta">Wdavonta</a>.
+                    </p>
+                </div>
+                <div class="col s12 l4 right">
+                    <a class="grey-text text-lighten-4 right" href="index.html">Home</a>
+                    <br />
+                    <a class="grey-text text-lighten-4 right" href="highscore.html">High Score</a>
                 </div>
             </div>
         </div>
-    </div>
-    </div>
-
-<!-- Footer -->
-<footer class="page-footer">
-    <div class="container.footer">
-        <div class="row">
-            <div class="col s12 l6">
-                <p> ❤️ Made with love by 
-                    <a class="grey-text text-lighten-4" href="https://github.com/Clu-Codes">Clu-Codes</a>,
-                    <a class="grey-text text-lighten-4" href="https://github.com/Elysiayn">Elysiayn</a>,
-                    <a class="grey-text text-lighten-4" href="https://github.com/Nickhill2380">Nickhill2380</a> &
-                    <a class="grey-text text-lighten-4" href="https://github.com/wdavonta">Wdavonta</a>.
-                </p>
-            </div>
-            <div class="col s12 l4 right">
-                <a class="grey-text text-lighten-4 right" href="index.html">Home</a>
-                <br />
-                <a class="grey-text text-lighten-4 right" href="highscore.html">High Score</a>
-            </div>
-        </div>
-    </div>
-</footer>
+    </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!-- <script src="./assets/js/script.js"></script> -->
