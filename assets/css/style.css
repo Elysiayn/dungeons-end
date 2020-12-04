@@ -13,6 +13,7 @@ nav {
     border-radius: 10px;
     justify-content: center;
     font-family: "Fondamento", cursive;
+    width: 100%;
 }
 
 .card-content {
@@ -135,12 +136,6 @@ body {
     height:auto;
 }
 
-/* .log {
-    display:block;
-    width: 100%;
-    overflow-y: scroll;
-} */
-
 .log-title {
     background:white;
     color:darkred;
@@ -149,11 +144,21 @@ body {
 }
 
 p.log {
-    width: 12em;
+    width: 100%;
     height: 6em;
-    border: dotted;
+    border: 5px ridge rgb(180,154,2);
     overflow-y: scroll;
+    height: 300px;
+    background:white;
+    color: darkred;
 }
+
+.contentLog {
+    margin: 0;
+    padding: 0;
+
+}
+
 /* .responsive-img {
     width: auto ;
   max-width: 100% ;
