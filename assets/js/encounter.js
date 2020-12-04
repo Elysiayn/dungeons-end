@@ -157,7 +157,7 @@ var damageDiceRoll = function(damageDice) {
 
     damageDealt = ((damageMultiplier * (Math.ceil(Math.random()*damageValue))) + damageBonus)
 
-    console.log(damageDealt);
+    // console.log(damageDealt);
 
 }
 
@@ -170,13 +170,13 @@ var hitDiceRoll = function() {
     
 
     if (toHit < 6) {
-        console.log("You've failed to strike the " + gameState.enemy.name);
+        console.log("You've failed to strike the " + gameState.enemy.name + ".");
     } else if (toHit >= 6) {
         console.log("You've dealt the " + gameState.enemy.name + " a mighty blow!")
         damageDiceRoll(gameState.user.attack);
         
         gameState.enemy.hp = gameState.enemy.hp - damageDealt;
-        console.log("enemy health " + gameState.enemy.hp)
+        console.log(gameState.enemy.name + " now has " + gameState.enemy.hp + " hp remaining.")
     }
 
     // if (toHit + str + profBonus > monsterArmor) {
@@ -245,7 +245,7 @@ var monsterStrike =  function() {
 
 var monsterAttack = function () {
     
-         console.log(gameState.enemy.attacks[0].name);
+        //  console.log(gameState.enemy.attacks[0].name);
      
         //checks if the monster has the mulitattack feature
 
@@ -261,10 +261,11 @@ var monsterAttack = function () {
                     if (monsterHit < gameState.user.armor) {
                         console.log(gameState.enemy.name + " failed to strike you!")
                     } else if (monsterHit>= gameState.user.armor){
-                        console.log(gameState.enemy.name + " hits you with " + gameState.enemy.attacks[1].name + "!")
+                        // console.log(gameState.enemy.attacks[1].name + " hits you for " + damageDealt + ".");
                         damageDiceRoll(gameState.enemy.attacks[1].damageDice);
+                        console.log(gameState.enemy.name + " hits you with " + gameState.enemy.attacks[1].name + " dealing " + damageDealt + " damage!");
                         gameState.user.hp = gameState.user.hp - damageDealt;
-                        console.log("user health " + gameState.user.hp)
+                        console.log(gameState.user.name + " has " + gameState.user.hp + " health remaining!")
                         endGame();
                     }
                 }
@@ -275,10 +276,10 @@ var monsterAttack = function () {
                 if (monsterHit< gameState.user.armor) {
                     console.log(gameState.enemy.name + " failed to strike you!")
                 } else if (monsterHit >= gameState.user.armor) {
-                    console.log(gameState.enemy.name + " hits you with " + gameState.enemy.attacks[i].name + "!")
                     damageDiceRoll(gameState.enemy.attacks[i].damageDice);
+                    console.log(gameState.enemy.name + " hits you with " + gameState.enemy.attacks[i].name + " dealing " + damageDealt + " damage!");
                     gameState.user.hp = gameState.user.hp - damageDealt;
-                    console.log("user health " + gameState.user.hp)
+                    console.log(gameState.user.name + " has " + gameState.user.hp + " health remaining!")
                     endGame();
                 }
                 
@@ -289,10 +290,10 @@ var monsterAttack = function () {
             if (monsterHit < gameState.user.armor) {
                 console.log(gameState.enemy.name + " failed to strike you!")
             } else if (monsterHit >= gameState.user.armor){
-                console.log(gameState.enemy.name + " hits you with " + gameState.enemy.attacks[0].name + "!")
                 damageDiceRoll(gameState.enemy.attacks[0].damageDice);
+                console.log(gameState.enemy.name + " hits you with " + gameState.enemy.attacks[0].name + " dealing " + damageDealt + " damage!");
                 gameState.user.hp = gameState.user.hp - damageDealt;
-                console.log("user health " + gameState.user.hp)
+                console.log(gameState.user.name + " has " + gameState.user.hp + " health remaining!");
                 endGame();
             }
         }
