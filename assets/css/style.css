@@ -85,11 +85,11 @@ h4 {
 }
 /* Modal Styling End */
 
-.banner {
+/* .banner {
     font-size: 50px;
     text-align: center;
     font-family: "Berkshire Swash";
-}
+} */
 
 
 div#header-background{
@@ -110,6 +110,7 @@ h1#header-text{
 }
 
 
+
 /* Footer Style */
 .page-footer,
 .footer-copyright {
@@ -124,3 +125,8 @@ body {
     flex-direction: column;
 }
 
+/* .responsive-img {
+    width: auto ;
+  max-width: 100% ;
+  height: auto ;
+} */
