@@ -30,11 +30,21 @@
             </ul>
     </nav>
 
-    <!-- Fight Images Container -->
-    <div class="container center">
+<!-- Log/Fighter/Enemy Display -->
+    <div class="container">
         <div class="row">
+    <!-- Combat Log -->
+        <div class="col offet-s1 s12 offset-m1 m6 combatLog">
+            <div class="card" id="log">
+                <span class="card-title log-title center">COMBAT LOG</span>
+                <div class="card-content center">
+                    <p class="log">COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT COMBAT LOG PRINT</p>
+                </div>
+            </div>
+        </div>
+
             <!-- Player Image Card -->
-            <div class="col s12 m6 l4 xl3 center">
+            <div class="col s12 m6 l4 xl3  center">
                 <div class="card" id="playerImage">
                     <div class="card-content center">
                         <!-- This is where player img will be dynamically generated -->
@@ -49,16 +59,14 @@
                 <div class="card" id="enemyImage">
                     <div class="card-content center">
                         <!-- This is where enemy img will be dynamically generated -->
-                        <span class="card-title"> <!--card title dynamically generated-->  </span>
+                        <span class="card-title"> <!--card title dynamically generated--> </span>
                         <p> <!-- enemy info will be dynamically generated--> </p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
-    <!-- Combat Log -->
-    
+
     <!-- Fight Box -->
     <div class="row">
         <div class="fight-button">
@@ -72,22 +80,23 @@
             <a class="waves-effect waves-light btn-large"id="dodge-button"><i class="material-icons right">block</i>Dodge</a>
             </div>
 
-            <!-- Modal Trigger -->
-            <div class="col s12 m6 l3">
-            <a class="waves-effect waves-light btn-large modal-trigger" href="#health"><i class="material-icons right">local_hospital</i>Health Potions</a>
-
-            <!-- Modal Structure -->
-            <div class="modal" id="#health">
-                <div class="modal-content">
-                    <h4>Health Potions</h4>
-                    <p>You are now able to increase your health to continue the game!</p>
-                </div>
-                <div class="modal-footer">
-                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-                </div>
+        
+        <div class="col s12 m6 l3">
+        <!-- Modal Trigger -->
+          <a class="waves-effect waves-light btn-large modal-trigger" href="#demo-modal"><i class="material-icons right">local_hospital</i>Health Potions</a> 
+        
+          <!-- Modal Structure -->
+          <div id="demo-modal" class="modal">
+            <div class="modal-content">
+              <h4>Health Potions</h4>
+              <p>You are now able to increase your health to continue the game!</p>
             </div>
+            <div class="modal-footer">
+              <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+            </div>
+          </div>
         </div>
-    </div>
+        </div>
     </div>
 
 <!-- Footer -->
