@@ -306,9 +306,9 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 // Health Portion Modal //
- /*  $(document).ready(function(){
-    $('#healthportions').modal();
-  }); */ 
+$(document).ready(function(){
+    $('.modal').modal();
+  })
   
 
 
