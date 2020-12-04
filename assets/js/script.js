@@ -5,9 +5,10 @@ var gameState = {
         name: "",
         hp: 50, // determined by player selected
         ap: 0, // determined by roll 
-        armor: 0, // determined by player selected
+        armor: 10, // determined by player selected
         xp: 0,
-        level: 1
+        level: 1,
+        attack: "2d6+5"
     },
     enemy: {
         name: "",
@@ -20,6 +21,12 @@ var gameState = {
 
 }
 var inputEl = document.getElementById("player-name");
+
+var playerInfo = [{
+    name: " ",
+    score: 0
+}
+]
 
 
 // Modal Activation Trigger
@@ -42,6 +49,8 @@ var grabName = function() {
 
 var beginAdventure = function(event) {
     window.location.href = "./encounter.html"
+   
+    saveUser(); 
 };
 
 var startBtn = document.getElementById('start-button');
@@ -49,4 +58,10 @@ startBtn.addEventListener("click", grabName);
 
 document.getElementById("continue").addEventListener("click", beginAdventure);
 // document.getElementById("player-name").addEventListener("blur", grabName);
+
+var saveUser = function () {
+    localStorage.setItem("user", JSON.stringify(gameState.user))
+}
+
+
 
