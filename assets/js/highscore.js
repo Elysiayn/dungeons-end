@@ -1,8 +1,5 @@
 var currentScores = [];
 
-
-
-
 var loadHighScores = function () {
     
     var storedScores = (localStorage.getItem("scores"))
