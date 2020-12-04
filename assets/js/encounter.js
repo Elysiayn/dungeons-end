@@ -3,22 +3,22 @@ var fighters = {
     human: {
         imgUrl: "./assets/images/image1.jpg",
         title: "Human Fighter",
-        description: ""
+        description: "Fighter 1"
     },
     orc: {
         imgUrl: "./assets/images/image2.jpg",
         title: "Orc Fighter",
-        description: ""
+        description: "Fighter 2"
     },
     aasimar: {
         imgUrl: "./assets/images/image3.jpg",
         title: "Aasimar Fighter",
-        description: ""
+        description: "Fighter 3"
     },
     elf: {
         imgUrl: "./assets/images/image4.jpg",
         title: "Elf Fighter",
-        description: ""
+        description: "Fighter 4"
     },
 } 
 
