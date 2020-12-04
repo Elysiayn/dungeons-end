@@ -177,3 +177,13 @@ p.log {
 .vs {
     border: 5px ridge rgb(180,154,2);
 }
+
+/* High Score Log Styles */
+.scoreLog {
+    margin: .75rem auto auto auto;
+    padding:0.25rem;
+    /* justify-content: right;
+    align-content:right;
+    float: right;  */
+    height:auto;
+}
