@@ -110,8 +110,6 @@ h1#header-text{
     font-family: "berkshire swash";
 }
 
-
-
 /* Footer Style */
 .page-footer,
 .footer-copyright {
@@ -136,11 +134,15 @@ body {
     height:auto;
 }
 
-.log-title {
+.card-title.log-title {
     background:white;
     color:darkred;
     margin: 1rem;
     border: 5px ridge rgb(180, 154, 2);
+    padding:1rem;
+    font-weight:900;
+    font-size:250% ;
+    text-decoration: double underline black;
 }
 
 p.log {
@@ -151,12 +153,12 @@ p.log {
     height: 300px;
     background:white;
     color: darkred;
+    font-weight: bolder;
 }
 
 .contentLog {
     margin: 0;
     padding: 0;
-
 }
 
 /* .responsive-img {
