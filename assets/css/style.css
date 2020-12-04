@@ -64,7 +64,7 @@ nav {
 
 .btn:hover,
 .btn-large:hover,
-.btn:active {
+.button:active {
     background: rgb(37, 37, 37);
 }
 /* Character Selection Card Styles End */
@@ -79,11 +79,14 @@ nav {
 .modalStyle {
     font-family: "Fondamento", cursive;
     border: 10px ridge darkred;
-    box-shadow: 0 5px 10px 0 rgb(37, 37, 37); 
+    box-shadow: 0 5px 10px 0 rgb(37, 37, 37);
+    font-weight: bolder;
+    font-size: large;
 }
 
 h4 {
     border-bottom: 5px double rgb(37, 37, 37);
+    font-weight: bolder;
 }
 /* Modal Styling End */
 
@@ -127,11 +130,11 @@ body {
 
 /* Combat Log Styles */
 .combatLog {
-    margin-left:0%;
-    margin-right:0;
-    justify-content: left;
-    align-content:left;
-    float: left; 
+    margin: .75rem auto auto auto;
+    padding:0.25rem;
+    /* justify-content: right;
+    align-content:right;
+    float: right;  */
     height:auto;
 }
 
@@ -162,8 +165,15 @@ p.log {
     padding: 0;
 }
 
+
+
 /* .responsive-img {
     width: auto ;
   max-width: 100% ;
   height: auto ;
 } */
+
+/* VS */
+.vs {
+    border: 5px ridge rgb(180,154,2);
+}
