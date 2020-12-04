@@ -30,9 +30,19 @@
             </ul>
     </nav>
 
-    <!-- Fight Images Container -->
-    <div class="container center">
+<!-- Log/Fighter/Enemy Display -->
+    <div class="container">
         <div class="row">
+    <!-- Combat Log -->
+        <div class="col s12 m6 l4 xl3 combatLog">
+            <div class="card combatLog" id="log">
+                <div class="card-content">
+                    <span class="card-title"></span>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+
             <!-- Player Image Card -->
             <div class="col s12 m6 l4 xl3 center">
                 <div class="card" id="playerImage">
@@ -49,16 +59,14 @@
                 <div class="card" id="enemyImage">
                     <div class="card-content center">
                         <!-- This is where enemy img will be dynamically generated -->
-                        <span class="card-title"> <!--card title dynamically generated-->  </span>
+                        <span class="card-title"> <!--card title dynamically generated--> </span>
                         <p> <!-- enemy info will be dynamically generated--> </p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
-    <!-- Combat Log -->
-    
+
     <!-- Fight Box -->
     <div class="row">
         <div class="fight-button">

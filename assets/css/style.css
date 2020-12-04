@@ -124,3 +124,13 @@ body {
     flex-direction: column;
 }
 
+/* Combat Log Styles */
+.combatLog {
+    display:grid;
+    margin-left:auto;
+    margin-right:0;
+    justify-content: left;
+    align-content:left;
+    float: left; 
+    height:auto;
+}
