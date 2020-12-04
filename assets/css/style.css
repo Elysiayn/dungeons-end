@@ -13,6 +13,7 @@ nav {
     border-radius: 10px;
     justify-content: center;
     font-family: "Fondamento", cursive;
+    width: 100%;
 }
 
 .card-content {
@@ -109,8 +110,6 @@ h1#header-text{
     font-family: "berkshire swash";
 }
 
-
-
 /* Footer Style */
 .page-footer,
 .footer-copyright {
@@ -125,7 +124,6 @@ body {
     flex-direction: column;
 }
 
-
 /* Combat Log Styles */
 .combatLog {
     margin-left:0%;
@@ -136,24 +134,31 @@ body {
     height:auto;
 }
 
-/* .log {
-    display:block;
-    width: 100%;
-    overflow-y: scroll;
-} */
-
-.log-title {
+.card-title.log-title {
     background:white;
     color:darkred;
     margin: 1rem;
     border: 5px ridge rgb(180, 154, 2);
+    padding:1rem;
+    font-weight:900;
+    font-size:250% ;
+    text-decoration: double underline black;
 }
 
 p.log {
-    width: 12em;
+    width: 100%;
     height: 6em;
-    border: dotted;
+    border: 5px ridge rgb(180,154,2);
     overflow-y: scroll;
+    height: 300px;
+    background:white;
+    color: darkred;
+    font-weight: bolder;
+}
+
+.contentLog {
+    margin: 0;
+    padding: 0;
 }
 
 /* .responsive-img {
@@ -161,4 +166,3 @@ p.log {
   max-width: 100% ;
   height: auto ;
 } */
-
