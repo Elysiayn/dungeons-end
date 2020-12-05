@@ -51,8 +51,6 @@ imageCard.innerHTML = "<img src=" + raceObj.imgUrl + "\>"
 
 var dataName = click.attributes.values("dataName")
 
-
-
 var gameState = {
     user: {
         name: "",

@@ -90,20 +90,19 @@ h4 {
 }
 /* Modal Styling End */
 
-/* .banner {
-    font-size: 50px;
+.banner {
+    font-size: 30px;
     text-align: center;
     font-family: "Berkshire Swash";
-} */
+}
 
-
+/* Background Picture */
 div#header-background{
-    position: absolute;
+    position: fixed;
     max-height: 4em;
     z-index: -1;
     border-radius: 10%;
-    opacity: 0.75;
-    
+    right:0%;   
 }
 
 h1#header-text{ 
@@ -112,6 +111,7 @@ h1#header-text{
     text-align: center;
     font-size: 3em;
     font-family: "berkshire swash";
+    color: rgb(180, 154, 2);
 }
 
 /* Footer Style */
@@ -126,6 +126,28 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+}
+
+
+/* Modal on Encounter page */
+.centerp {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+      
+}
+
+.modal p{
+    font-family: "fondamento";
+    text-align: center;
+    font-size: 25px;
+    
+}
+
+.modal h4 {
+    font-family: "fondamento";
+    text-align: center;
 }
 
 /* Combat Log Styles */
@@ -163,12 +185,6 @@ p.log {
     margin: 0;
     padding: 0;
 }
-
-/* .responsive-img {
-    width: auto ;
-  max-width: 100% ;
-  height: auto ;
-} */
 
 /* VS */
 .vs {
