@@ -22,6 +22,9 @@ var fighters = {
     },
 } 
 
+// used in the run function to slowly decrease user's chance of running away
+var runOdds =10;
+
 //Pull Value from localStorage
 var selected = localStorage.getItem("race");
 
@@ -49,12 +52,13 @@ imageCard.innerHTML = "<img src=" + raceObj.imgUrl + "\>"
 
 // tempObj.imgUrl
 
-var dataName = click.attributes.values("dataName")
+// looks like old code we no longer need 
+/*var dataName = click.attributes.values("dataName")
 
 var generateFighterCard = function(dataName) {
     //DOM manipulation to append img 
     img.attr(src.fighters.dataName.imgURL)
-}
+} */
 
 
 var gameState = {
@@ -287,8 +291,26 @@ var playerDodge = function (event) {
 //this will allow the player to run away
 
 var playerRun = function (event) {
-    console.log("You ran away");
-    //monsterAttack();
+    console.log(gameState.user.name + " attempts to run away");
+    
+
+    // calculates a number to determine if the user runs away they more they run the lower runOdds goes decreasing their chances of getting away. This should allow the users to run away from fight but not be able to run away from every tough monster holding out for weaker ones.
+    // if they fail to run the monster attacks if they succeed it summons a new monster
+    runChance = Math.ceil(Math.random() * (10 - 1) +  runOdds)
+    console.log(runOdds)
+    console.log(runChance)
+    if (runChance < 10) {
+    
+    console.log(gameState.user.name + " failed to run away from " + gameState.enemy.name + ".");
+    monsterAttack();
+    } else {
+        console.log(gameState.user.name + " ran away from " +gameState.enemy.name + ".");
+        monsterRandomizer(gameState.user.level);
+        runOdds --;
+    }
+
+
+    
 }
 
 // this will grab an image of the monster
