@@ -1,3 +1,6 @@
+
+
+
 var inputEl = document.getElementById("player-name");
 
 var gameState = {

@@ -64,9 +64,8 @@ nav {
 
 .btn:hover,
 .btn-large:hover,
-.active,
-button :active {
-    background: rgb(37, 37, 37);
+.btn:focus {
+    background: rgb(37, 37, 37) !important;
 }
 /* Character Selection Card Styles End */
 
