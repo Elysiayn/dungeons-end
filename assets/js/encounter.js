@@ -316,11 +316,24 @@ var playerRun = function (event) {
 // this will grab an image of the monster
 
 var monsterImageAPI = function(monsterName) {
-    fetch("https://api.open5e.com/monsters/" + monsterName.toLowerCase())
+    fetch("https://en.wikipedia.org/w/api.php?origin=*&action=query&prop=images&format=json&titles=" + monsterName.toLowerCase() )
     .then(function(response) {
         response.json().then(function(data) {
-            //console.log(data);
-            // console.log(data.results[1].img_main);
+            console.log(data);
+            var pages = data.query.pages;
+            for (var page in pages) {
+                for ( var img of pages[page].images){
+                  console.log(img.title)
+
+                    /*var monsterImage = "
+                   var monsterCard = document.getElementById("enemyImage");
+                   monsterCard.innerHTML = "<img src=" + monsterImage + "\>" */
+                }
+            }
+            
+            console.log(gameState.enemy.name)
+            
+            
         })
     })
 };
@@ -344,8 +357,7 @@ var monsterAttack = function () {
         //checks if the monster has the mulitattack feature
 
         if (gameState.enemy.attacks[0].name === "Multiattack"){
-           // debugger;
-           // var count = 1;
+           
            
             
             // this will run if the monster has a multiattack feature but only one basic attack. Allowing it to strike twice. the monsterstike function being inside the for loop forces it to have to check to see if it hits with each attack
@@ -355,8 +367,6 @@ var monsterAttack = function () {
                     if (monsterHit < gameState.user.armor) {
                         console.log(gameState.enemy.name + " failed to strike you!")
                     } else if (monsterHit>= gameState.user.armor){
-
-                        
 
                         damageDiceRoll(gameState.enemy.attacks[1].damageDice);
                         console.log(gameState.enemy.name + " hits you with " + gameState.enemy.attacks[1].name + " dealing " + damageDealt + " damage!");
