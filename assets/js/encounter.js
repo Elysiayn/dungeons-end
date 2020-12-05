@@ -22,6 +22,37 @@ var fighters = {
     },
 } 
 
+<<<<<<< HEAD
+=======
+//Pull Value from localStorage
+var selected = localStorage.getItem("race");
+
+let raceObj
+if (selected === "elf") {
+    raceObj = fighters.elf
+
+} else if (selected === "human") {
+    raceObj = fighters.human
+
+} else if (selected === "aasimar") {
+    raceObj = fighters.aasimar
+
+} else if (selected === "orc") {
+    raceObj = fighters.orc
+}
+
+//Write Logic (if Statement) to select which obj to use based on Value from local
+//Store that obj in temp and use that temp obj to gram the imgUrl and put that in the 
+//html
+
+var imageCard = document.getElementById("playerImage");
+console.log(imageCard);
+imageCard.innerHTML = "<img src=" + raceObj.imgUrl + "\>"
+
+// tempObj.imgUrl
+
+var dataName = click.attributes.values("dataName")
+>>>>>>> 577030663ebe11735eab95afa73fba88b3187896
 
 
 
