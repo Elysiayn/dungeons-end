@@ -53,6 +53,19 @@ var gameState = {
 
 }
 
+var currentScores = localStorage.getItem("scores")
+if (!currentScores) {
+    currentScores= [];
+} else {
+    currentScores = JSON.parse(currentScores)
+}
+
+/*var playerInfo = [{
+    name: " ",
+    score: 0
+}
+]*/
+
 var damageDealt = 0;
 
 var min = Math.ceil(1);
@@ -294,7 +307,9 @@ var monsterAttack = function () {
                     if (monsterHit < gameState.user.armor) {
                         console.log(gameState.enemy.name + " failed to strike you!")
                     } else if (monsterHit>= gameState.user.armor){
-                        // console.log(gameState.enemy.attacks[1].name + " hits you for " + damageDealt + ".");
+
+                        
+
                         damageDiceRoll(gameState.enemy.attacks[1].damageDice);
                         console.log(gameState.enemy.name + " hits you with " + gameState.enemy.attacks[1].name + " dealing " + damageDealt + " damage!");
                         gameState.user.hp = gameState.user.hp - damageDealt;
@@ -309,6 +324,8 @@ var monsterAttack = function () {
                 if (monsterHit< gameState.user.armor) {
                     console.log(gameState.enemy.name + " failed to strike you!")
                 } else if (monsterHit >= gameState.user.armor) {
+
+
                     damageDiceRoll(gameState.enemy.attacks[i].damageDice);
                     console.log(gameState.enemy.name + " hits you with " + gameState.enemy.attacks[i].name + " dealing " + damageDealt + " damage!");
                     gameState.user.hp = gameState.user.hp - damageDealt;
@@ -323,6 +340,8 @@ var monsterAttack = function () {
             if (monsterHit < gameState.user.armor) {
                 console.log(gameState.enemy.name + " failed to strike you!")
             } else if (monsterHit >= gameState.user.armor){
+
+
                 damageDiceRoll(gameState.enemy.attacks[0].damageDice);
                 console.log(gameState.enemy.name + " hits you with " + gameState.enemy.attacks[0].name + " dealing " + damageDealt + " damage!");
                 gameState.user.hp = gameState.user.hp - damageDealt;
@@ -358,11 +377,77 @@ var endGame = function() {
     } else if(gameState.user.hp <= 0) {
         console.log("You have perished");
         //store xp/score and character name in local store send user to highscore screen
+        /*playerInfo.name = gameState.user.name;
+        playerInfo.score = gameState.user.xp;*/
+        
+        var playerInfo = {
+            name: gameState.user.name,
+            score: gameState.user.xp
+        }
+        
+        createHighScores(playerInfo);
         window.location.href = "./highscore.html"
+
     } 
 
 
 }
+
+var saveUserScore = function () {
+    localStorage.setItem("scores", JSON.stringify(currentScores))
+}
+
+var loadUser= function() {
+
+    var storedUser = (localStorage.getItem("user"));
+
+    if (!storedUser) {
+
+        return false;
+    }
+
+    gameState.user = JSON.parse(storedUser);
+
+    
+}
+
+
+/*var loadHighScores = function () {
+    
+    var storedScores = (localStorage.getItem("scores"))
+
+    if (!storedScores){
+        
+        currentScores = [];
+        return false;
+    }
+
+    storedScores = JSON.parse(storedScores);
+    console.log(storedScores);
+      
+
+    storedScores.sort(compare);
+
+    for (var i = 0; i < storedScores.length; i++) {
+            createHighScores(storedScores[i]);
+        }
+
+}*/
+
+
+
+var createHighScores = function(playerRanks) {
+
+    currentScores.push(playerRanks);
+
+    saveUserScore();
+}
+
+
+
+
+loadUser();
+
 
 
  document.getElementById("attack-button").addEventListener("click", hitDiceRoll);
