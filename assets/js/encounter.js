@@ -43,9 +43,17 @@ if (selected === "elf") {
 //Store that obj in temp and use that temp obj to gram the imgUrl and put that in the 
 //html
 
-var imageCard = document.getElementById("playerImage");
-console.log(imageCard);
-imageCard.innerHTML = "<img src=" + raceObj.imgUrl + "\>"
+// DOM Manipulation to append img class
+
+var fighterImage = document.getElementById("playerImg");
+fighterImage.setAttribute("src",raceObj.imgUrl)
+
+var fighterTitle = document.getElementById("fighterTitle");
+fighterTitle.textContent= raceObj.title;
+
+var fighterDescription = document.getElementById("fighterDescription");
+fighterDescription.textContent = raceObj.description;
+
 
 // tempObj.imgUrl
 
