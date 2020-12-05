@@ -22,8 +22,6 @@ var fighters = {
     },
 } 
 
-<<<<<<< HEAD
-=======
 //Pull Value from localStorage
 var selected = localStorage.getItem("race");
 
@@ -52,7 +50,6 @@ imageCard.innerHTML = "<img src=" + raceObj.imgUrl + "\>"
 // tempObj.imgUrl
 
 var dataName = click.attributes.values("dataName")
->>>>>>> 577030663ebe11735eab95afa73fba88b3187896
 
 
 
