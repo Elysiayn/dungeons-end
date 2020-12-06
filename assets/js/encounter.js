@@ -58,7 +58,6 @@ fighterTitle.textContent= raceObj.title;
 var fighterDescription = document.getElementById("fighterDescription");
 fighterDescription.textContent = raceObj.description;
 
-
 // tempObj.imgUrl
 
 var dataName = click.attributes.values("dataName")
