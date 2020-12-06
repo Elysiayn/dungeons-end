@@ -46,26 +46,17 @@ if (selected === "elf") {
 //Store that obj in temp and use that temp obj to gram the imgUrl and put that in the 
 //html
 
-// DOM Manipulation to append img class
-
+//add styling to img
 var fighterImage = document.getElementById("playerImg");
 fighterImage.setAttribute("src",raceObj.imgUrl)
 
-
+//add title to selected fighter
 var fighterTitle = document.getElementById("fighterTitle");
 fighterTitle.textContent= raceObj.title;
 
+//add description to selected fighter
 var fighterDescription = document.getElementById("fighterDescription");
 fighterDescription.textContent = raceObj.description;
-
-
-// looks like old code we no longer need 
-/*var dataName = click.attributes.values("dataName")
-
-var generateFighterCard = function(dataName) {
-    //DOM manipulation to append img 
-    img.attr(src.fighters.dataName.imgURL)
-} */
 
 
 // tempObj.imgUrl
