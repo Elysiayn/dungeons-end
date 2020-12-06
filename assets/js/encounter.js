@@ -102,7 +102,7 @@ if (!currentScores) {
 console.log(gameState.user.name)
 var imageCard = document.getElementById("player-image");
 // console.log(imageCard);
-imageCard.innerHTML = "<img class='style' style='width:100%;height:auto;' src=" + raceObj.imgUrl + "\>"
+imageCard.innerHTML = "<img class='style' style='width:200px;height:300px;' src=" + raceObj.imgUrl + "\>"
 // var playerTitle = document.createElement("span");
 // playerTitle.textContent = gameState.user.name
 
