@@ -60,7 +60,7 @@ fighterDescription.textContent = raceObj.description;
 
 // tempObj.imgUrl
 
-var dataName = click.attributes.values("dataName")
+// var dataName = click.attributes.values("dataName")
 
 var gameState = {
     user: {
@@ -98,6 +98,7 @@ if (!currentScores) {
 ]*/
 
 var damageDealt = 0;
+var healthPotCount = 4;
 
 var min = Math.ceil(1);
 var max = Math.floor(20);
@@ -314,6 +315,36 @@ var playerRun = function (event) {
     
 }
 
+var healthPot = function () {
+    
+    var potionDrink = 10;
+
+    if(healthPotCount > 1 ){
+        
+        gameState.user.hp = gameState.user.hp + potionDrink;
+
+        console.log(gameState.user.name + " uses a health potion. You have " + healthPotCount + " potions left.")
+        console.log(potionDrink)
+        healthPotCount--;
+        
+        monsterAttack();
+
+    } else if (healthPotCount === 1) {
+        
+        gameState.user.hp = gameState.user.hp + potionDrink;
+
+        console.log(potionDrink)
+        console.log(gameState.user.name + " uses a health potion. You have " + healthPotCount + " potion left.")
+        healthPotCount--;
+    
+        monsterAttack();
+    } else {
+        console.log(gameState.user.name + " is out of potions.")
+    }
+
+    
+}
+
 // this will grab an image of the monster
 
 var monsterImageAPI = function(monsterName) {
@@ -502,5 +533,6 @@ loadUser();
  document.getElementById("attack-button").addEventListener("click", hitDiceRoll);
  document.getElementById("dodge-button").addEventListener("click", playerDodge);
  document.getElementById("run-button").addEventListener("click", playerRun);
+ document.getElementById("demo-modal").addEventListener("click", healthPot);
  
 
