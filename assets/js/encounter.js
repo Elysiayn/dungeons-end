@@ -103,23 +103,14 @@ console.log(gameState.user.name)
 var imageCard = document.getElementById("player-image");
 // console.log(imageCard);
 imageCard.innerHTML = "<img class='style' style='width:200px;height:300px;' src=" + raceObj.imgUrl + "\>"
+
+
 // var playerTitle = document.createElement("span");
 // playerTitle.textContent = gameState.user.name
 
 // imageCard.append(playerTitle);
 
 // tempObj.imgUrl
-
-// looks like old code we no longer need 
-/*var dataName = click.attributes.values("dataName")
-
-var generateFighterCard = function(dataName) {
-    //DOM manipulation to append img 
-    img.attr(src.fighters.dataName.imgURL)
-} */
-
-
-
 
 /*var playerInfo = [{
     name: " ",
@@ -387,7 +378,7 @@ var monsterImageAPI = function(monsterName) {
             var cleanMonster = monsterName.split("-").join("_").toLowerCase();
             console.log(monsters[cleanMonster]);
             var monsterImage = document.getElementById("monster-image");
-            monsterImage.innerHTML = "<img class='style' style='width:100%;min-height:217px;' src=" + monsters[cleanMonster] + ">";
+            monsterImage.innerHTML = "<img class='style' style='width:200px;height:300px;' src=" + monsters[cleanMonster] + ">";
             var monsterTitle = document.createElement("span");
             monsterTitle.textContent = data.name.toUpperCase();
             monsterImage.append(monsterTitle);
@@ -565,13 +556,16 @@ var createHighScores = function(playerRanks) {
     saveUserScore();
 }
 
-
-
-
 loadUser();
 var playerTitle = document.createElement("span");
 playerTitle.textContent = gameState.user.name.toUpperCase();
+playerTitle.classList.add("card-title");
 var playerRace = document.createElement("p");
+playerRace.classList.add("card-content");
+
+
+
+
 playerRace.textContent = selected.toUpperCase();
 imageCard.append(playerTitle);
 imageCard.append(playerRace);
