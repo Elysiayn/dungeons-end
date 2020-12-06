@@ -60,7 +60,7 @@ fighterDescription.textContent = raceObj.description;
 
 // tempObj.imgUrl
 
-var dataName = click.attributes.values("dataName")
+// var dataName = click.attributes.values("dataName")
 
 var gameState = {
     user: {
