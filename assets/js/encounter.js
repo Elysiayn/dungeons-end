@@ -21,6 +21,33 @@ var fighters = {
         description: ""
     },
 } 
+var monsters = {
+    aboleth: "https://bit.ly/37Tt45t",
+    animated_armor: "https://www.aidedd.org/dnd/images/animated-armor.jpg",
+    brass_dragon_wyrmling: "https://bit.ly/36LrCCP",
+    brown_bear: "https://bit.ly/36JyvUT",
+    bugbear: "https://bit.ly/2JPNrbk",
+    copper_dragon_wyrmling: "https://bit.ly/2IhBsmh",
+    death_dog: "https://bit.ly/3gfw1AN",
+    dire_wolf: "https://bit.ly/3oqb6Oq",
+    dryad: "https://bit.ly/3qx2nMb",
+    ghoul: "https://bit.ly/39LnggT",
+    giant_eagle: "https://bit.ly/3lM5g8n",
+    giant_hyena: "https://bit.ly/2VKqitj",
+    giant_octopus: "https://bit.ly/37x2b6Q",
+    giant_spider: "https://bit.ly/37IfVMc",
+    giant_toad: "https://bit.ly/33KEyXG",
+    giant_vulture: "https://bit.ly/33PI6ro",
+    harpy: "https://bit.ly/2JCEvpK",
+    hippogriff: "https://bit.ly/2VK70Eo",
+    imp: "https://bit.ly/3mOxlgq",
+    lion: "https://bit.ly/39Nn9Bk",
+    quasit: "https://bit.ly/3osPRvy",
+    specter: "https://bit.ly/3lMPWZh",
+    spy: "https://bit.ly/36JjHWm",
+    swarm_of_quippers: "https://bit.ly/2L1dIUr",
+    tiger: "https://bit.ly/36Qqz4B"
+};
 
 // used in the run function to slowly decrease user's chance of running away
 var runOdds =10;
@@ -28,6 +55,7 @@ var runOdds =10;
 //Pull Value from localStorage
 var selected = localStorage.getItem("race");
 
+// grab the race and image of the Fighter selected on index.html
 let raceObj
 if (selected === "elf") {
     raceObj = fighters.elf
@@ -41,25 +69,6 @@ if (selected === "elf") {
 } else if (selected === "orc") {
     raceObj = fighters.orc
 }
-
-//Write Logic (if Statement) to select which obj to use based on Value from local
-//Store that obj in temp and use that temp obj to gram the imgUrl and put that in the 
-//html
-
-var imageCard = document.getElementById("playerImage");
-console.log(imageCard);
-imageCard.innerHTML = "<img src=" + raceObj.imgUrl + "\>"
-
-// tempObj.imgUrl
-
-// looks like old code we no longer need 
-/*var dataName = click.attributes.values("dataName")
-
-var generateFighterCard = function(dataName) {
-    //DOM manipulation to append img 
-    img.attr(src.fighters.dataName.imgURL)
-} */
-
 
 var gameState = {
     user: {
@@ -82,6 +91,7 @@ var gameState = {
     },
 
 }
+var combatLog = document.getElementById("combat-info");
 
 var currentScores = localStorage.getItem("scores")
 if (!currentScores) {
@@ -89,6 +99,27 @@ if (!currentScores) {
 } else {
     currentScores = JSON.parse(currentScores)
 }
+console.log(gameState.user.name)
+var imageCard = document.getElementById("player-image");
+// console.log(imageCard);
+imageCard.innerHTML = "<img class='style' style='width:100%;height:auto;' src=" + raceObj.imgUrl + "\>"
+// var playerTitle = document.createElement("span");
+// playerTitle.textContent = gameState.user.name
+
+// imageCard.append(playerTitle);
+
+// tempObj.imgUrl
+
+// looks like old code we no longer need 
+/*var dataName = click.attributes.values("dataName")
+
+var generateFighterCard = function(dataName) {
+    //DOM manipulation to append img 
+    img.attr(src.fighters.dataName.imgURL)
+} */
+
+
+
 
 /*var playerInfo = [{
     name: " ",
@@ -132,7 +163,7 @@ var monsterSummoner = function (monster) {
             var cleanUrl = data.name.split(" ").join("-")
             //console.log(data.name);
             gameState.enemy.name = data.name;
-
+            console.log("Line 135", data);
             monsterImageAPI(cleanUrl);
 
             //console.log(data.hit_points);
@@ -145,24 +176,13 @@ var monsterSummoner = function (monster) {
             gameState.enemy.xp = data.xp;
             
             if (data.index === "duergar") {
-                console.log("duergar ran away")
+                var duergarCombatInfo = document.createElement("p");
+                duergarCombatInfo.textContent = "Duergar ran away!"
+                combatLog.append(duergarCombatInfo);
+                console.log("line 182", "duergar ran away")
                 monsterRandomizer(gameState.user.level);
             }
 
-            /*if (data.actions[0].name === "Multiattack") {
-                console.log(data.actions[0].name);
-                console.log(data.actions[0].options.from[0]);
-                var count = 1;
-                for( i= 0; i < data.actions[0].options.from[0].length; i++ ){
-                    
-                    damageDiceRoll(data.actions[count].damage[0].damage_dice);
-                    count ++;
-                }
-                    
-                }
-                else{   
-                damageDiceRoll(data.actions[0].damage[0].damage_dice);
-                }*/
             
 
             if (data.actions[0].name === "Multiattack") {
@@ -246,13 +266,25 @@ var hitDiceRoll = function() {
     
 
     if (toHit < 6) {
-        console.log("You've failed to strike the " + gameState.enemy.name + ".");
+        var userFailedAttackInfo = document.createElement("p");
+                userFailedAttackInfo.textContent = "You've failed to strike the " + gameState.enemy.name + "."
+                combatLog.appendChild(userFailedAttackInfo);
+        console.log("line 272", "You've failed to strike the " + gameState.enemy.name + ".");
     } else if (toHit >= 6) {
-        console.log("You've dealt the " + gameState.enemy.name + " a mighty blow!")
+        var userAttackInfo = document.createElement("p");
+                userAttackInfo.textContent = "You've dealt the " + gameState.enemy.name + " a mighty blow!"
+                combatLog.appendChild(userAttackInfo);
+        console.log("line 277", "You've dealt the " + gameState.enemy.name + " a mighty blow!")
+
         damageDiceRoll(gameState.user.attack);
         
         gameState.enemy.hp = gameState.enemy.hp - damageDealt;
-        console.log(gameState.enemy.name + " now has " + gameState.enemy.hp + " hp remaining.")
+
+        var combatUpdate = document.createElement("p");
+        combatUpdate.textContent = gameState.enemy.name + " now has " + gameState.enemy.hp + " hp remaining."
+        combatLog.append(combatUpdate);
+
+        console.log("Line 287", gameState.enemy.name + " now has " + gameState.enemy.hp + " hp remaining.")
     }
 
     // if (toHit + str + profBonus > monsterArmor) {
@@ -318,8 +350,19 @@ var playerRun = function (event) {
 var monsterImageAPI = function(monsterName) {
     fetch("https://api.open5e.com/monsters/" + monsterName.toLowerCase())
     .then(function(response) {
+        
         response.json().then(function(data) {
-            //console.log(data);
+            console.log("HIIIIIIIIIIIII", data);
+            var cleanMonster = monsterName.split("-").join("_").toLowerCase();
+            console.log(monsters[cleanMonster]);
+            var monsterImage = document.getElementById("monster-image");
+            monsterImage.innerHTML = "<img class='style' style='width:100%;min-height:217px;' src=" + monsters[cleanMonster] + ">";
+            var monsterTitle = document.createElement("span");
+            monsterTitle.textContent = data.name.toUpperCase();
+            monsterImage.append(monsterTitle);
+            var monsterType = document.createElement("p");
+            monsterType.textContent = data.type.toUpperCase();
+            monsterImage.append(monsterType);
             // console.log(data.results[1].img_main);
         })
     })
@@ -495,7 +538,12 @@ var createHighScores = function(playerRanks) {
 
 
 loadUser();
-
+var playerTitle = document.createElement("span");
+playerTitle.textContent = gameState.user.name.toUpperCase();
+var playerRace = document.createElement("p");
+playerRace.textContent = selected.toUpperCase();
+imageCard.append(playerTitle);
+imageCard.append(playerRace);
 
 
  document.getElementById("attack-button").addEventListener("click", hitDiceRoll);
