@@ -3,22 +3,22 @@ var fighters = {
     human: {
         imgUrl: "./assets/images/image1.jpg",
         title: "Human Fighter",
-        description: ""
+        description: "Fighter 1"
     },
     orc: {
         imgUrl: "./assets/images/image2.jpg",
         title: "Orc Fighter",
-        description: ""
+        description: "Fighter 2"
     },
     aasimar: {
         imgUrl: "./assets/images/image3.jpg",
         title: "Aasimar Fighter",
-        description: ""
+        description: "Fighter 3"
     },
     elf: {
         imgUrl: "./assets/images/image4.jpg",
         title: "Elf Fighter",
-        description: ""
+        description: "Fighter 4"
     },
 } 
 
@@ -46,11 +46,18 @@ if (selected === "elf") {
 //Store that obj in temp and use that temp obj to gram the imgUrl and put that in the 
 //html
 
-var imageCard = document.getElementById("playerImage");
-console.log(imageCard);
-imageCard.innerHTML = "<img src=" + raceObj.imgUrl + "\>"
+// DOM Manipulation to append img class
 
-// tempObj.imgUrl
+var fighterImage = document.getElementById("playerImg");
+fighterImage.setAttribute("src",raceObj.imgUrl)
+
+
+var fighterTitle = document.getElementById("fighterTitle");
+fighterTitle.textContent= raceObj.title;
+
+var fighterDescription = document.getElementById("fighterDescription");
+fighterDescription.textContent = raceObj.description;
+
 
 // looks like old code we no longer need 
 /*var dataName = click.attributes.values("dataName")
@@ -60,6 +67,10 @@ var generateFighterCard = function(dataName) {
     img.attr(src.fighters.dataName.imgURL)
 } */
 
+
+// tempObj.imgUrl
+
+var dataName = click.attributes.values("dataName")
 
 var gameState = {
     user: {
