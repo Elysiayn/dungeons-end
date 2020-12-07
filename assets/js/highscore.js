@@ -1,5 +1,7 @@
 var currentScores = [];
 
+var scoreBoardEl = document.querySelector(".score")
+
 var loadHighScores = function () {
     
     var storedScores = (localStorage.getItem("scores"))
@@ -9,7 +11,7 @@ var loadHighScores = function () {
         currentScores = [];
         return false;
     }
-
+    debugger;
     storedScores = JSON.parse(storedScores);
     //console.log(storedScores);
       
@@ -25,12 +27,18 @@ var loadHighScores = function () {
 
 // this will be the function to push the scores onto the page
 var showHallOfFame = function (currentScores) {
-    console.log(currentScores)
+    for (var i = 0; i< currentScores.length; i++) {
+
+        var rankEl = document.createElement("p");
+        rankEl.textContent = currentScores[i].name + " " + currentScores[i].score;
+        scoreBoardEl.appendChild(rankEl);
+
+    }
 } 
 
 var compare = function(a,b) {
-    var scoreA = parseInt(a.xp);
-    var scoreB = parseInt(b.xp);
+    var scoreA = parseInt(a.score);
+    var scoreB = parseInt(b.score);
 
     return scoreB - scoreA;
 }
