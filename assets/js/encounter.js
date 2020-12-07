@@ -384,6 +384,7 @@ var monsterImageAPI = function(monsterName) {
             monsterImage.append(monsterTitle);
             var monsterType = document.createElement("p");
             monsterType.textContent = data.type.toUpperCase();
+            //
             monsterImage.append(monsterType);
             // console.log(data.results[1].img_main);
         })
@@ -562,6 +563,7 @@ playerTitle.textContent = gameState.user.name.toUpperCase();
 playerTitle.classList.add("card-title");
 var playerRace = document.createElement("p");
 playerRace.classList.add("card-content");
+
 
 
 
