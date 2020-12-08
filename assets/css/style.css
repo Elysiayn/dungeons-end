@@ -167,7 +167,6 @@ body {
         margin-left: auto;
         margin-right: auto;
         width: 50%;
-      
 }
 
 .modal p{
@@ -186,9 +185,6 @@ body {
 .combatLog {
     margin: .75rem auto auto auto;
     padding:0.25rem;
-    /* justify-content: right;
-    align-content:right;
-    float: right;  */
     height:auto;
 }
 
@@ -203,32 +199,31 @@ body {
     text-decoration: double underline black;
 }
 
-p.log {
+.log {
     border: 5px ridge rgb(180,154,2);
     overflow-y: scroll;
-    height: 300px; 
+    height: 250px;
+    width: auto;
     background:white;
     color: darkred;
     font-weight: bolder;
+    line-height: 2;
 }
 
-.contentLog {
-    margin: 0;
-    padding: 0;
-}
-
-/* VS */
+/* VS Box Styles*/
 .vs {
     border: 5px ridge rgb(180,154,2);
+    width: 100%;
+    content: auto;
+    margin: 1rem;
 }
 
 /* High Score Log Styles */
 .scoreLog {
     margin: .75rem auto auto auto;
-    /* padding:0.25rem; */
     height:auto;
     width: 100%;
-}
+} 
 
 .score {
     border: 5px ridge rgb(180,154,2);
@@ -238,6 +233,7 @@ p.log {
     font-weight: bolder;
     min-width: 100%;
     min-height: 300px;
+    text-decoration:underline;
+    line-height: 3;
+    word-spacing: 30px;
 }
-
-
