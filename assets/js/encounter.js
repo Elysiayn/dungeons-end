@@ -413,9 +413,11 @@ var monsterImageAPI = function(monsterName) {
             monsterImage.innerHTML = "<img class='style' style='width:200px;height:300px;' src=" + monsters[cleanMonster] + ">";
             var monsterTitle = document.createElement("span");
             monsterTitle.textContent = data.name.toUpperCase();
+            monsterTitle.classList.add("card-title");
             monsterImage.append(monsterTitle);
             var monsterType = document.createElement("p");
             monsterType.textContent = data.type.toUpperCase();
+            
             //
             monsterImage.append(monsterType);
             // console.log(data.results[1].img_main);
