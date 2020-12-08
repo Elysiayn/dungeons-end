@@ -216,6 +216,7 @@ body {
     background:white;
     color: darkred;
     font-weight: bolder;
+    line-height: 2;
 }
 
 /* VS Box Styles*/
@@ -223,6 +224,7 @@ body {
     border: 5px ridge rgb(180,154,2);
     width: 100%;
     content: auto;
+    margin: 1rem;
 }
 
 /* High Score Log Styles */
@@ -240,6 +242,7 @@ body {
     font-weight: bolder;
     min-width: 100%;
     min-height: 300px;
+    text-decoration:underline;
+    line-height: 3;
+    word-spacing: 30px;
 }
-
-
