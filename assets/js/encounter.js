@@ -92,6 +92,7 @@ var gameState = {
 
 }
 var combatLog = document.getElementById("combat-info");
+combatLog.classList.add("log");
 
 var currentScores = localStorage.getItem("scores")
 if (!currentScores) {
@@ -102,7 +103,7 @@ if (!currentScores) {
 console.log(gameState.user.name)
 var imageCard = document.getElementById("player-image");
 // console.log(imageCard);
-imageCard.innerHTML = "<img class='style' style='width:200px;height:300px;' src=" + raceObj.imgUrl + "\>"
+imageCard.innerHTML = "<img class='style' style='width:100%;height:auto;' src=" + raceObj.imgUrl + "\>"
 
 
 // var playerTitle = document.createElement("span");
@@ -410,13 +411,14 @@ var monsterImageAPI = function(monsterName) {
             console.log(monsters[cleanMonster]);
 
             var monsterImage = document.getElementById("monster-image");
-            monsterImage.innerHTML = "<img class='style' style='width:200px;height:300px;' src=" + monsters[cleanMonster] + ">";
+            monsterImage.innerHTML = "<img class='style' style='width:100%;height:auto;' src=" + monsters[cleanMonster] + ">";
             var monsterTitle = document.createElement("span");
             monsterTitle.textContent = data.name.toUpperCase();
             monsterTitle.classList.add("card-title");
             monsterImage.append(monsterTitle);
             var monsterType = document.createElement("p");
             monsterType.textContent = data.type.toUpperCase();
+            monsterType.classList.add("card-content");
             
             //
             monsterImage.append(monsterType);
