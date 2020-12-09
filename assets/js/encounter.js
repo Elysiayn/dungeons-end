@@ -73,9 +73,9 @@ if (selected === "elf") {
 var gameState = {
     user: {
         name: "",
-        hp: 50, // determined by player selected
+        hp: 50, 
         ap: 0, // determined by roll 
-        armor: 8, // determined by player selected
+        armor: 8, 
         xp: 0,
         level: 1,
         attack: "2d6+5"
@@ -102,22 +102,8 @@ if (!currentScores) {
 }
 console.log(gameState.user.name)
 var imageCard = document.getElementById("player-image");
-// console.log(imageCard);
+
 imageCard.innerHTML = "<img class='style' style='width:100%;height:auto;' src=" + raceObj.imgUrl + "\>"
-
-
-// var playerTitle = document.createElement("span");
-// playerTitle.textContent = gameState.user.name
-
-// imageCard.append(playerTitle);
-
-// tempObj.imgUrl
-
-/*var playerInfo = [{
-    name: " ",
-    score: 0
-}
-]*/
 
 var damageDealt = 0;
 var healthPotCount = 4;
@@ -154,20 +140,21 @@ var monsterSummoner = function (monster) {
     .then(function(response){
         response.json().then(function(data) {
             var cleanUrl = data.name.split(" ").join("-")
-            //console.log(data.name);
+            
             gameState.enemy.name = data.name;
             console.log("Line 135", data);
             monsterImageAPI(cleanUrl);
 
-            //console.log(data.hit_points);
+            
             gameState.enemy.hp = data.hit_points;
 
-            //console.log(data.armor_class);
+            
             gameState.enemy.armor = data.armor_class;
 
-            //console.log(data.xp);
+            
             gameState.enemy.xp = data.xp;
             
+            // duergar has an enlarge ability for it's first move causing it not fall in line with our current code. This if statment causes it to summon a new monster to replace it
             if (data.index === "duergar") {
                 var duergarCombatInfo = document.createElement("ul");
                 duergarCombatInfo.textContent = "Duergar ran away!"
@@ -179,8 +166,7 @@ var monsterSummoner = function (monster) {
             
 
             if (data.actions[0].name === "Multiattack") {
-            //console.log(data.actions[0].name);
-            /*console.log(data.actions[0].options.from[0]);*/
+            
 
             var attackInfo = {};
 
@@ -188,7 +174,7 @@ var monsterSummoner = function (monster) {
             attackInfo.damageDice = 0;
             gameState.enemy.attacks.push(attackInfo); 
             
-            //debugger;
+            
 
             var count = 1;
             for( i= 0; i < data.actions[0].options.from[0].length; i++ ){
@@ -215,7 +201,7 @@ var monsterSummoner = function (monster) {
                 gameState.enemy.attacks.push(attackInfo);
                 
             }
-           // console.log(gameState.enemy.attacks)
+           
         })
     }
     )
@@ -239,14 +225,9 @@ var damageDiceRoll = function(damageDice) {
         var damageBonus = 0;
     }
 
-    /*console.log(damageInfo);
-    console.log(damageValue);
-    console.log(damageMultiplier);
-    console.log(damageBonus);*/
-
     damageDealt = ((damageMultiplier * (Math.ceil(Math.random()*damageValue))) + damageBonus)
 
-    // console.log(damageDealt);
+    
 
 }
 
@@ -280,13 +261,6 @@ var hitDiceRoll = function() {
 
         console.log("Line 287", gameState.enemy.name + " now has " + gameState.enemy.hp + " hp remaining.")
     }
-
-    // if (toHit + str + profBonus > monsterArmor) {
-    //     damageDiceRoll();
-    // } else {
-        
-    // }
-
     
     endGame();
     // if statement is here to check if the monster is alive and before it attacks 
@@ -296,7 +270,7 @@ var hitDiceRoll = function() {
     return toHit;    
 }
 
-//console.log("Look at me!", hitDiceRoll());
+
 
 
 // this allows the player to take a dodge action and temperarily increase their armor to hopefully avoid a strike from the monster
@@ -310,12 +284,12 @@ var playerDodge = function (event) {
 
     console.log("You took the dodge action");
     gameState.user.armor = gameState.user.armor + 5;
-    //console.log(gameState.user.armor);
+    
 
     monsterAttack();
     
     gameState.user.armor = gameState.user.armor -5;
-    //console.log(gameState.user.armor);
+    
 
     
 }
@@ -331,7 +305,6 @@ var playerRun = function (event) {
 
     console.log(gameState.user.name + " attempts to run away");
     
-
     // calculates a number to determine if the user runs away they more they run the lower runOdds goes decreasing their chances of getting away. This should allow the users to run away from fight but not be able to run away from every tough monster holding out for weaker ones.
     // if they fail to run the monster attacks if they succeed it summons a new monster
     runChance = Math.ceil(Math.random() * (10 - 1) +  runOdds)
@@ -339,7 +312,6 @@ var playerRun = function (event) {
     console.log(runChance)
     if (runChance < 10) {
     
-    // var playerCombatRun = document.createElement("p");
     playerCombatDodge.textContent = gameState.user.name + " failed to run away from " + gameState.enemy.name + ".";
     combatLog.append(playerCombatRun);
     
@@ -364,6 +336,7 @@ var healthPot = function () {
     var logPotion = document.createElement("ul");
     var potionDrink = 10;
 
+    // runs if the user has more then one health potion remaining
     if(healthPotCount > 1 ){
         
         gameState.user.hp = gameState.user.hp + potionDrink;
@@ -377,6 +350,7 @@ var healthPot = function () {
         
         monsterAttack();
 
+        //runs if they have just one remaining to keep proper grammar 
     } else if (healthPotCount === 1) {
         
         gameState.user.hp = gameState.user.hp + potionDrink;
@@ -389,6 +363,7 @@ var healthPot = function () {
         healthPotCount--;
     
         monsterAttack();
+        //runs if there is no health potions remaining 
     } else {
 
         logPotion.textContent = gameState.user.name + " is out of potions.";
@@ -420,9 +395,9 @@ var monsterImageAPI = function(monsterName) {
             monsterType.textContent = data.type.toUpperCase();
             monsterType.classList.add("card-content");
             
-            //
+           
             monsterImage.append(monsterType);
-            // console.log(data.results[1].img_main);
+            
         })
     })
 };
@@ -433,7 +408,7 @@ var monsterImageAPI = function(monsterName) {
 var monsterStrike =  function() { 
     
     monsterHit = Math.floor(Math.random() * (max - min + 1) + min);
-    //console.log(monsterHit)
+    
 
 }
 
@@ -441,15 +416,14 @@ var monsterStrike =  function() {
 
 var monsterAttack = function () {
     
-        //  console.log(gameState.enemy.attacks[0].name);
+        
      
         //checks if the monster has the mulitattack feature
 
         var logMonsterAttack = document.createElement("ul");
 
         if (gameState.enemy.attacks[0].name === "Multiattack"){
-           // debugger;
-           // var count = 1;
+          
            
             
             // this will run if the monster has a multiattack feature but only one basic attack. Allowing it to strike twice. the monsterstike function being inside the for loop forces it to have to check to see if it hits with each attack
@@ -557,10 +531,9 @@ var endGame = function() {
         
     } else if(gameState.user.hp <= 0) {
         console.log("You have perished");
-        //store xp/score and character name in local store send user to highscore screen
-        /*playerInfo.name = gameState.user.name;
-        playerInfo.score = gameState.user.xp;*/
         
+        //store xp/score and character name in local store send user to highscore screen
+       
         var playerInfo = {
             name: gameState.user.name,
             score: gameState.user.xp
@@ -592,31 +565,6 @@ var loadUser= function() {
     
 }
 
-
-/*var loadHighScores = function () {
-    
-    var storedScores = (localStorage.getItem("scores"))
-
-    if (!storedScores){
-        
-        currentScores = [];
-        return false;
-    }
-
-    storedScores = JSON.parse(storedScores);
-    console.log(storedScores);
-      
-
-    storedScores.sort(compare);
-
-    for (var i = 0; i < storedScores.length; i++) {
-            createHighScores(storedScores[i]);
-        }
-
-}*/
-
-
-
 var createHighScores = function(playerRanks) {
 
     currentScores.push(playerRanks);
@@ -625,6 +573,7 @@ var createHighScores = function(playerRanks) {
 }
 
 loadUser();
+
 var playerTitle = document.createElement("span");
 playerTitle.textContent = gameState.user.name.toUpperCase();
 playerTitle.classList.add("card-title");
