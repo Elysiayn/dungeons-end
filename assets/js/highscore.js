@@ -36,6 +36,8 @@ var showHallOfFame = function (currentScores) {
     }
 } 
 
+
+// compares items in the storedScores array and arranges them by high score
 var compare = function(a,b) {
     var scoreA = parseInt(a.score);
     var scoreB = parseInt(b.score);
