@@ -199,7 +199,7 @@ body {
 
 .log {
     border: 5px ridge rgb(180,154,2);
-    overflow-y: scroll;
+    overflow: scroll;
     height: 250px;
     width: auto;
     background:white;
