@@ -158,7 +158,7 @@ var monsterSummoner = function (monster) {
             if (data.index === "duergar") {
                 var duergarCombatInfo = document.createElement("p");
                 duergarCombatInfo.textContent = "Duergar ran away!"
-                combatLog.append(duergarCombatInfo);
+                combatLog.prepend(duergarCombatInfo);
                
                 monsterRandomizer(gameState.user.level);
             }
@@ -242,12 +242,12 @@ var hitDiceRoll = function() {
     if (toHit < 6) {
         var userFailedAttackInfo = document.createElement("p");
         userFailedAttackInfo.textContent = "You've failed to strike the " + gameState.enemy.name + "."
-        combatLog.appendChild(userFailedAttackInfo);
+        combatLog.prepend(userFailedAttackInfo);
 
     } else if (toHit >= 6) {
         var userAttackInfo = document.createElement("p");
         userAttackInfo.textContent = "You've dealt the " + gameState.enemy.name + " a mighty blow!"
-        combatLog.appendChild(userAttackInfo);
+        combatLog.prepend(userAttackInfo);
 
         damageDiceRoll(gameState.user.attack);
         
@@ -255,7 +255,7 @@ var hitDiceRoll = function() {
 
         var combatUpdate = document.createElement("p");
         combatUpdate.textContent = gameState.enemy.name + " now has " + gameState.enemy.hp + " hp remaining.";
-        combatLog.append(combatUpdate);
+        combatLog.prepend(combatUpdate);
 
     }
     
@@ -277,7 +277,7 @@ var playerDodge = function (event) {
     // Logs Dodge action by Player
     var playerCombatDodge = document.createElement("p");
         playerCombatDodge.textContent = "You took the dodge action!";
-        combatLog.append(playerCombatDodge);
+        combatLog.prepend(playerCombatDodge);
 
     gameState.user.armor = gameState.user.armor + 5;
     
@@ -297,7 +297,7 @@ var playerRun = function (event) {
     // Logs Run action by Player
     var playerCombatRun = document.createElement("p");
     playerCombatRun.textContent = gameState.user.name + " attempts to run away";
-    combatLog.append(playerCombatRun);
+    combatLog.prepend(playerCombatRun);
     
     // calculates a number to determine if the user runs away they more they run the lower runOdds goes decreasing their chances of getting away. This should allow the users to run away from fight but not be able to run away from every tough monster holding out for weaker ones.
     // if they fail to run the monster attacks if they succeed it summons a new monster
@@ -306,13 +306,13 @@ var playerRun = function (event) {
     if (runChance < 10) {
     
     playerCombatRun.textContent = gameState.user.name + " failed to run away from " + gameState.enemy.name + ".";
-    combatLog.append(playerCombatRun);
+    combatLog.prepend(playerCombatRun);
     
     monsterAttack();
     } else {
 
         playerCombatRun.textContent = gameState.user.name + " ran away from " +gameState.enemy.name + "." + " " + gameState.user.name + "'s ability to run away has diminshed slightly!";
-        combatLog.append(playerCombatRun);
+        combatLog.prepend(playerCombatRun);
 
         monsterRandomizer(gameState.user.level);
         runOdds --;
@@ -333,7 +333,7 @@ var healthPot = function () {
         gameState.user.hp = gameState.user.hp + potionDrink;
 
         logPotion.textContent = gameState.user.name + " uses a health potion to restore 10hp! " + gameState.user.name + " has " + healthPotCount + " potions left.";
-        combatLog.append(logPotion);
+        combatLog.prepend(logPotion);
 
         healthPotCount--;
         
@@ -345,7 +345,7 @@ var healthPot = function () {
         gameState.user.hp = gameState.user.hp + potionDrink;
 
         logPotion.textContent = gameState.user.name + " uses a health potion. You have " + healthPotCount + " potion left.";
-        combatLog.append(logPotion);
+        combatLog.prepend(logPotion);
     
         healthPotCount--;
     
@@ -354,7 +354,7 @@ var healthPot = function () {
     } else {
 
         logPotion.textContent = gameState.user.name + " is out of potions.";
-        combatLog.append(logPotion);
+        combatLog.prepend(logPotion);
     }
 
     
@@ -419,19 +419,19 @@ var monsterAttack = function () {
                     if (monsterHit < gameState.user.armor) {
 
                         logMonsterAttack.textContent = gameState.enemy.name + " failed to strike you!";
-                        combatLog.append(logMonsterAttack);
+                        combatLog.prepend(logMonsterAttack);
 
                     } else {
 
                         damageDiceRoll(gameState.enemy.attacks[1].damageDice);
 
                         logMonsterAttack.textContent = gameState.enemy.name + " hits you with " + gameState.enemy.attacks[1].name + " dealing " + damageDealt + " damage!";
-                        combatLog.append(logMonsterAttack);
+                        combatLog.prepend(logMonsterAttack);
 
                         gameState.user.hp = gameState.user.hp - damageDealt;
 
                         logUserHpAfterMonsterHit.textContent = gameState.user.name + " has " + gameState.user.hp + " health remaining!";
-                        combatLog.append(logUserHpAfterMonsterHit);
+                        combatLog.prepend(logUserHpAfterMonsterHit);
 
                         endGame();
                     }
@@ -443,20 +443,20 @@ var monsterAttack = function () {
                 if (monsterHit< gameState.user.armor) {
 
                     logMonsterAttack.textContent = gameState.enemy.name + " failed to strike you!";
-                    combatLog.append(logMonsterAttack);
+                    combatLog.prepend(logMonsterAttack);
 
                 } else if (monsterHit >= gameState.user.armor) {
 
                     damageDiceRoll(gameState.enemy.attacks[i].damageDice);
 
                     logMonsterAttack.textContent = gameState.enemy.name + " hits you with " + gameState.enemy.attacks[i].name + " dealing " + damageDealt + " damage!";
-                    combatLog.append(logMonsterAttack);
+                    combatLog.prepend(logMonsterAttack);
 
                     gameState.user.hp = gameState.user.hp - damageDealt;
 
 
                     logUserHpAfterMonsterHit.textContent = gameState.user.name + " has " + gameState.user.hp + " health remaining!";
-                    combatLog.append(logUserHpAfterMonsterHit);
+                    combatLog.prepend(logUserHpAfterMonsterHit);
                     endGame();
                 }
                 
@@ -467,19 +467,19 @@ var monsterAttack = function () {
             if (monsterHit < gameState.user.armor) {
 
                 logMonsterAttack.textContent = gameState.enemy.name + " failed to strike you!";
-                combatLog.append(logMonsterAttack);
+                combatLog.prepend(logMonsterAttack);
 
             } else if (monsterHit >= gameState.user.armor){
 
                 damageDiceRoll(gameState.enemy.attacks[0].damageDice);
 
                 logMonsterAttack.textContent = gameState.enemy.name + " hits you with " + gameState.enemy.attacks[0].name + " dealing " + damageDealt + " damage!";
-                combatLog.append(logMonsterAttack);
+                combatLog.prepend(logMonsterAttack);
 
                 gameState.user.hp = gameState.user.hp - damageDealt;
 
                 logUserHpAfterMonsterHit.textContent = gameState.user.name + " has " + gameState.user.hp + " health remaining!";
-                combatLog.append(logUserHpAfterMonsterHit);
+                combatLog.prepend(logUserHpAfterMonsterHit);
                 
                 endGame();
             }
@@ -506,11 +506,11 @@ var endGame = function() {
 
     if (gameState.enemy.hp <= 0) {
         logEndGame.textContent = gameState.enemy.name + " has been slain!";
-        combatLog.append(logEndGame);
+        combatLog.prepend(logEndGame);
         
         gameState.user.xp = gameState.user.xp + gameState.enemy.xp;
         logExp.textContent = gameState.user.name + " earned " + gameState.enemy.xp + "xp from killing " + gameState.enemy.name + "!";
-        combatLog.append(logExp);
+        combatLog.prepend(logExp);
         
         monsterRandomizer(gameState.user.level);
         
