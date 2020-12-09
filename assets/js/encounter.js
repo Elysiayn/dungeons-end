@@ -254,7 +254,7 @@ var hitDiceRoll = function() {
         gameState.enemy.hp = gameState.enemy.hp - damageDealt;
 
         var combatUpdate = document.createElement("p");
-        combatUpdate.textContent = gameState.enemy.name + " now has " + gameState.enemy.hp + " hp remaining.";
+        combatUpdate.textContent = gameState.enemy.name + " now has " + gameState.enemy.hp + " HP remaining.";
         combatLog.prepend(combatUpdate);
 
     }
@@ -332,7 +332,7 @@ var healthPot = function () {
         
         gameState.user.hp = gameState.user.hp + potionDrink;
 
-        logPotion.textContent = gameState.user.name + " uses a health potion to restore 10hp! " + gameState.user.name + " has " + healthPotCount + " potions left.";
+        logPotion.textContent = gameState.user.name + " uses a health potion to restore 10HP! " + gameState.user.name + " has " + healthPotCount + " potions left.";
         combatLog.prepend(logPotion);
 
         healthPotCount--;
@@ -356,8 +356,6 @@ var healthPot = function () {
         logPotion.textContent = gameState.user.name + " is out of potions.";
         combatLog.prepend(logPotion);
     }
-
-    
 }
 
 // this will grab an image of the monster
@@ -380,7 +378,6 @@ var monsterImageAPI = function(monsterName) {
             monsterType.textContent = data.type.toUpperCase();
             monsterType.classList.add("card-content");
             
-           
             monsterImage.append(monsterType);
             
         })
@@ -400,17 +397,14 @@ var monsterStrike =  function() {
 // this is the function to determine if the monster hit and if so what to do about it
 
 var monsterAttack = function () {
-    
-        
-     
+
         //checks if the monster has the mulitattack feature
 
         var logMonsterAttack = document.createElement("p");
         var logUserHpAfterMonsterHit = document.createElement("p");
 
         if (gameState.enemy.attacks[0].name === "Multiattack"){
-          
-           
+
             
             // this will run if the monster has a multiattack feature but only one basic attack. Allowing it to strike twice. the monsterstike function being inside the for loop forces it to have to check to see if it hits with each attack
             if (gameState.enemy.attacks.length < 3 ) {
@@ -498,7 +492,6 @@ $(document).ready(function(){
     $('.modal').modal();
   })
 
-
 var logEndGame = document.createElement("p");
 var logExp = document.createElement("p");
   // function used to check if the user or enemies' heatlh falls below zero
@@ -509,7 +502,7 @@ var endGame = function() {
         combatLog.prepend(logEndGame);
         
         gameState.user.xp = gameState.user.xp + gameState.enemy.xp;
-        logExp.textContent = gameState.user.name + " earned " + gameState.enemy.xp + "xp from killing " + gameState.enemy.name + "!";
+        logExp.textContent = gameState.user.name + " earned " + gameState.enemy.xp + " XP from killing " + gameState.enemy.name + "!";
         combatLog.prepend(logExp);
         
         monsterRandomizer(gameState.user.level);
@@ -578,5 +571,3 @@ imageCard.append(playerRace);
  document.getElementById("dodge-button").addEventListener("click", playerDodge);
  document.getElementById("run-button").addEventListener("click", playerRun);
  document.getElementById("demo-modal").addEventListener("click", healthPot);
- 
-

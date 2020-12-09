@@ -67,7 +67,7 @@ var grabName = function() {
         gameState.user.name = name
     
         modalParaEl.textContent = "Be wary, " + gameState.user.name + "." + " As you fight your way to the Dungeon's End, you will face ferocious monsters. While each monster may vary in power, remain vigilant, as any of these foes could be your demise.";
-     }
+    }
 }
 //Modal End
 
@@ -107,7 +107,3 @@ document.addEventListener("click", generateFighterCard);
 var saveUser = function () {
     localStorage.setItem("user", JSON.stringify(gameState.user))
 }
-
-
-
-
