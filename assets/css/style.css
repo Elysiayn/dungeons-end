@@ -1,0 +1,239 @@
+nav {
+    background-color: darkred;
+    font-family: "Fondamento", cursive;
+}
+
+/* Character Selection Cards Styles Begin*/
+.card {
+    background:darkred;
+    border: 3px solid black;
+    box-shadow: 0 10px 20px 0 darkgrey; 
+    padding: 0.25rem;
+    margin: 1.5rem 1rem;
+    border-radius: 10px;
+    justify-content: center;
+    font-family: "Fondamento", cursive;
+    width: 100%;
+}
+
+.card-content {
+    align-content: center;
+    text-align: center;
+    color: white;
+}
+
+.card-action {
+    background: rgb(37, 37, 37);
+    color: white;
+    text-align: center;
+}
+
+.card-title {
+    border-bottom: 1px solid white;
+}
+
+.center {
+    display:grid;
+    margin-left:auto;
+    margin-right:auto;
+    justify-content: center;
+    align-content:center;
+}
+
+.flexCenter {
+    display:flex;
+    margin-left:auto;
+    margin-right:auto;
+    justify-content: center;
+    align-content:center;
+}
+
+.container {
+    display:grid;
+    grid-gap: 50px;
+    flex: 1 0 auto;
+}
+
+.full-width {
+    width:100%;
+}
+
+.btn,
+.btn-large {
+    border: 1px solid black;
+    box-shadow: 0 5px 10px 0 rgb(37, 37, 37); 
+    font-family: "Fondamento", cursive;
+    background: rgb(180, 154, 2);
+}
+
+.style {
+    border: 5px ridge rgb(180, 154, 2);
+}
+
+.btn:hover,
+.btn-large:hover,
+.btn:focus {
+    background: rgb(37, 37, 37) !important;
+}
+/* Character Selection Card Styles End */
+
+.input-form {
+    border: 10px ridge rgb(180, 154, 2);
+    box-shadow: 0 5px 10px 0 rgb(37, 37, 37); 
+    font-family: "Fondamento", cursive;
+}
+/* Enter Character Name End */
+
+.modalStyle {
+    font-family: "Fondamento", cursive;
+    border: 10px ridge darkred;
+    box-shadow: 0 5px 10px 0 rgb(37, 37, 37);
+    font-weight: bolder;
+    font-size: large;
+}
+
+h4 {
+    border-bottom: 5px double rgb(37, 37, 37);
+    font-weight: bolder;
+}
+/* Modal Styling End */
+
+.banner {
+    font-size: 30px;
+    text-align: center;
+    font-family: "Berkshire Swash";
+}
+
+/* Background Picture */
+div#header-background{
+    position: fixed;
+    max-height: 4em;
+    z-index: -1;
+    border-radius: 10%;
+    right:0%;   
+}
+
+
+
+h1#header-text{ 
+    position: relative;
+    top: 0;
+    text-align: center;
+    font-size: 3em;
+    font-family: "berkshire swash";
+    font-weight: bold;
+    color:rgb(180, 154, 2);
+       text-shadow:
+       4px 4px 1px #300000,
+       4px 6px 1px #400000,
+       4px 8px 1px #500000,
+       4px 10px 1px #600000,
+       4px 12px 1px #700000,
+       4px 14px 1px #800000,
+       4px 16px 1px #900000,
+       4px 18px 1px #A00000,
+       4px 20px 1px #B00000,
+       4px 22px 1px #C00000,
+       4px 24px 1px #D00000,
+       4px 26px 1px #E00000,
+       4px 28px 1px #F00000,
+       4px 30px 1px #FA0000,
+       4px 32px 1px #FB0000,
+       4px 34px 1px #FC0000,
+       4px 36px 1px #FD0000,
+       4px 38px 1px #FE0000,
+       4px 40px 2px #FF0000;
+       padding-bottom:20px
+}
+
+/* Footer Style */
+.page-footer,
+.footer-copyright {
+    background-color: darkred;
+    font-family: "Fondamento", cursive;
+    flex-shrink:0;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+
+/* Modal on Encounter page */
+.centerp {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+}
+
+.modal p{
+    font-family: "fondamento";
+    text-align: center;
+    font-size: 25px;
+    
+}
+
+.modal h4 {
+    font-family: "fondamento";
+    text-align: center;
+}
+
+/* Combat Log Styles */
+.combatLog {
+    margin: .75rem auto auto auto;
+    padding:0.25rem;
+    height:auto;
+}
+
+.card-title.log-title {
+    background:white;
+    color:darkred;
+    margin: 1rem;
+    border: 5px ridge rgb(180, 154, 2);
+    padding:1rem;
+    font-weight:900;
+    font-size:250% ;
+    text-decoration: double underline black;
+}
+
+.log {
+    border: 5px ridge rgb(180,154,2);
+    overflow-y: scroll;
+    height: 250px;
+    width: auto;
+    background:white;
+    color: darkred;
+    font-weight: bolder;
+    line-height: 2;
+}
+
+/* VS Box Styles*/
+.vs {
+    border: 5px ridge rgb(180,154,2);
+    width: 100%;
+    content: auto;
+    margin: 1rem;
+}
+
+/* High Score Log Styles */
+.scoreLog {
+    margin: .75rem auto auto auto;
+    height:auto;
+    width: 100%;
+} 
+
+.score {
+    border: 5px ridge rgb(180,154,2);
+    overflow-y: scroll;
+    background:white;
+    color: darkred;
+    font-weight: bolder;
+    min-width: 100%;
+    min-height: 300px;
+    text-decoration:underline;
+    line-height: 3;
+    word-spacing: 30px;
+}
