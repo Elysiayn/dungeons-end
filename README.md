@@ -12,6 +12,4 @@ https://elysiayn.github.io/dungeons-end/
 ## Github
 https://github.com/Elysiayn/dungeons-end
 
-## Image
-![An example of the Scheduler in action](./Assets/Scheduler_Preview/)
 
