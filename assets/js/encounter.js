@@ -100,7 +100,7 @@ if (!currentScores) {
 } else {
     currentScores = JSON.parse(currentScores)
 }
-console.log(gameState.user.name)
+
 var imageCard = document.getElementById("player-image");
 
 imageCard.innerHTML = "<img class='style' style='width:100%;height:auto;' src=" + raceObj.imgUrl + "\>"
@@ -142,7 +142,7 @@ var monsterSummoner = function (monster) {
             var cleanUrl = data.name.split(" ").join("-")
             
             gameState.enemy.name = data.name;
-            console.log("Line 135", data);
+           
             monsterImageAPI(cleanUrl);
 
             
@@ -156,10 +156,10 @@ var monsterSummoner = function (monster) {
             
             // duergar has an enlarge ability for it's first move causing it not fall in line with our current code. This if statment causes it to summon a new monster to replace it
             if (data.index === "duergar") {
-                var duergarCombatInfo = document.createElement("ul");
+                var duergarCombatInfo = document.createElement("p");
                 duergarCombatInfo.textContent = "Duergar ran away!"
-                combatLog.append(duergarCombatInfo);
-                console.log("line 182", "duergar ran away")
+                combatLog.prepend(duergarCombatInfo);
+               
                 monsterRandomizer(gameState.user.level);
             }
 
@@ -240,26 +240,23 @@ var hitDiceRoll = function() {
     
 
     if (toHit < 6) {
-        var userFailedAttackInfo = document.createElement("ul");
+        var userFailedAttackInfo = document.createElement("p");
         userFailedAttackInfo.textContent = "You've failed to strike the " + gameState.enemy.name + "."
-        combatLog.appendChild(userFailedAttackInfo);
-        console.log("line 272", "You've failed to strike the " + gameState.enemy.name + ".");
+        combatLog.prepend(userFailedAttackInfo);
 
     } else if (toHit >= 6) {
-        var userAttackInfo = document.createElement("ul");
+        var userAttackInfo = document.createElement("p");
         userAttackInfo.textContent = "You've dealt the " + gameState.enemy.name + " a mighty blow!"
-        combatLog.appendChild(userAttackInfo);
-        console.log("line 277", "You've dealt the " + gameState.enemy.name + " a mighty blow!")
+        combatLog.prepend(userAttackInfo);
 
         damageDiceRoll(gameState.user.attack);
         
         gameState.enemy.hp = gameState.enemy.hp - damageDealt;
 
-        var combatUpdate = document.createElement("ul");
-        combatUpdate.textContent = gameState.enemy.name + " now has " + gameState.enemy.hp + " hp remaining.";
-        combatLog.append(combatUpdate);
+        var combatUpdate = document.createElement("p");
+        combatUpdate.textContent = gameState.enemy.name + " now has " + gameState.enemy.hp + " HP remaining.";
+        combatLog.prepend(combatUpdate);
 
-        console.log("Line 287", gameState.enemy.name + " now has " + gameState.enemy.hp + " hp remaining.")
     }
     
     endGame();
@@ -278,11 +275,10 @@ var hitDiceRoll = function() {
 var playerDodge = function (event) {
 
     // Logs Dodge action by Player
-    var playerCombatDodge = document.createElement("ul");
+    var playerCombatDodge = document.createElement("p");
         playerCombatDodge.textContent = "You took the dodge action!";
-        combatLog.append(playerCombatDodge);
+        combatLog.prepend(playerCombatDodge);
 
-    console.log("You took the dodge action");
     gameState.user.armor = gameState.user.armor + 5;
     
 
@@ -299,30 +295,25 @@ var playerDodge = function (event) {
 var playerRun = function (event) {
 
     // Logs Run action by Player
-    var playerCombatRun = document.createElement("ul");
+    var playerCombatRun = document.createElement("p");
     playerCombatRun.textContent = gameState.user.name + " attempts to run away";
-    combatLog.append(playerCombatRun);
-
-    console.log(gameState.user.name + " attempts to run away");
+    combatLog.prepend(playerCombatRun);
     
     // calculates a number to determine if the user runs away they more they run the lower runOdds goes decreasing their chances of getting away. This should allow the users to run away from fight but not be able to run away from every tough monster holding out for weaker ones.
     // if they fail to run the monster attacks if they succeed it summons a new monster
     runChance = Math.ceil(Math.random() * (10 - 1) +  runOdds)
-    console.log(runOdds)
-    console.log(runChance)
+
     if (runChance < 10) {
     
     playerCombatRun.textContent = gameState.user.name + " failed to run away from " + gameState.enemy.name + ".";
-    combatLog.append(playerCombatRun);
+    combatLog.prepend(playerCombatRun);
     
-    console.log(gameState.user.name + " failed to run away from " + gameState.enemy.name + ".");
     monsterAttack();
     } else {
 
         playerCombatRun.textContent = gameState.user.name + " ran away from " +gameState.enemy.name + "." + " " + gameState.user.name + "'s ability to run away has diminshed slightly!";
-        combatLog.append(playerCombatRun);
+        combatLog.prepend(playerCombatRun);
 
-        console.log(gameState.user.name + " ran away from " +gameState.enemy.name + ".");
         monsterRandomizer(gameState.user.level);
         runOdds --;
     }
@@ -333,7 +324,7 @@ var playerRun = function (event) {
 
 var healthPot = function () {
 
-    var logPotion = document.createElement("ul");
+    var logPotion = document.createElement("p");
     var potionDrink = 10;
 
     // runs if the user has more then one health potion remaining
@@ -341,11 +332,9 @@ var healthPot = function () {
         
         gameState.user.hp = gameState.user.hp + potionDrink;
 
-        logPotion.textContent = gameState.user.name + " uses a health potion. You have " + healthPotCount + " potions left.";
-        combatLog.append(logPotion);
+        logPotion.textContent = gameState.user.name + " uses a health potion to restore 10HP! " + gameState.user.name + " has " + healthPotCount + " potions left.";
+        combatLog.prepend(logPotion);
 
-        console.log(gameState.user.name + " uses a health potion. You have " + healthPotCount + " potions left.")
-        console.log(potionDrink)
         healthPotCount--;
         
         monsterAttack();
@@ -355,11 +344,9 @@ var healthPot = function () {
         
         gameState.user.hp = gameState.user.hp + potionDrink;
 
-        console.log(potionDrink)
-
         logPotion.textContent = gameState.user.name + " uses a health potion. You have " + healthPotCount + " potion left.";
-        combatLog.append(logPotion);
-        console.log(gameState.user.name + " uses a health potion. You have " + healthPotCount + " potion left.")
+        combatLog.prepend(logPotion);
+    
         healthPotCount--;
     
         monsterAttack();
@@ -367,11 +354,8 @@ var healthPot = function () {
     } else {
 
         logPotion.textContent = gameState.user.name + " is out of potions.";
-        combatLog.append(logPotion);
-        console.log(gameState.user.name + " is out of potions.")
+        combatLog.prepend(logPotion);
     }
-
-    
 }
 
 // this will grab an image of the monster
@@ -381,9 +365,8 @@ var monsterImageAPI = function(monsterName) {
     .then(function(response) {
         
         response.json().then(function(data) {
-            console.log("HIIIIIIIIIIIII", data);
+
             var cleanMonster = monsterName.split("-").join("_").toLowerCase();
-            console.log(monsters[cleanMonster]);
 
             var monsterImage = document.getElementById("monster-image");
             monsterImage.innerHTML = "<img class='style' style='width:100%;height:auto;' src=" + monsters[cleanMonster] + ">";
@@ -391,11 +374,10 @@ var monsterImageAPI = function(monsterName) {
             monsterTitle.textContent = data.name.toUpperCase();
             monsterTitle.classList.add("card-title");
             monsterImage.append(monsterTitle);
-            var monsterType = document.createElement("ul");
+            var monsterType = document.createElement("p");
             monsterType.textContent = data.type.toUpperCase();
             monsterType.classList.add("card-content");
             
-           
             monsterImage.append(monsterType);
             
         })
@@ -415,16 +397,14 @@ var monsterStrike =  function() {
 // this is the function to determine if the monster hit and if so what to do about it
 
 var monsterAttack = function () {
-    
-        
-     
+
         //checks if the monster has the mulitattack feature
 
-        var logMonsterAttack = document.createElement("ul");
+        var logMonsterAttack = document.createElement("p");
+        var logUserHpAfterMonsterHit = document.createElement("p");
 
         if (gameState.enemy.attacks[0].name === "Multiattack"){
-          
-           
+
             
             // this will run if the monster has a multiattack feature but only one basic attack. Allowing it to strike twice. the monsterstike function being inside the for loop forces it to have to check to see if it hits with each attack
             if (gameState.enemy.attacks.length < 3 ) {
@@ -433,24 +413,20 @@ var monsterAttack = function () {
                     if (monsterHit < gameState.user.armor) {
 
                         logMonsterAttack.textContent = gameState.enemy.name + " failed to strike you!";
-                        combatLog.append(logMonsterAttack);
-                        console.log(gameState.enemy.name + " failed to strike you!");
+                        combatLog.prepend(logMonsterAttack);
 
-                    } else if (monsterHit>= gameState.user.armor){
+                    } else {
 
                         damageDiceRoll(gameState.enemy.attacks[1].damageDice);
 
                         logMonsterAttack.textContent = gameState.enemy.name + " hits you with " + gameState.enemy.attacks[1].name + " dealing " + damageDealt + " damage!";
-                        combatLog.append(logMonsterAttack);
-                        console.log(gameState.enemy.name + " hits you with " + gameState.enemy.attacks[1].name + " dealing " + damageDealt + " damage!");
-                        console.log(logMonsterAttack)
+                        combatLog.prepend(logMonsterAttack);
 
                         gameState.user.hp = gameState.user.hp - damageDealt;
 
-                        logMonsterAttack.textContent = gameState.user.name + " has " + gameState.user.hp + " health remaining!";
-                        combatLog.append(logMonsterAttack);
-                        console.log(gameState.user.name + " has " + gameState.user.hp + " health remaining!")
-                        console.log(logMonsterAttack)
+                        logUserHpAfterMonsterHit.textContent = gameState.user.name + " has " + gameState.user.hp + " health remaining!";
+                        combatLog.prepend(logUserHpAfterMonsterHit);
+
                         endGame();
                     }
                 }
@@ -461,23 +437,20 @@ var monsterAttack = function () {
                 if (monsterHit< gameState.user.armor) {
 
                     logMonsterAttack.textContent = gameState.enemy.name + " failed to strike you!";
-                    combatLog.append(logMonsterAttack);
-                    console.log(gameState.enemy.name + " failed to strike you!")
-                    console.log(logMonsterAttack)
+                    combatLog.prepend(logMonsterAttack);
 
                 } else if (monsterHit >= gameState.user.armor) {
 
                     damageDiceRoll(gameState.enemy.attacks[i].damageDice);
 
                     logMonsterAttack.textContent = gameState.enemy.name + " hits you with " + gameState.enemy.attacks[i].name + " dealing " + damageDealt + " damage!";
-                    combatLog.append(logMonsterAttack);
-                    console.log(gameState.enemy.name + " hits you with " + gameState.enemy.attacks[i].name + " dealing " + damageDealt + " damage!");
-                    console.log(logMonsterAttack)
+                    combatLog.prepend(logMonsterAttack);
+
                     gameState.user.hp = gameState.user.hp - damageDealt;
 
-                    logMonsterAttack.textContent = gameState.user.name + " has " + gameState.user.hp + " health remaining!";
-                    combatLog.append(logMonsterAttack);
-                    console.log(gameState.user.name + " has " + gameState.user.hp + " health remaining!")
+
+                    logUserHpAfterMonsterHit.textContent = gameState.user.name + " has " + gameState.user.hp + " health remaining!";
+                    combatLog.prepend(logUserHpAfterMonsterHit);
                     endGame();
                 }
                 
@@ -488,23 +461,20 @@ var monsterAttack = function () {
             if (monsterHit < gameState.user.armor) {
 
                 logMonsterAttack.textContent = gameState.enemy.name + " failed to strike you!";
-                combatLog.append(logMonsterAttack);
-                console.log(gameState.enemy.name + " failed to strike you!")
+                combatLog.prepend(logMonsterAttack);
 
             } else if (monsterHit >= gameState.user.armor){
 
                 damageDiceRoll(gameState.enemy.attacks[0].damageDice);
 
                 logMonsterAttack.textContent = gameState.enemy.name + " hits you with " + gameState.enemy.attacks[0].name + " dealing " + damageDealt + " damage!";
-                combatLog.append(logMonsterAttack);
-                console.log(gameState.enemy.name + " hits you with " + gameState.enemy.attacks[0].name + " dealing " + damageDealt + " damage!");
+                combatLog.prepend(logMonsterAttack);
 
                 gameState.user.hp = gameState.user.hp - damageDealt;
 
-                logMonsterAttack.textContent = gameState.user.name + " has " + gameState.user.hp + " health remaining!";
-                combatLog.append(logMonsterAttack);
-                console.log(gameState.user.name + " has " + gameState.user.hp + " health remaining!");
-                console.log(logMonsterAttack)
+                logUserHpAfterMonsterHit.textContent = gameState.user.name + " has " + gameState.user.hp + " health remaining!";
+                combatLog.prepend(logUserHpAfterMonsterHit);
+                
                 endGame();
             }
         }
@@ -517,20 +487,24 @@ document.addEventListener('DOMContentLoaded', function() {
     var instances = M.Sidenav.init(elems, {});
   });
 
-// Health Portion Modal //
+// Health Potion Modal //
 $(document).ready(function(){
     $('.modal').modal();
   })
-  
 
-
+var logEndGame = document.createElement("p");
+var logExp = document.createElement("p");
   // function used to check if the user or enemies' heatlh falls below zero
 var endGame = function() {
 
     if (gameState.enemy.hp <= 0) {
-        console.log("The monster has been slain");
+        logEndGame.textContent = gameState.enemy.name + " has been slain!";
+        combatLog.prepend(logEndGame);
+        
         gameState.user.xp = gameState.user.xp + gameState.enemy.xp;
-        console.log (gameState.user.xp);
+        logExp.textContent = gameState.user.name + " earned " + gameState.enemy.xp + " XP from killing " + gameState.enemy.name + "!";
+        combatLog.prepend(logExp);
+        
         monsterRandomizer(gameState.user.level);
         
     } else if(gameState.user.hp <= 0) {
@@ -597,5 +571,3 @@ imageCard.append(playerRace);
  document.getElementById("dodge-button").addEventListener("click", playerDodge);
  document.getElementById("run-button").addEventListener("click", playerRun);
  document.getElementById("demo-modal").addEventListener("click", healthPot);
- 
-
