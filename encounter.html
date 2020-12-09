@@ -12,16 +12,13 @@
         <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon-16x16.png">
         <title>Encounter</title>
     </head>
-
     <body>
-
 <!-- Banner & Background Image -->
     <header>
         <div class="container">
         <div class="responsive-img" id="header-background"><img src="./assets/images/dd7.jpg"></div>  
         </div>
     </header>
-
     <!-- Nav Bar -->
     <nav>
         <div class="nav-wrapper">
@@ -38,11 +35,9 @@
                 <li><a href="highscore.html">High Score</a></li>
             </ul>
     </nav>
-
     <!-- Fighter/Enemy/Log Display -->
     <div class="container">
         <div class="row">
-
             <!-- Combat Log -->
             <div class="col s12 m12 l12 xl4 combatLog">
                 <div class="card scroll combatLog" id="log">
@@ -51,7 +46,6 @@
                     </div>
                 </div>
             </div>
-
             <!-- Player Image Card -->
             <div class="col s12 m4 l4 xl3 center">
                 <div class="card" id="playerImage">
@@ -62,14 +56,12 @@
                     </div>
                 </div>
             </div> 
-            
-
+            <!-- VS. Badge -->
             <div class="col s12 m4 l3 xl2 ">
                 <div class="card vs">
                     <h1 class="center">VS.</h1>
                 </div>
             </div>
-
             <!-- Enemy Image Card -->
             <div class="col s12 m4 l4 xl3 center">
                 <div class="card" id="enemyImage">
@@ -81,7 +73,6 @@
                 </div>
             </div>
         </div>
-
         <!-- Fight Box -->
         <div class="row">
             <div class="fight-button">
@@ -94,7 +85,6 @@
                 <div class="col s12 m6 l3">
                     <a class="waves-effect waves-light btn-large"id="dodge-button"><i class="material-icons right">block</i>Dodge</a>
                 </div>
-
                 <div class="col s12 m6 l3">
                     <!-- Modal Trigger -->
                     <a class="waves-effect waves-light btn-large modal-trigger" href="#demo-modal"><i class="material-icons right">local_hospital</i>Health Potions</a> 
@@ -106,35 +96,34 @@
                             <p>You are now able to increase your health to continue the game!</p>
                         </div>
                         <div class="modal-footer">
-                            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Continue</a>
+                            <a href="#!" class="modal-close btn">Continue</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
 <!-- Footer -->
 <footer class="page-footer full-width">
     <div class="container.footer">
         <div class="row">
-            <div class="col s12 l6">
-                <p> ❤️ Made with love by 
+            <div class="col s12 l4 left">
+                <a class="grey-text text-lighten-4 left" href="index.html">Home</a>
+                <br />
+                <a class="grey-text text-lighten-4 left" href="highscore.html">High Score</a>
+            </div>
+            <div class="col s12 l6 right">
+                <p class="right"> ❤️ Made with love by 
                     <a class="grey-text text-lighten-4" href="https://github.com/Clu-Codes">Clu-Codes</a>,
                     <a class="grey-text text-lighten-4" href="https://github.com/Elysiayn">Elysiayn</a>,
                     <a class="grey-text text-lighten-4" href="https://github.com/Nickhill2380">Nickhill2380</a> &
                     <a class="grey-text text-lighten-4" href="https://github.com/wdavonta">Wdavonta</a>.
                 </p>
             </div>
-            <div class="col s12 l4 right">
-                <a class="grey-text text-lighten-4 right" href="index.html">Home</a>
-                <br />
-                <a class="grey-text text-lighten-4 right" href="highscore.html">High Score</a>
-            </div>
         </div>
     </div>
 </footer>
-    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./assets/js/encounter.js"></script>
     </body>
