@@ -10,117 +10,99 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <link rel="stylesheet" href="./assets/css/style.css"/>
+        <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon-16x16.png">
         <title>Dungeon's End</title>
     </head>
-
     <body>
-    <!-- Banner -->
-    <!-- <div class= "banner">
-        <div class="col s12 m8 offset-m2 l6 offset-l3">
-            <div class="card-panel grey lighten-5 z-depth-1">
-                <div class="row valign-wrapper">
-                    <div class="col s2">
-                        <img src="./assets/images/dd3.jpg"   alt="dragons" class="round responsive-img">
-                    </div>
-                </div>
-                    <div class="col s10 center">
-                        <span class="black-text">
-                            Welcome To Dungeon's End
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
-    <header>
-        <div class="banner">
-            <div class="col s12">
-                <div class="responsive-img" id="header-background"><img src="./assets/images/dd3.jpg"></div>
-                <h1 id="header-text">Welcome To Dungeon's End</h1>
-            </div>
+    <!-- Banner & Background Image -->
+        <header>
+        <div class="container">
+            
+        <div class="responsive-img" id="header-background"><img src="./assets/images/dd3.jpg"></div>
+        <h1 id="header-text">Dungeon's End</h1>
         </div>
-    </header>
-
+        </header>
+        
     <!-- Nav Bar -->
     <nav>
         <div class="nav-wrapper">
             <a href="#!" class="brand-logo center"><img src="./assets/images/logo.png" width="95" height="auto"></a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">Menu</i></a>
             <ul class="right hide-on-med-and-down">
-                <li><a href="index.html">Home</a></li>
                 <li><a href="highscore.html">High Score</a></li>
             </ul>
         </div>
-        
+    
             <ul class="sidenav" id="mobile-demo">
-                <li><a href="index.html">Home</a></li>
                 <li><a href="highscore.html">High Score</a></li>
             </ul>
     </nav>
-    <br>
-    <br>
-    <br>
     <!-- Character Selection Pictures -->
     <div class="container center full-width">
         <div class="row">
             <!-- Image 1 -->
             <div class="col s12 m6 l4 xl3 center">
                 <div class="card" id="image1">
-                    <div class="card-content center contentLog">
-                        <img src="./assets/images/image1.jpg" class="style" style="width:200px;height:300px;" alt="Human Male Fighter">
+                    <div class="card-content center">
+                        <img src="./assets/images/image1.jpg" class="style center" style="width:200px;height:300px;" alt="Human Male Fighter">
                         <span class="card-title">Human Fighter</span>
-                        <p>FIGHTER 1 INFO</p>
+                        <p>Humans are the youngest of the common races, late to arrive on the world scene 
+                            and short-lived in comparison to dwarves, elves, and dragons. Humans were renowned for their diversity and ambition, and 
+                            although they lacked specialization, they could excel in many areas.</p>
                     </div>
                     <div class="card-action">
-                        <button class="btn" data-name="human" type="submit" name="action" id="fighter1">Select Fighter
+                        <button class="btn fighter-button" dataName="human" type="submit" name="action" id="fighter1">Select Fighter
                             <i class="material-icons left">colorize</i>
                         </button>
                     </div>
                 </div>
             </div>
-
             <!-- Image 2 -->
             <div class="col s12 m6 l4 xl3 center">
                 <div class="card" id="image2">
                     <div class="card-content center">
-                        <img src="./assets/images/image2.jpg" class="style" style="width:200px;height:300px;" alt="Orc Male Fighter">
+                        <img src="./assets/images/image2.jpg" class="style center" style="width:200px;height:300px;" alt="Orc Male Fighter">
                         <span class="card-title">Orc Fighter</span>
-                        <p>FIGHTER 2 INFO</p>
+                        <p>Savage and fearless, orc tribes are ever in search of elves, dwarves, and humans to destroy. Motivated by their 
+                            hatred of the civilized races of the world and their need to satisfy the demands of their deities, the orcs know 
+                            that if they fight well and bring glory to their tribe.</p>
                     </div>
                     <div class="card-action">
-                        <button class="btn" data-name="orc" type="submit" name="action" id="fighter2">Select Fighter
+                        <button class="btn fighter-button" dataName="orc" type="submit" name="action" id="fighter2">Select Fighter
                             <i class="material-icons left">colorize</i>
                         </button>
                     </div>
                 </div>
             </div>
-
             <!-- Image 3 -->
             <div class="col s12 m6 l4 xl3 center">
                 <div class="card" id="image3">
                     <div class="card-content center">
-                        <img src="./assets/images/image3.jpg" class="style"  style="width:200px;height:300px;" alt="Aasimar Female Fighter">
+                        <img src="./assets/images/image3.jpg" class="style center"  style="width:200px;height:300px;" alt="Aasimar Female Fighter">
                         <span class="card-title">Aasimar Fighter</span>
-                        <p>FIGHTER 3 INFO</p>
+                        <p>Aasimar are descended from humans power from Mount Celestia, divine realm of many lawful good deities. 
+                            Born to serve as champions of the gods, their births hailed as blessed events. They are known for their 
+                            luminous features that reveal their celestial heritage.</p>
                     </div>
                     <div class="card-action">
-                        <button class="btn" data-name="aasimar" type="submit" name="action" id="fighter3">Select Fighter
+                        <button class="btn fighter-button" dataName="aasimar" type="submit" name="action" id="fighter3">Select Fighter
                             <i class="material-icons left">colorize</i>
                         </button>
                     </div>
                 </div>
             </div>
-
             <!-- Image 4 -->
             <div class="col s12 m6 l4 xl3 center">
                 <div class="card" id="image4">
                     <div class="card-content center">
-                        <img src="./assets/images/image4.jpg" class="style"  style="width:200px;height:300px;" alt="Elf Female Fighter">
+                        <img src="./assets/images/image4.jpg" class="style center"  style="width:200px;height:300px;" alt="Elf Female Fighter">
                         <span class="card-title">Elf Fighter</span>
-                        <p>FIGHTER 4 INFO</p>
+                        <p>Elves are a fearless and adaptable people due to their long life span and the magical prowess. Elves are known 
+                            to exude grace considered to be unparalleled among others belonging to different species. They strive to live in 
+                            harmony with nature and celebrate this connection.</p>
                     </div>
                     <div class="card-action">
-                        <button class="btn" data-name="elf" type="submit" name="action" id="fighter4">Select Fighter
+                        <button class="btn fighter-button" dataName="elf" type="submit" name="action" id="fighter4">Select Fighter
                             <i class="material-icons left">colorize</i>
                         </button>
                     </div>
@@ -128,13 +110,9 @@
             </div>
         </div>
     </div>
-    <!-- End of Character Selection Pictures -->
-    <br>
-    <br>
-    <br>
     <!-- Input Field for Character Name -->
-    <div class="container">
-        <div class="row">
+    <div class="container full-width">
+        <div class="row center">
             <div class="col s8 l12 center">
                 <div class="input-form card-panel">
                     <input class="input-form" type="text" id="player-name" placeholder="Enter Character Name!"/>
@@ -145,7 +123,7 @@
                 <!-- Modal Structure -->
                 <div id="modal1" class="modal modalStyle">
                     <div class="modal-content">
-                        <img src="./assets/images/image6.jpg" style="width:450px;height:300px;" alt="Old Sagely Wizard">
+                        <img src="./assets/images/image5.jpg" class="style" style="width:90%; height:auto;" alt="Old Sagely Wizard">
                         <div class="">
                             <h4>Welcome to Dungeon's End!</h4>
                             <p class="modal-text"></p>
@@ -158,23 +136,20 @@
             </div>  
         </div>
     </div>
-
     <!-- Footer -->
     <footer class="page-footer">
         <div class="container.footer">
             <div class="row">
-                <div class="col s12 l6">
-                    <p> ❤️ Made with love by 
+                <div class="col s12 l4 left">
+                    <a class="grey-text text-lighten-4 left" href="highscore.html">High Score</a>
+                </div>
+                <div class="col s12 l6 right">
+                    <p class="right"> ❤️ Made with love by 
                         <a class="grey-text text-lighten-4" href="https://github.com/Clu-Codes">Clu-Codes</a>,
                         <a class="grey-text text-lighten-4" href="https://github.com/Elysiayn">Elysiayn</a>,
                         <a class="grey-text text-lighten-4" href="https://github.com/Nickhill2380">Nickhill2380</a> &
                         <a class="grey-text text-lighten-4" href="https://github.com/wdavonta">Wdavonta</a>.
                     </p>
-                </div>
-                <div class="col s12 l4 right">
-                    <a class="grey-text text-lighten-4 right" href="index.html">Home</a>
-                    <br />
-                    <a class="grey-text text-lighten-4 right" href="highscore.html">High Score</a>
                 </div>
             </div>
         </div>
