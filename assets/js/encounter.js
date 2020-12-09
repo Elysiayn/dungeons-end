@@ -300,7 +300,7 @@ var playerRun = function (event) {
 
     // Logs Run action by Player
     var playerCombatRun = document.createElement("ul");
-    playerCombatDodge.textContent = gameState.user.name + " attempts to run away";
+    playerCombatRun.textContent = gameState.user.name + " attempts to run away";
     combatLog.append(playerCombatRun);
 
     console.log(gameState.user.name + " attempts to run away");
@@ -312,14 +312,14 @@ var playerRun = function (event) {
     console.log(runChance)
     if (runChance < 10) {
     
-    playerCombatDodge.textContent = gameState.user.name + " failed to run away from " + gameState.enemy.name + ".";
+    playerCombatRun.textContent = gameState.user.name + " failed to run away from " + gameState.enemy.name + ".";
     combatLog.append(playerCombatRun);
     
     console.log(gameState.user.name + " failed to run away from " + gameState.enemy.name + ".");
     monsterAttack();
     } else {
 
-        playerCombatDodge.textContent = gameState.user.name + " ran away from " +gameState.enemy.name + ".";
+        playerCombatRun.textContent = gameState.user.name + " ran away from " +gameState.enemy.name + "." + " " + gameState.user.name + "'s ability to run away has diminshed slightly!";
         combatLog.append(playerCombatRun);
 
         console.log(gameState.user.name + " ran away from " +gameState.enemy.name + ".");
