@@ -156,7 +156,7 @@ var monsterSummoner = function (monster) {
             
             // duergar has an enlarge ability for it's first move causing it not fall in line with our current code. This if statment causes it to summon a new monster to replace it
             if (data.index === "duergar") {
-                var duergarCombatInfo = document.createElement("p");
+                var duergarCombatInfo = document.createElement("ul");
                 duergarCombatInfo.textContent = "Duergar ran away!"
                 combatLog.append(duergarCombatInfo);
                 console.log("line 182", "duergar ran away")
@@ -240,13 +240,13 @@ var hitDiceRoll = function() {
     
 
     if (toHit < 6) {
-        var userFailedAttackInfo = document.createElement("p");
+        var userFailedAttackInfo = document.createElement("ul");
         userFailedAttackInfo.textContent = "You've failed to strike the " + gameState.enemy.name + "."
         combatLog.appendChild(userFailedAttackInfo);
         console.log("line 272", "You've failed to strike the " + gameState.enemy.name + ".");
 
     } else if (toHit >= 6) {
-        var userAttackInfo = document.createElement("p");
+        var userAttackInfo = document.createElement("ul");
         userAttackInfo.textContent = "You've dealt the " + gameState.enemy.name + " a mighty blow!"
         combatLog.appendChild(userAttackInfo);
         console.log("line 277", "You've dealt the " + gameState.enemy.name + " a mighty blow!")
@@ -255,7 +255,7 @@ var hitDiceRoll = function() {
         
         gameState.enemy.hp = gameState.enemy.hp - damageDealt;
 
-        var combatUpdate = document.createElement("p");
+        var combatUpdate = document.createElement("ul");
         combatUpdate.textContent = gameState.enemy.name + " now has " + gameState.enemy.hp + " hp remaining.";
         combatLog.append(combatUpdate);
 
@@ -278,7 +278,7 @@ var hitDiceRoll = function() {
 var playerDodge = function (event) {
 
     // Logs Dodge action by Player
-    var playerCombatDodge = document.createElement("p");
+    var playerCombatDodge = document.createElement("ul");
         playerCombatDodge.textContent = "You took the dodge action!";
         combatLog.append(playerCombatDodge);
 
@@ -299,7 +299,7 @@ var playerDodge = function (event) {
 var playerRun = function (event) {
 
     // Logs Run action by Player
-    var playerCombatRun = document.createElement("p");
+    var playerCombatRun = document.createElement("ul");
     playerCombatDodge.textContent = gameState.user.name + " attempts to run away";
     combatLog.append(playerCombatRun);
 
@@ -333,7 +333,7 @@ var playerRun = function (event) {
 
 var healthPot = function () {
 
-    var logPotion = document.createElement("p");
+    var logPotion = document.createElement("ul");
     var potionDrink = 10;
 
     // runs if the user has more then one health potion remaining
@@ -391,7 +391,7 @@ var monsterImageAPI = function(monsterName) {
             monsterTitle.textContent = data.name.toUpperCase();
             monsterTitle.classList.add("card-title");
             monsterImage.append(monsterTitle);
-            var monsterType = document.createElement("p");
+            var monsterType = document.createElement("ul");
             monsterType.textContent = data.type.toUpperCase();
             monsterType.classList.add("card-content");
             
@@ -420,7 +420,7 @@ var monsterAttack = function () {
      
         //checks if the monster has the mulitattack feature
 
-        var logMonsterAttack = document.createElement("p");
+        var logMonsterAttack = document.createElement("ul");
 
         if (gameState.enemy.attacks[0].name === "Multiattack"){
           
