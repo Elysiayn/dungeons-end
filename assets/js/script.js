@@ -85,7 +85,21 @@ var beginAdventure = function(event) {
 var startBtn = document.getElementById('start-button');
 startBtn.addEventListener("click", grabName);
 
+var playerName = document.getElementById('player-name')
+playerName.addEventListener("keydown", e =>{
+    if(e.keyCode === 13){
+        document.getElementById('start-button').click();
+    }
+});
 document.getElementById("continue").addEventListener("click", beginAdventure);
+
+
+var adventureEl = document.getElementById('modal1')
+adventureEl.addEventListener("keydown", e =>{
+    if(e.keyCode === 13){
+        document.getElementById('continue').click();
+    }
+});
 
 document.addEventListener("click", generateFighterCard);
 
