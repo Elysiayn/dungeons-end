@@ -443,12 +443,14 @@ var monsterAttack = function () {
                         logMonsterAttack.textContent = gameState.enemy.name + " hits you with " + gameState.enemy.attacks[1].name + " dealing " + damageDealt + " damage!";
                         combatLog.append(logMonsterAttack);
                         console.log(gameState.enemy.name + " hits you with " + gameState.enemy.attacks[1].name + " dealing " + damageDealt + " damage!");
+                        console.log(logMonsterAttack)
 
                         gameState.user.hp = gameState.user.hp - damageDealt;
 
                         logMonsterAttack.textContent = gameState.user.name + " has " + gameState.user.hp + " health remaining!";
                         combatLog.append(logMonsterAttack);
                         console.log(gameState.user.name + " has " + gameState.user.hp + " health remaining!")
+                        console.log(logMonsterAttack)
                         endGame();
                     }
                 }
@@ -461,6 +463,7 @@ var monsterAttack = function () {
                     logMonsterAttack.textContent = gameState.enemy.name + " failed to strike you!";
                     combatLog.append(logMonsterAttack);
                     console.log(gameState.enemy.name + " failed to strike you!")
+                    console.log(logMonsterAttack)
 
                 } else if (monsterHit >= gameState.user.armor) {
 
@@ -469,7 +472,7 @@ var monsterAttack = function () {
                     logMonsterAttack.textContent = gameState.enemy.name + " hits you with " + gameState.enemy.attacks[i].name + " dealing " + damageDealt + " damage!";
                     combatLog.append(logMonsterAttack);
                     console.log(gameState.enemy.name + " hits you with " + gameState.enemy.attacks[i].name + " dealing " + damageDealt + " damage!");
-
+                    console.log(logMonsterAttack)
                     gameState.user.hp = gameState.user.hp - damageDealt;
 
                     logMonsterAttack.textContent = gameState.user.name + " has " + gameState.user.hp + " health remaining!";
@@ -501,6 +504,7 @@ var monsterAttack = function () {
                 logMonsterAttack.textContent = gameState.user.name + " has " + gameState.user.hp + " health remaining!";
                 combatLog.append(logMonsterAttack);
                 console.log(gameState.user.name + " has " + gameState.user.hp + " health remaining!");
+                console.log(logMonsterAttack)
                 endGame();
             }
         }
