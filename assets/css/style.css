@@ -93,7 +93,7 @@ nav {
 }
 
 h4 {
-    border-bottom: 5px double rgb(37, 37, 37);
+    border-bottom: 5px double darkred;
     font-weight: bolder;
 }
 /* Modal Styling End */
