@@ -493,11 +493,11 @@ document.addEventListener('DOMContentLoaded', function() {
     var instances = M.Sidenav.init(elems, {});
   });
 
-// Health Portion Modal //
+// Health Potion Modal //
 $(document).ready(function(){
     $('.modal').modal();
   })
-  
+
 
 var logEndGame = document.createElement("p");
 var logExp = document.createElement("p");
