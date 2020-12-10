@@ -23,6 +23,9 @@ The pandemic has forced many of us into isolation, preventing many adventures fr
 ## Features
 * Interactive elements(buttons, input fields): Gives users elements to interact with, such as character selection, name input, and fight button options. 
 * Utilizes local storage to store user selections and inputs. 
+* Utilizing local storage to create competitiveness amongst players by ranking scores on high scores page. 
+* Dynamic playability via user option sets. 
+* Follows Dungeon's and Dragons 5e game mechanics(combat options), monster details for encounters pulled from Open 5e API and DnD 5e API. 
 
 ## Built With
 Languages Used: HTML, CSS & Materialize, & JavaScript
