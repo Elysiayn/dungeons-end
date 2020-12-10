@@ -28,7 +28,7 @@ var monsters = {
     brown_bear: "https://bit.ly/36JyvUT",
     bugbear: "https://bit.ly/2JPNrbk",
     copper_dragon_wyrmling: "https://bit.ly/2IhBsmh",
-    death_dog: "https://bit.ly/3gfw1AN",
+    death_dog: "https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/265/387/315/636252768823194310.jpeg",
     dire_wolf: "https://bit.ly/3oqb6Oq",
     dryad: "https://bit.ly/3qx2nMb",
     ghoul: "https://bit.ly/39LnggT",
