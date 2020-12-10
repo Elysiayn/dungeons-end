@@ -32,7 +32,6 @@ var gameState = {
         xp: 0,
         challenge_rating: 0
     },
-
 }
 var inputEl = document.getElementById("player-name");
 
@@ -42,11 +41,9 @@ var playerInfo = [{
 }
 ]
 
-
 // Modal Activation Trigger
 var grabName = function() {
 
-    
         var beginModal = document.querySelector('.modal');
         var instances = M.Modal.init(beginModal);
         var getModal = M.Modal.getInstance(beginModal);
@@ -54,18 +51,11 @@ var grabName = function() {
 
         var modalParaEl = document.querySelector(".modal-text");
         var name = inputEl.value.trim();
-    
-    if ((name === "")||(!selectedRace )){
-            
+
+    if ((name === "")||(!selectedRace )){ 
         modalParaEl.textContent = "Brave Adventurer, I need to know your name and fighter before you continue. So I may tell all of your bravery.";
-        
-
-     }else {
-        
-        
-
+    }else {
         gameState.user.name = name
-    
         modalParaEl.textContent = "Be wary, " + gameState.user.name + "." + " As you fight your way to the Dungeon's End, you will face ferocious monsters. While each monster may vary in power, remain vigilant, as any of these foes could be your demise.";
     }
 }
@@ -79,7 +69,6 @@ var beginAdventure = function(event) {
     window.location.href = "./encounter.html";
 
     saveUser(); 
-    
 };
 
 var startBtn = document.getElementById('start-button');
@@ -93,7 +82,6 @@ playerName.addEventListener("keydown", e =>{
 });
 document.getElementById("continue").addEventListener("click", beginAdventure);
 
-
 var adventureEl = document.getElementById('modal1')
 adventureEl.addEventListener("keydown", e =>{
     if(e.keyCode === 13){
@@ -102,7 +90,6 @@ adventureEl.addEventListener("keydown", e =>{
 });
 
 document.addEventListener("click", generateFighterCard);
-
 
 var saveUser = function () {
     localStorage.setItem("user", JSON.stringify(gameState.user))
