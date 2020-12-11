@@ -51,3 +51,9 @@ var saveHighScores = function () {
 }
 
 loadHighScores();
+
+
+
+$(document).ready(function() {
+    $('.sidenav').sidenav() 
+});
