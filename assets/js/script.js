@@ -94,3 +94,7 @@ document.addEventListener("click", generateFighterCard);
 var saveUser = function () {
     localStorage.setItem("user", JSON.stringify(gameState.user))
 }
+
+$(document).ready(function() {
+    $('.sidenav').sidenav() 
+});
