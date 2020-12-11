@@ -10,7 +10,7 @@ var loadHighScores = function () {
         currentScores = [];
         return false;
     }
-    debugger;
+    
     storedScores = JSON.parse(storedScores);
     //console.log(storedScores);
 
